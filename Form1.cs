@@ -15,11 +15,15 @@ namespace LitteQuizMaster
     //TO DO - Fehler auffangen, wenn man in der Liste oder beim Start nichts ausgewählt hat - wichtig
     public partial class Form1 : Form
     {
-        
-       
-        
-        private List<Frage> listeFragen = new List<Frage>();   //Fragenliste für die Fragen erstellt
+        int punktezaehlen = 0;
+        int anzahlDerFragen = 0;
 
+        Frage aktuelleFrage = new Frage();
+        Random zufall = new Random();       //Zufallszahl
+
+
+        private List<Frage> listeFragen = new List<Frage>();   //Fragenliste für die Fragen erstellt
+        private List<Statistiken> highscore = new List<Statistiken>();
         public Form1()      //Konstruktor
         {
             InitializeComponent();
@@ -31,7 +35,7 @@ namespace LitteQuizMaster
         {
             //TODO Pfad noch mit Openfield ändern und in einer anderen KLasse auslagern
             BinaryFormatter binaryFormatter = new BinaryFormatter();
-            FileStream stream = new FileStream(@"C:\Users\black\source\repos\LitteQuizMaster\FrageAntwort.txt", FileMode.Create, FileAccess.Write);
+            FileStream stream = new FileStream(@"C:\Users\black\source\repos\FrageAntwort.txt", FileMode.Create, FileAccess.Write);
             binaryFormatter.Serialize(stream, listeFragen);
             stream.Close();
 
@@ -39,7 +43,7 @@ namespace LitteQuizMaster
 
         public void Deserialisierung()
         {
-            FileStream stream = new FileStream(@"C:\Users\black\source\repos\LitteQuizMaster\FrageAntwort.txt", FileMode.Open, FileAccess.Read);
+            FileStream stream = new FileStream(@"C:\Users\black\source\repos\FrageAntwort.txt", FileMode.Open, FileAccess.Read);
             BinaryFormatter binaryFormatter = new BinaryFormatter();
             listeFragen = (List<Frage>)binaryFormatter.Deserialize(stream);
 
@@ -52,15 +56,16 @@ namespace LitteQuizMaster
 
             Frage neueFrage = FrageSpeichern();
             listeFragen.Add(neueFrage);
+           
+
          //TODO Leere String abfangen
             Serialisierung();      
             GuiSynch();
-            FelderLeeren();
+            FelderFragenEditorLeeren();
         }
        
-        private void FelderLeeren() /* Methode: Felder leeren um einen neuen Eintrag machen zu können */
+        private void FelderFragenEditorLeeren() /* Methode: Felder leeren um einen neuen Eintrag machen zu können */
         {
-           
             txtNeueFrage.Text = "";
             textBox1.Text = "";
             textBox2.Text = "";
@@ -72,6 +77,13 @@ namespace LitteQuizMaster
             radioButton8.Checked = false;
             radioButton9.Checked = false;
             radioButton10.Checked = false;
+        }
+        private void RadioButtonQuizLeeren() {
+            radioButton1.Checked = false;
+            radioButton2.Checked = false;
+            radioButton3.Checked = false;
+            radioButton4.Checked = false;
+            radioButton5.Checked = false;
         }
 
         private void GuiSynch()  /* Methode: GUI Synchronisation*/
@@ -99,10 +111,10 @@ namespace LitteQuizMaster
                                          );
             //Deserialisierung();
             GuiSynch();
-            FelderLeeren();
+            FelderFragenEditorLeeren();
 
         }
-           
+       
         Frage FrageSpeichern() /* Anlegen einer neuen Frage mit Antworten und welche wahr ist + gibt diese zurück*/
         {
             Frage frage = new Frage();
@@ -134,68 +146,77 @@ namespace LitteQuizMaster
             lblMoeglicheAntwort5.Text = frage.GetAntworten()[4].antwortText;
             aktuelleFrage = frage;
         }
-        Frage aktuelleFrage = new Frage();
-
         
 
         private void btnAntwortSetzen_Click(object sender, EventArgs e)/* Tab Quiz */
-        {
+        {//TODO nur einmal eine Antwort setzen, dannach geht es nicht mehr  while (x<1){ checked anweisungen}
             
-
-            Deserialisierung();
             bool richtigBeantwortet = false;
+
+        
             /*Überprüfung der Antwort*/ // funktioniert nicht; muss die daten der anderen radiobutton auf 
             //die anderen übertragen
-            
-            
+            Deserialisierung();
             if (radioButton1.Checked)
-            {
-                //if()
-                {
-                    
-                   richtigBeantwortet = aktuelleFrage.GetAntworten()[0].istRichtig;
-                }
+            {     
+                    richtigBeantwortet = aktuelleFrage.GetAntworten()[0].istRichtig;
                 
             }
             else if (radioButton2.Checked)
             {
-               // if (radioButton2.Checked == radioButton7.Checked)
                     richtigBeantwortet = aktuelleFrage.GetAntworten()[1].istRichtig;
             }
             else if (radioButton3.Checked)
             {
-              //  if (radioButton3.Checked == radioButton8.Checked)
                     richtigBeantwortet = aktuelleFrage.GetAntworten()[2].istRichtig;
             }
             else if (radioButton4.Checked)
             {
-               // if (radioButton4.Checked == radioButton9.Checked)
                     richtigBeantwortet = aktuelleFrage.GetAntworten()[3].istRichtig;
             }
             else if (radioButton5.Checked)
             {
-               // if (radioButton5.Checked == radioButton10.Checked)
                     richtigBeantwortet = aktuelleFrage.GetAntworten()[4].istRichtig;
             }
             else
             {
-                /* nichts ausgewählt */
+                /* wenn nichts ausgewählt  wird*/
                 MessageBox.Show("Nichts ausgewählt.");
                 return;
             }
-
-            if (richtigBeantwortet)
-            {
+                     
+                if (richtigBeantwortet)
+                {
                 /* Werte von der Klasse Statistiken müssen übergeben werden */
-                int punktezaehlen = 0;
-                punktezaehlen++;   //Zählt Punkte, wenn richtig (für Statistik)
                 
-                MessageBox.Show("Korrekt."+"\nDeine Punkte: "+ punktezaehlen);
+                   punktezaehlen = punktezaehlen+1;   //Zählt Punkte, wenn richtig (für Statistik)
+                   
+                    
+                    MessageBox.Show("Korrekt." + "\nDeine Punkte: " + punktezaehlen +" von " +anzahlDerFragen + " Punkte(n)");
+                //TODO - Punkte sollen in der Statistik angezeigt werden
+                    
+                    FrageHolenQuiz();
+                    RadioButtonQuizLeeren();
+
+                }
+                else
+                {
+                    punktezaehlen = punktezaehlen + 0;
+
+                    MessageBox.Show("Leider Falsch.\n Deine Punkte: " + punktezaehlen +" von " + anzahlDerFragen +" Punkte(n)" );
+                    FrageHolenQuiz();
+                    GuiSynch();
+                    RadioButtonQuizLeeren();
             }
-            else
-            {
-                MessageBox.Show("Falsch.");
-            }
+          
+          
+            
+            //TODO - Antwort speichern und welche Frage es ist
+            // TODO - Punkte merken und später rechnen
+            //TODO - nur einmal Antwort setzen
+            //TODO - bei der nächstenFrage wieder alles leeren(keine aktive Radiobutton)
+            //oder einfach bereit hier die nächste Frage holen
+          
         }
        
         private void FrageImEditorAnzeigen()  /* Funktion Anzeigen im Frageneditor */
@@ -218,9 +239,7 @@ namespace LitteQuizMaster
         }
         private void btnEdit_Click(object sender, EventArgs e)  /* Tab FragenEditor */
         {
-           
               FrageImEditorAnzeigen();
-
         }
 
         private void btnFrageLöschern_Click(object sender, EventArgs e)
@@ -229,9 +248,6 @@ namespace LitteQuizMaster
             //int Index = lstFragenliste.SelectedIndex; 
             listeFragen.RemoveAt(lstFragenliste.SelectedIndex);
             GuiSynch();
-            
-
-
         }
 
         private void btnCloseEditor_Click(object sender, EventArgs e)
@@ -259,12 +275,9 @@ namespace LitteQuizMaster
           }*/
         #endregion
 
-        private void btnStart_Click(object sender, EventArgs e)
+            private void FrageHolenQuiz()
         {
-            Random zufall = new Random();
-            
-            Deserialisierung();
-            /*Soll Random-Fragen anzeigen*/
+           
             Frage spielStart = listeFragen[zufall.Next(1, listeFragen.Count)];
             lblFragestellung.Text = spielStart.GetFrageText();
             lblMoeglicheAntwort1.Text = spielStart.GetAntworten()[0].antwortText;
@@ -272,15 +285,27 @@ namespace LitteQuizMaster
             lblMoeglicheAntwort3.Text = spielStart.GetAntworten()[2].antwortText;
             lblMoeglicheAntwort4.Text = spielStart.GetAntworten()[3].antwortText;
             lblMoeglicheAntwort5.Text = spielStart.GetAntworten()[4].antwortText;
-            //Wenn man Start nochmal klickt, zeigt er die nächste an
-           //Vermerk: radioButton1.Checked = spielStart.GetAntworten()[0].istRichtig;
-           //zeigt den richtigen wert an
 
-           
-
-            //TODO Radiobutton.checked
-
+            anzahlDerFragen = anzahlDerFragen + 1;  //Counter Anzahl der Frage Statistik
+            aktuelleFrage.SetAntworten(spielStart.GetAntworten()[0], spielStart.GetAntworten()[1],
+            spielStart.GetAntworten()[2], spielStart.GetAntworten()[3], spielStart.GetAntworten()[4]);
+            
+          
             GuiSynch();
+        }
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+           // Random zufall = new Random();
+            
+            Deserialisierung();
+           // RadioButtonQuizLeeren();
+            FrageHolenQuiz();
+        
+            
+            //Vermerk: radioButton1.Checked = spielStart.GetAntworten()[0].istRichtig;
+            //somit zeigt es den richtigen Wert an
+            //TODO -Wenn man Start nochmal klickt, zeigt er die nächste an
+          
         }
 
         private void tabNeueFragen_Click(object sender, EventArgs e)
@@ -291,10 +316,26 @@ namespace LitteQuizMaster
         private void btnNeuFrageEditor_Click(object sender, EventArgs e)
         {
             /*Felder für eine neue Frage leeren*/
-            FelderLeeren();
+            FelderFragenEditorLeeren();
             GuiSynch();
         }
+       
+        
+        
+
+
+        #region Nächste-Frage-Button
+        /*
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            RadioButtonQuizLeeren();
+            FrageHolenQuiz();
+         
+
+        }
+        */
+        #endregion
         //TODO eingabefeld Tab editor vergrößern oder flexibel machen
     }
-    
+
 }

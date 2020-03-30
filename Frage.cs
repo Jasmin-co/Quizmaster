@@ -39,6 +39,7 @@ namespace LitteQuizMaster
             antworten.Add(p_a3);
             antworten.Add(p_a4);
             antworten.Add(p_a5);
+            
         }
         
         public List<Antwort> GetAntworten()    //Rückgabe der Liste antwort
@@ -76,5 +77,6 @@ namespace LitteQuizMaster
             
                     //Datenbestand in der Liste gelöschen: ... .RemoveAt(Index);
         }*/
+
     }
 }

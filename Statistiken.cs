@@ -6,22 +6,35 @@ using System.Threading.Tasks;
 
 namespace LitteQuizMaster
 {
+    [Serializable]
     class Statistiken   //Für den Tab Statistik
         //Vorbereitung um die Punkte zuzufügen, errechnen, anzeigen zu lassen
     {
+        //TODO - liste Punktzahl/Highscore
+        //TODO dies eliste soll die aktuellen punkzahl, datum und namen haben
         private int erreichtePunkteZahl;
         private int erreichbarePunktZahl;
+        private int punkte;
+        private string name;
+        private DateTime datumUhrzeit;
 
-        Statistiken erreichtePunkte = new Statistiken();    //Objekt erstellt
+        
+        
+      
+
+
+       //erreichtePunkte = new Statistiken();    //Objekt erstellt
 
 
         public void SetErreichtePunkte(int p_erreichtePunkte)
         {
-            erreichtePunkteZahl = p_erreichtePunkte;    //Wertzuweidsung
+            
+            erreichtePunkteZahl = p_erreichtePunkte;    //Wertzuweisung
         }
 
         public int GetErreichtePunkte()
         {
+            
             return erreichtePunkteZahl; //muss für Textbox ToString verwendet werden?
         }
 
