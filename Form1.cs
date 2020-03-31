@@ -17,13 +17,15 @@ namespace LitteQuizMaster
     {
         int punktezaehlen = 0;
         int anzahlDerFragen = 0;
+        Statistiken spielerStatistiken = new Statistiken(); //spielerpunkte Statistik
+        Statistiken fragenStatistiken = new Statistiken();  //Aktuelle Frageanzahl Statistik
 
         Frage aktuelleFrage = new Frage();
         Random zufall = new Random();       //Zufallszahl
 
 
         private List<Frage> listeFragen = new List<Frage>();   //Fragenliste für die Fragen erstellt
-        private List<Statistiken> highscore = new List<Statistiken>();
+        
         public Form1()      //Konstruktor
         {
             InitializeComponent();
@@ -189,20 +191,19 @@ namespace LitteQuizMaster
                 {
                 /* Werte von der Klasse Statistiken müssen übergeben werden */
                 
-                   punktezaehlen = punktezaehlen+1;   //Zählt Punkte, wenn richtig (für Statistik)
-                   
+                  // punktezaehlen = punktezaehlen+1;   //Zählt Punkte, wenn richtig (für Statistik)
+                spielerStatistiken.PunktzahlPlus1(punktezaehlen);
                     
                     MessageBox.Show("Korrekt." + "\nDeine Punkte: " + punktezaehlen +" von " +anzahlDerFragen + " Punkte(n)");
                 //TODO - Punkte sollen in der Statistik angezeigt werden
                     
                     FrageHolenQuiz();
                     RadioButtonQuizLeeren();
-
+                 
                 }
                 else
                 {
-                    punktezaehlen = punktezaehlen + 0;
-
+                 
                     MessageBox.Show("Leider Falsch.\n Deine Punkte: " + punktezaehlen +" von " + anzahlDerFragen +" Punkte(n)" );
                     FrageHolenQuiz();
                     GuiSynch();
@@ -285,8 +286,8 @@ namespace LitteQuizMaster
             lblMoeglicheAntwort3.Text = spielStart.GetAntworten()[2].antwortText;
             lblMoeglicheAntwort4.Text = spielStart.GetAntworten()[3].antwortText;
             lblMoeglicheAntwort5.Text = spielStart.GetAntworten()[4].antwortText;
-
-            anzahlDerFragen = anzahlDerFragen + 1;  //Counter Anzahl der Frage Statistik
+            //
+            fragenStatistiken.FragenZaehlen(anzahlDerFragen);  //Counter Anzahl der Frage Statistik
             aktuelleFrage.SetAntworten(spielStart.GetAntworten()[0], spielStart.GetAntworten()[1],
             spielStart.GetAntworten()[2], spielStart.GetAntworten()[3], spielStart.GetAntworten()[4]);
             
@@ -295,8 +296,7 @@ namespace LitteQuizMaster
         }
         private void btnStart_Click(object sender, EventArgs e)
         {
-           // Random zufall = new Random();
-            
+                  
             Deserialisierung();
            // RadioButtonQuizLeeren();
             FrageHolenQuiz();
@@ -319,9 +319,21 @@ namespace LitteQuizMaster
             FelderFragenEditorLeeren();
             GuiSynch();
         }
-       
-        
-        
+
+        private void btnStatistikNamenEintragen_Click(object sender, EventArgs e)
+        {
+            Statistiken statistiken = new Statistiken();
+
+            string usereingabe = txtStatistikNameEintragen.Text;    //username soll eingetragen werden
+
+         //TODO- speicher den namen sobald er eingegeben wurde + speicher die punkte und das datum in die highscoreliste
+         // ggf neuen button erstellen oder wenn Spiel zuende ist, wechsel zur statistik seite
+         //TODO zeige die Punkte und die maxpunkte in den jeweiligen labels an
+            
+        }
+
+
+
 
 
         #region Nächste-Frage-Button
