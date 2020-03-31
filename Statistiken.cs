@@ -15,7 +15,7 @@ namespace LitteQuizMaster
         private int spielerPunkteZahl { get; set; }
         private int erreichbarePunktZahl { get; set; }
         private int punkte;    //spielerpunkte
-        private int maxpunkte { get; set; } //max erreichbare punkte
+        private int maxpunkte;  //max erreichbare punkte
         private string spielername { get; set; }
         private DateTime zeitangabe { get; set; }
         public Statistiken spielpunkte { get; private set; }
@@ -46,10 +46,14 @@ namespace LitteQuizMaster
         }
       
 
-        public void FragenZaehlen(int fragenanzahl)
+        public void FragenZaehlen(int fragenanzahl)//Tab Quiz Rückgabe der Anzahl der Fragen
         {
             maxpunkte = maxpunkte + 1;
             
+        }
+        public int getAnzahlFragen()    
+        {
+            return maxpunkte;
         }
 
         
