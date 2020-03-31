@@ -192,7 +192,7 @@ namespace LitteQuizMaster
                 /* Werte von der Klasse Statistiken müssen übergeben werden */
                 
                   // punktezaehlen = punktezaehlen+1;   //Zählt Punkte, wenn richtig (für Statistik)
-                spielerStatistiken.PunktzahlPlus1(punktezaehlen);
+                    spielerStatistiken.PunktzahlPlus1(punktezaehlen);
                     
                     MessageBox.Show("Korrekt." + "\nDeine Punkte: " + spielerStatistiken.getPunkte() +" von " +anzahlDerFragen + " Punkte(n)");
                 //TODO - Punkte sollen in der Statistik angezeigt werden
@@ -204,7 +204,7 @@ namespace LitteQuizMaster
                 else
                 {
                  
-                    MessageBox.Show("Leider Falsch.\n Deine Punkte: " + punktezaehlen +" von " + anzahlDerFragen +" Punkte(n)" );
+                    MessageBox.Show("Leider Falsch.\n Deine Punkte: " + spielerStatistiken.getPunkte() +" von " + anzahlDerFragen +" Punkte(n)" );
                     FrageHolenQuiz();
                     GuiSynch();
                     RadioButtonQuizLeeren();
