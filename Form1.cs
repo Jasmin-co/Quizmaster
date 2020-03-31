@@ -15,7 +15,7 @@ namespace LitteQuizMaster
     //TO DO - Fehler auffangen, wenn man in der Liste oder beim Start nichts ausgewählt hat - wichtig
     public partial class Form1 : Form
     {
-        int punktezaehlen = 0;
+        int punktezaehlen;
         int anzahlDerFragen = 0;
         Statistiken spielerStatistiken = new Statistiken(); //spielerpunkte Statistik
         Statistiken fragenStatistiken = new Statistiken();  //Aktuelle Frageanzahl Statistik
@@ -194,7 +194,7 @@ namespace LitteQuizMaster
                   // punktezaehlen = punktezaehlen+1;   //Zählt Punkte, wenn richtig (für Statistik)
                 spielerStatistiken.PunktzahlPlus1(punktezaehlen);
                     
-                    MessageBox.Show("Korrekt." + "\nDeine Punkte: " + punktezaehlen +" von " +anzahlDerFragen + " Punkte(n)");
+                    MessageBox.Show("Korrekt." + "\nDeine Punkte: " + spielerStatistiken.getPunkte() +" von " +anzahlDerFragen + " Punkte(n)");
                 //TODO - Punkte sollen in der Statistik angezeigt werden
                     
                     FrageHolenQuiz();
@@ -288,6 +288,7 @@ namespace LitteQuizMaster
             lblMoeglicheAntwort5.Text = spielStart.GetAntworten()[4].antwortText;
             //
             fragenStatistiken.FragenZaehlen(anzahlDerFragen);  //Counter Anzahl der Frage Statistik
+
             aktuelleFrage.SetAntworten(spielStart.GetAntworten()[0], spielStart.GetAntworten()[1],
             spielStart.GetAntworten()[2], spielStart.GetAntworten()[3], spielStart.GetAntworten()[4]);
             
@@ -298,7 +299,7 @@ namespace LitteQuizMaster
         {
                   
             Deserialisierung();
-           // RadioButtonQuizLeeren();
+         
             FrageHolenQuiz();
         
             

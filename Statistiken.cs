@@ -14,7 +14,7 @@ namespace LitteQuizMaster
         //TODO dies eliste soll die aktuellen punkzahl, datum und namen haben
         private int spielerPunkteZahl { get; set; }
         private int erreichbarePunktZahl { get; set; }
-        private int punkte { get; set; }    //spielerpunkte
+        private int punkte;    //spielerpunkte
         private int maxpunkte { get; set; } //max erreichbare punkte
         private string spielername { get; set; }
         private DateTime zeitangabe { get; set; }
@@ -40,18 +40,23 @@ namespace LitteQuizMaster
         {
           punkte =  punkte + 1;
         }
+        public int getPunkte()
+        {
+            return punkte;
+        }
       
 
         public void FragenZaehlen(int fragenanzahl)
         {
             maxpunkte = maxpunkte + 1;
+            
         }
 
         
 
         public void setStatistikSachen(Statistiken spielerPunkte, Statistiken spielername)
         {/*in meine liste eingefügt*/
-            spielerPunkte = spielpunkte;    //Versuch Verbindung von spielpunkte zu spielerpunkte zu erstellen
+            //spielerPunkte = spielpunkte;    //Versuch Verbindung von spielpunkte zu spielerpunkte zu erstellen
            
             highscore.Clear();
             highscore.Add(spielerPunkte);
