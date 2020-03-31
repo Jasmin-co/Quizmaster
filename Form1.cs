@@ -192,7 +192,7 @@ namespace LitteQuizMaster
                 /* Werte von der Klasse Statistiken müssen übergeben werden */
                 
                   // punktezaehlen = punktezaehlen+1;   //Zählt Punkte, wenn richtig (für Statistik)
-                    spielerStatistiken.PunktzahlPlus1(punktezaehlen);
+                    spielerStatistiken.PunktzahlPlus1();
                     
                     MessageBox.Show("Korrekt." + "\nDeine Punkte: " + spielerStatistiken.getPunkte() +" von " +spielerStatistiken.getAnzahlFragen() + " Punkte(n)");
                 //TODO - Punkte sollen in der Statistik angezeigt werden
@@ -287,7 +287,7 @@ namespace LitteQuizMaster
             lblMoeglicheAntwort4.Text = spielStart.GetAntworten()[3].antwortText;
             lblMoeglicheAntwort5.Text = spielStart.GetAntworten()[4].antwortText;
             //
-            fragenStatistiken.FragenZaehlen(anzahlDerFragen);  //Counter Anzahl der Frage Statistik
+            spielerStatistiken.FragenZaehlen();  //Counter Anzahl der Frage Statistik
 
             aktuelleFrage.SetAntworten(spielStart.GetAntworten()[0], spielStart.GetAntworten()[1],
             spielStart.GetAntworten()[2], spielStart.GetAntworten()[3], spielStart.GetAntworten()[4]);

@@ -15,7 +15,10 @@ namespace LitteQuizMaster
         private int spielerPunkteZahl { get; set; }
         private int erreichbarePunktZahl { get; set; }
         private int punkte;    //spielerpunkte
+        private int spielerPunkteZaehlerZwischenspeicher;
         private int maxpunkte;  //max erreichbare punkte
+        private int fragenZaehlerZwischenspeicher;
+
         private string spielername { get; set; }
         private DateTime zeitangabe { get; set; }
         public Statistiken spielpunkte { get; private set; }
@@ -36,24 +39,26 @@ namespace LitteQuizMaster
         {
         }
 
-        public void PunktzahlPlus1(int spielpunkte)   //SpielerPunkte zählen
+        public void PunktzahlPlus1()   //SpielerPunkte zählen
         {
           punkte =  punkte + 1;
         }
         public int getPunkte()
         {
-            return punkte;
+            spielerPunkteZaehlerZwischenspeicher = punkte;
+            return spielerPunkteZaehlerZwischenspeicher;
         }
       
 
-        public void FragenZaehlen(int fragenanzahl)//Tab Quiz Rückgabe der Anzahl der Fragen
+        public void FragenZaehlen()//Tab Quiz Rückgabe der Anzahl der Fragen
         {
             maxpunkte = maxpunkte + 1;
             
         }
         public int getAnzahlFragen()    
         {
-            return maxpunkte;
+            fragenZaehlerZwischenspeicher = maxpunkte;
+            return fragenZaehlerZwischenspeicher;
         }
 
         
