@@ -12,18 +12,15 @@ using System.IO;
 
 
 /* AUFGABENLISTE: */
-// TODO - Punktestand automatisch auf Statistiken anzeigen lassen
-
-// TODO - Antwort speichern und welche Frage es ist
-
-// TODO - speicher den namen sobald er eingegeben wurde + speicher die punkte und das datum in die highscoreliste
+// TODO - Statistiken: Punktestand automatisch auf Statistiken anzeigen lassen
+// TODO - Statistiken: speicher den namen sobald er eingegeben wurde + speicher die punkte und das datum in die highscoreliste
 // ggf neuen button erstellen oder wenn Spiel zuende ist, wechsel zur statistik seite
-// TODO - zeige die Punkte und die maxpunkte in den jeweiligen labels an
+// TODO - Statisteken: zeige die Punkte und die maxpunkte in den jeweiligen labels an
 // TODO - Fehler auffangen, wenn man in der Liste oder beim Start nichts ausgewählt hat - wichtig
 // TODO - Serialisierung und Deserialissierungs-Methoden: Pfad noch mit Openfield ändern und in einer anderen KLasse auslagern
-// TODO - bei FrageEditor Vermeidung eines Leerenstrings, Doppelte Fragestellung
+// TODO - FrageEditor: Vermeidung eines Leerenstrings, Doppelte Fragestellung
 // TODO - Frageeditor: Texteingaben flexibel gestalten?
-// TODO - Zum Schluss überflüssige Codes /Kommentare löschen und die Fehlerabfangenssachen coden
+// TODO - Allgemein: Zum Schluss überflüssige Codes /Kommentare löschen und die Fehlerabfangenssachen coden
 
 
 namespace LitteQuizMaster
@@ -329,7 +326,7 @@ namespace LitteQuizMaster
             Statistiken statistiken = new Statistiken();
 
             usereingabe = txtStatistikNameEintragen.Text;    //username soll eingetragen werden
-            lblTextfeld.Text = usereingabe;
+            lblTextfeld.Text = usereingabe; //Testausgabe bei Statistiken
 
             GuiSynch();
            
