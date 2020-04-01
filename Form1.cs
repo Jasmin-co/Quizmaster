@@ -15,10 +15,9 @@ namespace LitteQuizMaster
     //TO DO - Fehler auffangen, wenn man in der Liste oder beim Start nichts ausgewählt hat - wichtig
     public partial class Form1 : Form
     {
-        int punktezaehlen;
-        int anzahlDerFragen;
+    
         Statistiken spielerStatistiken = new Statistiken(); //spielerpunkte Statistik
-        Statistiken fragenStatistiken = new Statistiken();  //Aktuelle Frageanzahl Statistik
+      //  Statistiken fragenStatistiken = new Statistiken();  //Aktuelle Frageanzahl Statistik
 
         Frage aktuelleFrage = new Frage();
         Random zufall = new Random();       //Zufallszahl
@@ -135,23 +134,26 @@ namespace LitteQuizMaster
 
             return frage; 
         }
-
+        #region FrageAnzeige - wir derzeit nicht benutzt
         /* Methode: Anzeigen der Frage und den dazugehörigen Antworten Antworten */
-       private void FrageAnzeigen(Frage frage) /* für Button Next beim Tab Quiz */
-        {
-            
-            lblFragestellung.Text = frage.GetFrageText();
-            lblMoeglicheAntwort1.Text = frage.GetAntworten()[0].antwortText;
-            lblMoeglicheAntwort2.Text = frage.GetAntworten()[1].antwortText;
-            lblMoeglicheAntwort3.Text = frage.GetAntworten()[2].antwortText;
-            lblMoeglicheAntwort4.Text = frage.GetAntworten()[3].antwortText;
-            lblMoeglicheAntwort5.Text = frage.GetAntworten()[4].antwortText;
-            aktuelleFrage = frage;
-        }
-        
+
+        /*  private void FrageAnzeigen(Frage frage) // für Button Next beim Tab Quiz 
+           {
+
+               lblFragestellung.Text = frage.GetFrageText();
+               lblMoeglicheAntwort1.Text = frage.GetAntworten()[0].antwortText;
+               lblMoeglicheAntwort2.Text = frage.GetAntworten()[1].antwortText;
+               lblMoeglicheAntwort3.Text = frage.GetAntworten()[2].antwortText;
+               lblMoeglicheAntwort4.Text = frage.GetAntworten()[3].antwortText;
+               lblMoeglicheAntwort5.Text = frage.GetAntworten()[4].antwortText;
+               aktuelleFrage = frage;
+           }*/
+        #endregion
+
 
         private void btnAntwortSetzen_Click(object sender, EventArgs e)/* Tab Quiz */
-        {//TODO nur einmal eine Antwort setzen, dannach geht es nicht mehr  while (x<1){ checked anweisungen}
+        {
+            //TODO nur einmal eine Antwort setzen, dannach geht es nicht mehr  while (x<1){ checked anweisungen}
             
             bool richtigBeantwortet = false;
 
