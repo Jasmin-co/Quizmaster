@@ -100,6 +100,7 @@
             this.lblKennzeichnungFrage = new System.Windows.Forms.Label();
             this.txtNeueFrage = new System.Windows.Forms.TextBox();
             this.lblFragenEditorTitel = new System.Windows.Forms.Label();
+            this.lblTextfeld = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabQuiz.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -224,7 +225,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.62867F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 84.37133F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 146F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 147F));
             this.tableLayoutPanel1.Controls.Add(this.radioButton3, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.radioButton4, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.radioButton2, 2, 1);
@@ -255,7 +256,7 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(842, 161);
+            this.radioButton3.Location = new System.Drawing.Point(841, 161);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(21, 20);
             this.radioButton3.TabIndex = 15;
@@ -265,7 +266,7 @@
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(842, 240);
+            this.radioButton4.Location = new System.Drawing.Point(841, 240);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(21, 20);
             this.radioButton4.TabIndex = 16;
@@ -275,7 +276,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(842, 82);
+            this.radioButton2.Location = new System.Drawing.Point(841, 82);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(21, 20);
             this.radioButton2.TabIndex = 14;
@@ -287,7 +288,7 @@
             this.radioButton1.AutoSize = true;
             this.radioButton1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.radioButton1.Location = new System.Drawing.Point(842, 3);
+            this.radioButton1.Location = new System.Drawing.Point(841, 3);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(21, 20);
             this.radioButton1.TabIndex = 13;
@@ -353,7 +354,7 @@
             this.lblMoeglicheAntwort4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblMoeglicheAntwort4.Location = new System.Drawing.Point(134, 237);
             this.lblMoeglicheAntwort4.Name = "lblMoeglicheAntwort4";
-            this.lblMoeglicheAntwort4.Size = new System.Drawing.Size(702, 42);
+            this.lblMoeglicheAntwort4.Size = new System.Drawing.Size(701, 42);
             this.lblMoeglicheAntwort4.TabIndex = 11;
             // 
             // lblMoeglicheAntwort3
@@ -364,7 +365,7 @@
             this.lblMoeglicheAntwort3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblMoeglicheAntwort3.Location = new System.Drawing.Point(134, 158);
             this.lblMoeglicheAntwort3.Name = "lblMoeglicheAntwort3";
-            this.lblMoeglicheAntwort3.Size = new System.Drawing.Size(702, 42);
+            this.lblMoeglicheAntwort3.Size = new System.Drawing.Size(701, 42);
             this.lblMoeglicheAntwort3.TabIndex = 18;
             // 
             // lblMoeglicheAntwort2
@@ -375,7 +376,7 @@
             this.lblMoeglicheAntwort2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblMoeglicheAntwort2.Location = new System.Drawing.Point(134, 79);
             this.lblMoeglicheAntwort2.Name = "lblMoeglicheAntwort2";
-            this.lblMoeglicheAntwort2.Size = new System.Drawing.Size(702, 42);
+            this.lblMoeglicheAntwort2.Size = new System.Drawing.Size(701, 42);
             this.lblMoeglicheAntwort2.TabIndex = 19;
             // 
             // lblMoeglicheAntwort1
@@ -387,7 +388,7 @@
             this.lblMoeglicheAntwort1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblMoeglicheAntwort1.Location = new System.Drawing.Point(134, 0);
             this.lblMoeglicheAntwort1.Name = "lblMoeglicheAntwort1";
-            this.lblMoeglicheAntwort1.Size = new System.Drawing.Size(702, 42);
+            this.lblMoeglicheAntwort1.Size = new System.Drawing.Size(701, 42);
             this.lblMoeglicheAntwort1.TabIndex = 20;
             // 
             // lblMoeglicheAntwort5
@@ -398,13 +399,13 @@
             this.lblMoeglicheAntwort5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblMoeglicheAntwort5.Location = new System.Drawing.Point(134, 316);
             this.lblMoeglicheAntwort5.Name = "lblMoeglicheAntwort5";
-            this.lblMoeglicheAntwort5.Size = new System.Drawing.Size(702, 42);
+            this.lblMoeglicheAntwort5.Size = new System.Drawing.Size(701, 42);
             this.lblMoeglicheAntwort5.TabIndex = 21;
             // 
             // radioButton5
             // 
             this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(842, 319);
+            this.radioButton5.Location = new System.Drawing.Point(841, 319);
             this.radioButton5.Name = "radioButton5";
             this.radioButton5.Size = new System.Drawing.Size(21, 20);
             this.radioButton5.TabIndex = 17;
@@ -446,6 +447,7 @@
             // tabStatistik
             // 
             this.tabStatistik.BackColor = System.Drawing.Color.Bisque;
+            this.tabStatistik.Controls.Add(this.lblTextfeld);
             this.tabStatistik.Controls.Add(this.btnStatistikNamenEintragen);
             this.tabStatistik.Controls.Add(this.lblDeinePunkteAnzeige);
             this.tabStatistik.Controls.Add(this.lblAnzeigeErreichbarePunkte);
@@ -981,6 +983,16 @@
             this.lblFragenEditorTitel.TabIndex = 0;
             this.lblFragenEditorTitel.Text = "Neue Fragen erstellen / Fragen bearbeiten";
             // 
+            // lblTextfeld
+            // 
+            this.lblTextfeld.AutoSize = true;
+            this.lblTextfeld.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTextfeld.Location = new System.Drawing.Point(314, 516);
+            this.lblTextfeld.Name = "lblTextfeld";
+            this.lblTextfeld.Size = new System.Drawing.Size(97, 29);
+            this.lblTextfeld.TabIndex = 44;
+            this.lblTextfeld.Text = "Testfeld";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -1077,6 +1089,7 @@
         private System.Windows.Forms.Label lblAnzeigeErreichbarePunkte;
         private System.Windows.Forms.Button btnStatistikNamenEintragen;
         private System.Windows.Forms.Label lblAnzeigeAnzahlFragenInDerListe;
+        private System.Windows.Forms.Label lblTextfeld;
     }
 }
 

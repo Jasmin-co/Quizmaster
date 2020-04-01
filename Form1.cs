@@ -10,12 +10,31 @@ using System.Windows.Forms;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
+
+/* AUFGABENLISTE: */
+// TODO - Punktestand automatisch auf Statistiken anzeigen lassen
+
+// TODO - Antwort speichern und welche Frage es ist
+
+// TODO - speicher den namen sobald er eingegeben wurde + speicher die punkte und das datum in die highscoreliste
+// ggf neuen button erstellen oder wenn Spiel zuende ist, wechsel zur statistik seite
+// TODO - zeige die Punkte und die maxpunkte in den jeweiligen labels an
+// TODO - Fehler auffangen, wenn man in der Liste oder beim Start nichts ausgewählt hat - wichtig
+// TODO - Serialisierung und Deserialissierungs-Methoden: Pfad noch mit Openfield ändern und in einer anderen KLasse auslagern
+// TODO - bei FrageEditor Vermeidung eines Leerenstrings, Doppelte Fragestellung
+// TODO - Frageeditor: Texteingaben flexibel gestalten?
+// TODO - Zum Schluss überflüssige Codes /Kommentare löschen und die Fehlerabfangenssachen coden
+
+
 namespace LitteQuizMaster
 {
-    //TO DO - Fehler auffangen, wenn man in der Liste oder beim Start nichts ausgewählt hat - wichtig
+
     public partial class Form1 : Form
+
     {
-    
+        string usereingabe = ""; // Deklaration für die Namenemseintragung des Spielers
+
+
         Statistiken spielerStatistiken = new Statistiken(); //spielerpunkte Statistik
       //  Statistiken fragenStatistiken = new Statistiken();  //Aktuelle Frageanzahl Statistik
 
@@ -29,12 +48,11 @@ namespace LitteQuizMaster
         {
             InitializeComponent();
             Deserialisierung();
-            //TODO -Liste laden jedoch noch nichts anzeigen lassen
         }
 
         public void Serialisierung()
         {
-            //TODO Pfad noch mit Openfield ändern und in einer anderen KLasse auslagern
+         
             BinaryFormatter binaryFormatter = new BinaryFormatter();
             FileStream stream = new FileStream(@"C:\Users\black\source\repos\FrageAntwort.txt", FileMode.Create, FileAccess.Write);
             binaryFormatter.Serialize(stream, listeFragen);
@@ -153,13 +171,9 @@ namespace LitteQuizMaster
 
         private void btnAntwortSetzen_Click(object sender, EventArgs e)/* Tab Quiz */
         {
-            //TODO nur einmal eine Antwort setzen, dannach geht es nicht mehr  while (x<1){ checked anweisungen}
             
             bool richtigBeantwortet = false;
 
-        
-            /*Überprüfung der Antwort*/ // funktioniert nicht; muss die daten der anderen radiobutton auf 
-            //die anderen übertragen
             Deserialisierung();
             if (radioButton1.Checked)
             {     
@@ -197,7 +211,7 @@ namespace LitteQuizMaster
                     spielerStatistiken.PunktzahlPlus1();
                     
                     MessageBox.Show("Korrekt." + "\nDeine Punkte: " + spielerStatistiken.getPunkte() +" von " +spielerStatistiken.getAnzahlFragen() + " Punkte(n)");
-                //TODO - Punkte sollen in der Statistik angezeigt werden
+           
                     
                     FrageHolenQuiz();
                     RadioButtonQuizLeeren();
@@ -210,15 +224,7 @@ namespace LitteQuizMaster
                     FrageHolenQuiz();
                     GuiSynch();
                     RadioButtonQuizLeeren();
-            }
-          
-          
-            
-            //TODO - Antwort speichern und welche Frage es ist
-            // TODO - Punkte merken und später rechnen
-            //TODO - nur einmal Antwort setzen
-            //TODO - bei der nächstenFrage wieder alles leeren(keine aktive Radiobutton)
-            //oder einfach bereit hier die nächste Frage holen
+            }       
           
         }
        
@@ -247,9 +253,7 @@ namespace LitteQuizMaster
 
         private void btnFrageLöschern_Click(object sender, EventArgs e)
         {
-            /* TODO- Löschung der ausgewählten Frage */
-            //int Index = lstFragenliste.SelectedIndex; 
-            listeFragen.RemoveAt(lstFragenliste.SelectedIndex);
+             listeFragen.RemoveAt(lstFragenliste.SelectedIndex);
             GuiSynch();
         }
 
@@ -293,8 +297,10 @@ namespace LitteQuizMaster
 
             aktuelleFrage.SetAntworten(spielStart.GetAntworten()[0], spielStart.GetAntworten()[1],
             spielStart.GetAntworten()[2], spielStart.GetAntworten()[3], spielStart.GetAntworten()[4]);
-            
-          
+
+            //Vermerk: radioButton1.Checked = spielStart.GetAntworten()[0].istRichtig;
+            //somit zeigt es den richtigen Wert an
+
             GuiSynch();
         }
         private void btnStart_Click(object sender, EventArgs e)
@@ -303,17 +309,12 @@ namespace LitteQuizMaster
             Deserialisierung();
          
             FrageHolenQuiz();
-        
-            
-            //Vermerk: radioButton1.Checked = spielStart.GetAntworten()[0].istRichtig;
-            //somit zeigt es den richtigen Wert an
-            //TODO -Wenn man Start nochmal klickt, zeigt er die nächste an
-          
+
         }
 
         private void tabNeueFragen_Click(object sender, EventArgs e)
         {
-
+            //kann das weg?
         }
 
         private void btnNeuFrageEditor_Click(object sender, EventArgs e)
@@ -327,15 +328,14 @@ namespace LitteQuizMaster
         {
             Statistiken statistiken = new Statistiken();
 
-            string usereingabe = txtStatistikNameEintragen.Text;    //username soll eingetragen werden
+            usereingabe = txtStatistikNameEintragen.Text;    //username soll eingetragen werden
+            lblTextfeld.Text = usereingabe;
 
-         //TODO- speicher den namen sobald er eingegeben wurde + speicher die punkte und das datum in die highscoreliste
-         // ggf neuen button erstellen oder wenn Spiel zuende ist, wechsel zur statistik seite
-         //TODO zeige die Punkte und die maxpunkte in den jeweiligen labels an
+            GuiSynch();
+           
+
             
         }
-
-
 
 
 
@@ -350,7 +350,7 @@ namespace LitteQuizMaster
         }
         */
         #endregion
-        //TODO eingabefeld Tab editor vergrößern oder flexibel machen
+        
     }
 
 }
