@@ -13,7 +13,7 @@ namespace LitteQuizMaster
         //Klasse um Fragen und deren Antworten zu holen usw
         private string frageText;   //Deklaration eines Feldes
         private List<Antwort> antworten = new List<Antwort>();  //Erstellung einer Liste für Antworten
-
+      
         #region FKT
         /* public void Frage(string frage) // Funktion: Zuweisung der Frage(gleiche wie setter)
          {
@@ -46,6 +46,7 @@ namespace LitteQuizMaster
         {     
             return antworten;
          }
+      
 
         #region keine Ahnung ob das weg kann
 
@@ -72,11 +73,11 @@ namespace LitteQuizMaster
          {
              return fragen;
          }*/
-       /* public void loeschenEinerFrage()
-        {//5.3
-            
-                    //Datenbestand in der Liste gelöschen: ... .RemoveAt(Index);
-        }*/
+        /* public void loeschenEinerFrage()
+         {//5.3
+
+                     //Datenbestand in der Liste gelöschen: ... .RemoveAt(Index);
+         }*/
 
     }
 }

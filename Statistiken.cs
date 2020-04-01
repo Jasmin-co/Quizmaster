@@ -18,6 +18,7 @@ namespace LitteQuizMaster
         private int spielerPunkteZaehlerZwischenspeicher;
         private int maxpunkte;  //max erreichbare punkte
         private int fragenZaehlerZwischenspeicher;
+        
 
         private string spielername { get; set; }
         private DateTime zeitangabe { get; set; }
@@ -63,7 +64,7 @@ namespace LitteQuizMaster
 
         
 
-        public void setStatistikSachen(Statistiken spielerPunkte, Statistiken spielername)
+        public void setStatistikSachen(Statistiken spielerPunkte, Statistiken spielername)//nicht fertig
         {/*in meine liste eingefügt*/
             //spielerPunkte = spielpunkte;    //Versuch Verbindung von spielpunkte zu spielerpunkte zu erstellen
            
@@ -75,6 +76,15 @@ namespace LitteQuizMaster
         public List<Statistiken> GetStatistikSachen()
         {
             return highscore;
+        }
+
+        public void SetSpielerName(string p_spielername)    //set spielername
+        {
+            spielername = p_spielername;
+        }
+        public string GetSpielerName()      //gibt den Spielernamen zurück
+        {
+            return spielername;
         }
 
         //erreichtePunkte = new Statistiken();    //Objekt erstellt

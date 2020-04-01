@@ -19,7 +19,8 @@ using System.IO;
 // TODO - Fehler auffangen, wenn man in der Liste oder beim Start nichts ausgewählt hat - wichtig
 // TODO - Serialisierung und Deserialissierungs-Methoden: Pfad noch mit Openfield ändern und in einer anderen KLasse auslagern
 // TODO - FrageEditor: Vermeidung eines Leerenstrings, Doppelte Fragestellung
-// TODO - Frageeditor: Texteingaben flexibel gestalten?
+// TODO - Frageeditor: Texteingaben flexibel gestalten? - muss nicht zwingend
+// TODO - Statt direkt in der Liste Random machen (wegen Endlosschleife und doppelte Fragenausgabe- Zeite Liste erstellen un dann mischen lassen
 // TODO - Allgemein: Zum Schluss überflüssige Codes /Kommentare löschen und die Fehlerabfangenssachen coden
 
 
@@ -33,19 +34,24 @@ namespace LitteQuizMaster
 
 
         Statistiken spielerStatistiken = new Statistiken(); //spielerpunkte Statistik
-      //  Statistiken fragenStatistiken = new Statistiken();  //Aktuelle Frageanzahl Statistik
+                                                            //  Statistiken fragenStatistiken = new Statistiken();  //Aktuelle Frageanzahl Statistik
 
         Frage aktuelleFrage = new Frage();
         Random zufall = new Random();       //Zufallszahl
-
-
-        private List<Frage> listeFragen = new List<Frage>();   //Fragenliste für die Fragen erstellt
+       
         
+        private List<Frage> listeFragen = new List<Frage>();   //Fragenliste für die Fragen erstellt
+        private List<Statistiken> listeNamen = new List<Statistiken>();     //Erstellung Namensliste
+
+       
+
         public Form1()      //Konstruktor
         {
             InitializeComponent();
             Deserialisierung();
         }
+       
+
 
         public void Serialisierung()
         {
@@ -56,7 +62,7 @@ namespace LitteQuizMaster
             stream.Close();
 
         }
-
+       
         public void Deserialisierung()
         {
             FileStream stream = new FileStream(@"C:\Users\black\source\repos\FrageAntwort.txt", FileMode.Open, FileAccess.Read);
@@ -208,11 +214,12 @@ namespace LitteQuizMaster
                     spielerStatistiken.PunktzahlPlus1();
                     
                     MessageBox.Show("Korrekt." + "\nDeine Punkte: " + spielerStatistiken.getPunkte() +" von " +spielerStatistiken.getAnzahlFragen() + " Punkte(n)");
-           
-                    
+
+
+                
                     FrageHolenQuiz();
-                    RadioButtonQuizLeeren();
-                 
+                     RadioButtonQuizLeeren();
+                
                 }
                 else
                 {
@@ -278,27 +285,30 @@ namespace LitteQuizMaster
 
           }*/
         #endregion
-
+     
             private void FrageHolenQuiz()
         {
-           
-            Frage spielStart = listeFragen[zufall.Next(1, listeFragen.Count)];
-            lblFragestellung.Text = spielStart.GetFrageText();
-            lblMoeglicheAntwort1.Text = spielStart.GetAntworten()[0].antwortText;
-            lblMoeglicheAntwort2.Text = spielStart.GetAntworten()[1].antwortText;
-            lblMoeglicheAntwort3.Text = spielStart.GetAntworten()[2].antwortText;
-            lblMoeglicheAntwort4.Text = spielStart.GetAntworten()[3].antwortText;
-            lblMoeglicheAntwort5.Text = spielStart.GetAntworten()[4].antwortText;
-            //
-            spielerStatistiken.FragenZaehlen();  //Counter Anzahl der Frage Statistik
+            
+                Frage spielStart = listeFragen[zufall.Next(1, listeFragen.Count)];
+            
+                lblFragestellung.Text = spielStart.GetFrageText();
+                lblMoeglicheAntwort1.Text = spielStart.GetAntworten()[0].antwortText;
+                lblMoeglicheAntwort2.Text = spielStart.GetAntworten()[1].antwortText;
+                lblMoeglicheAntwort3.Text = spielStart.GetAntworten()[2].antwortText;
+                lblMoeglicheAntwort4.Text = spielStart.GetAntworten()[3].antwortText;
+                lblMoeglicheAntwort5.Text = spielStart.GetAntworten()[4].antwortText;
 
-            aktuelleFrage.SetAntworten(spielStart.GetAntworten()[0], spielStart.GetAntworten()[1],
-            spielStart.GetAntworten()[2], spielStart.GetAntworten()[3], spielStart.GetAntworten()[4]);
+                spielerStatistiken.FragenZaehlen();  //Counter Anzahl der Frage Statistik
 
-            //Vermerk: radioButton1.Checked = spielStart.GetAntworten()[0].istRichtig;
-            //somit zeigt es den richtigen Wert an
+                aktuelleFrage.SetAntworten(spielStart.GetAntworten()[0], spielStart.GetAntworten()[1],
+                spielStart.GetAntworten()[2], spielStart.GetAntworten()[3], spielStart.GetAntworten()[4]);
 
-            GuiSynch();
+                //Vermerk: radioButton1.Checked = spielStart.GetAntworten()[0].istRichtig;
+                //somit zeigt es den richtigen Wert an
+
+                GuiSynch();
+            
+            
         }
         private void btnStart_Click(object sender, EventArgs e)
         {
@@ -321,17 +331,39 @@ namespace LitteQuizMaster
             GuiSynch();
         }
 
-        private void btnStatistikNamenEintragen_Click(object sender, EventArgs e)
+        private void SynHighscoreliste()        //Syncronisation der Higscoreliste Tab Statistik
         {
-            Statistiken statistiken = new Statistiken();
+            lsbStatistikHighscore.Items.Clear();  //Eingabefeld geleert wird
 
-            usereingabe = txtStatistikNameEintragen.Text;    //username soll eingetragen werden
-            lblTextfeld.Text = usereingabe; //Testausgabe bei Statistiken
+            for (int i = 0; i < listeNamen.Count; i++)  //geht die Liste anhand des Index durch
+            {
+                lsbStatistikHighscore.Items.Add(listeNamen[i].GetSpielerName());
+            }
+        }
 
-            GuiSynch();
+
+
+        Statistiken NameSpeichern() /* Anlegen einer neuen Frage mit Antworten und welche wahr ist + gibt diese zurück*/
+        {
+            Statistiken name = new Statistiken();
+
+            /* Text v. d. Frage + die dazugehörigen 5 Antworten(text + bool)*/
+            string neuername = txtStatistikNameEintragen.Text;
+            name.SetSpielerName(neuername);//erstmal nur den Namen übergeben
+         
+            return name;
            
+        }
 
-            
+        private void btnStatistikNamenEintragen_Click(object sender, EventArgs e) // Namen in der Highscoreliste anzeigen
+        {
+            Statistiken statistikneuername = NameSpeichern();
+
+            listeNamen.Add(statistikneuername);
+         
+            SynHighscoreliste();
+
+       
         }
 
 
@@ -342,12 +374,19 @@ namespace LitteQuizMaster
         {
             RadioButtonQuizLeeren();
             FrageHolenQuiz();
-         
+          string frage = txtNeueFrage.Text;
+
+            Frage neueFrage = FrageSpeichern();
+            listeFragen.Add(neueFrage);
 
         }
         */
         #endregion
-        
+
+        private void btnQuizStopp_Click(object sender, EventArgs e) //Testbutton
+        {
+
+        }
     }
 
 }
