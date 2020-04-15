@@ -12,15 +12,16 @@ using System.IO;
 
 
 /* AUFGABENLISTE: */
-// TODO - Statistiken: Punktestand automatisch auf Statistiken anzeigen lassen
+
 // TODO - Statistiken: speicher den namen sobald er eingegeben wurde + speicher die punkte und das datum in die highscoreliste
 // ggf neuen button erstellen oder wenn Spiel zuende ist, wechsel zur statistik seite
-// TODO - Statisteken: zeige die Punkte und die maxpunkte in den jeweiligen labels an
+
+
 // TODO - Fehler auffangen, wenn man in der Liste oder beim Start nichts ausgewählt hat - wichtig
 // TODO - Serialisierung und Deserialissierungs-Methoden: Pfad noch mit Openfield ändern und in einer anderen KLasse auslagern
 // TODO - FrageEditor: Vermeidung eines Leerenstrings, Doppelte Fragestellung
 // TODO - Frageeditor: Texteingaben flexibel gestalten? - muss nicht zwingend
-// TODO - Statt direkt in der Liste Random machen (wegen Endlosschleife und doppelte Fragenausgabe- Zeite Liste erstellen un dann mischen lassen
+// TODO - Statt direkt in der Liste Random machen (wegen Endlosschleife und doppelte Fragenausgabe- 
 // TODO - Allgemein: Zum Schluss überflüssige Codes /Kommentare löschen und die Fehlerabfangenssachen coden
 
 
@@ -30,20 +31,18 @@ namespace LitteQuizMaster
     public partial class Form1 : Form
 
     {
-        string usereingabe = ""; // Deklaration für die Namenemseintragung des Spielers
-
-
+      
         Statistiken spielerStatistiken = new Statistiken(); //spielerpunkte Statistik
                                                             //  Statistiken fragenStatistiken = new Statistiken();  //Aktuelle Frageanzahl Statistik
 
         Frage aktuelleFrage = new Frage();
         Random zufall = new Random();       //Zufallszahl
+
        
         
         private List<Frage> listeFragen = new List<Frage>();   //Fragenliste für die Fragen erstellt
-        private List<Statistiken> listeNamen = new List<Statistiken>();     //Erstellung Namensliste
-
-       
+           
+             
 
         public Form1()      //Konstruktor
         {
@@ -213,21 +212,42 @@ namespace LitteQuizMaster
                   // punktezaehlen = punktezaehlen+1;   //Zählt Punkte, wenn richtig (für Statistik)
                     spielerStatistiken.PunktzahlPlus1();
                     
-                    MessageBox.Show("Korrekt." + "\nDeine Punkte: " + spielerStatistiken.getPunkte() +" von " +spielerStatistiken.getAnzahlFragen() + " Punkte(n)");
+                    MessageBox.Show("Korrekt." + "\nDeine Punkte: " + spielerStatistiken.GetPunkte() +" von " +spielerStatistiken.GetAnzahlFragen() + " Punkte(n)");
 
+                    if ( spielerStatistiken.GetAnzahlFragen() <1) {
 
-                
-                    FrageHolenQuiz();
-                     RadioButtonQuizLeeren();
+                        FrageHolenQuiz();
+                        RadioButtonQuizLeeren();
+                    }
+                    else
+                    {
+                    MessageBox.Show("Spiel ist zu Ende");
+                    tabControl1.SelectTab(tabStatistik);
+                    lblDeinePunkteAnzeige.Text = Convert.ToString(spielerStatistiken.GetPunkte());
+                    lblAnzeigeErreichbarePunkte.Text = Convert.ToString(spielerStatistiken.GetAnzahlFragen());
+                       
+                }
                 
                 }
                 else
                 {
                  
-                    MessageBox.Show("Leider Falsch.\n Deine Punkte: " + spielerStatistiken.getPunkte() +" von " + spielerStatistiken.getAnzahlFragen() +" Punkte(n)" );
-                    FrageHolenQuiz();
-                    GuiSynch();
-                    RadioButtonQuizLeeren();
+                    MessageBox.Show("Leider Falsch.\n Deine Punkte: " + spielerStatistiken.GetPunkte() +" von " + spielerStatistiken.GetAnzahlFragen() +" Punkte(n)" );
+
+                    if (spielerStatistiken.GetAnzahlFragen() < 1) //Anzahl der Fragen festlegen
+                    {
+                        FrageHolenQuiz();
+                        GuiSynch();
+                        RadioButtonQuizLeeren();
+                    }
+                    else
+                    {
+                    MessageBox.Show("Spiel ist zu Ende");
+                    tabControl1.SelectTab(tabStatistik);
+                    lblDeinePunkteAnzeige.Text = Convert.ToString(spielerStatistiken.GetPunkte());
+                    lblAnzeigeErreichbarePunkte.Text = Convert.ToString(spielerStatistiken.GetAnzahlFragen());
+
+                }
             }       
           
         }
@@ -289,7 +309,7 @@ namespace LitteQuizMaster
             private void FrageHolenQuiz()
         {
             
-                Frage spielStart = listeFragen[zufall.Next(1, listeFragen.Count)];
+                Frage spielStart = listeFragen[zufall.Next(0, listeFragen.Count-1)];
             
                 lblFragestellung.Text = spielStart.GetFrageText();
                 lblMoeglicheAntwort1.Text = spielStart.GetAntworten()[0].antwortText;
@@ -330,43 +350,74 @@ namespace LitteQuizMaster
             FelderFragenEditorLeeren();
             GuiSynch();
         }
+        private List<Statistiken> highscore = new List<Statistiken>();
 
-        private void SynHighscoreliste()        //Syncronisation der Higscoreliste Tab Statistik
+     
+
+
+
+        Statistiken SpielerDatenSpeichern() /* Für den Highscore, anlegen neue Spielerdaten + gibt diese zurück*/
         {
-            lsbStatistikHighscore.Items.Clear();  //Eingabefeld geleert wird
-
-            for (int i = 0; i < listeNamen.Count; i++)  //geht die Liste anhand des Index durch
-            {
-                lsbStatistikHighscore.Items.Add(listeNamen[i].GetSpielerName());
-            }
-        }
+            Statistiken neueSpielerDaten = new Statistiken();
 
 
-
-        Statistiken NameSpeichern() /* Anlegen einer neuen Frage mit Antworten und welche wahr ist + gibt diese zurück*/
-        {
-            Statistiken name = new Statistiken();
-
-            /* Text v. d. Frage + die dazugehörigen 5 Antworten(text + bool)*/
+            int spielpunktestand = Convert.ToInt32(lblDeinePunkteAnzeige.Text);
+            int maxpunkte = Convert.ToInt32(lblAnzeigeErreichbarePunkte.Text);
             string neuername = txtStatistikNameEintragen.Text;
-            name.SetSpielerName(neuername);//erstmal nur den Namen übergeben
-         
-            return name;
+            string spielzeit = DateTime.Now.ToShortDateString();
+            
+                
+
+        
+       
+            Statistiken Statistik = new Statistiken();//Objekt erstellen und mit objekt.variable = ... befüllen
+            Statistik.spielpunkte = spielpunktestand;
+            Statistik.erreichbarePunktZahl = maxpunkte;
+            Statistik.spielername = neuername;
+            Statistik.zeitangabe = spielzeit; 
+
+            highscore.Add(Statistik);       //Objekt Statistik wird der Listre Highscore hinzugefügt
+
+            //  lblTextfeld.Text =Convert.ToString(Statistik.erreichbarePunktZahl)+Convert.ToString(Statistik.spielername); //Testausgabe
+            lblTextfeld.Text = Convert.ToString(spielzeit);
+            
+                //TODO -Punktestand , MaxPunkte, Datum*/
+
+                return Statistik;
            
         }
+       
+        private void SynHighscoreliste()        //Syncronisation der Higscoreliste Tab Statistik
+        {
+            lstHighscoreListeStatistiken.Items.Clear();  //Eingabefeld geleert wird
 
+            for (int i = 0; i < highscore.Count; i++)  //geht die Liste anhand des Index durch
+            {
+                lstHighscoreListeStatistiken.Items.Add(highscore[i].GibMirDieStatistikDaten());//alle daten abändern sodass ich die pubkte habe
+                //GetSpielerDaten gibt den spielernamen zurück er soll aber punkte, namen und datum zurückgeben
+
+            }
+        }
         private void btnStatistikNamenEintragen_Click(object sender, EventArgs e) // Namen in der Highscoreliste anzeigen
         {
-            Statistiken statistikneuername = NameSpeichern();
+            Statistiken statistikneuername = SpielerDatenSpeichern();
+            
 
-            listeNamen.Add(statistikneuername);
+          //  highscore.Add(statistikneuername);
+          //  listeSpielerStatistikListe.Add(SpielerDatenSpeichern());
+            
+
+            
+            
+            
+            
          
             SynHighscoreliste();
-
+            // Serialisierung FrageAntwort oder Extra 
        
         }
 
-
+        
 
         #region Nächste-Frage-Button
         /*

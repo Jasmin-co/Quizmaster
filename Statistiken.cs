@@ -12,28 +12,46 @@ namespace LitteQuizMaster
     {
         //TODO - liste Punktzahl/Highscore
         //TODO dies eliste soll die aktuellen punkzahl, datum und namen haben
-        private int spielerPunkteZahl { get; set; }
-        private int erreichbarePunktZahl { get; set; }
-        private int punkte;    //spielerpunkte
-        private int spielerPunkteZaehlerZwischenspeicher;
-        private int maxpunkte;  //max erreichbare punkte
-        private int fragenZaehlerZwischenspeicher;
+        public int spielerPunkteZahl { get; set; }
+        public int erreichbarePunktZahl { get; set; }
+        public int punkte;    //spielerpunkte
+        public int spielerPunkteZaehlerZwischenspeicher;
+        public int maxpunkte;  //max erreichbare punkte
+        public int fragenZaehlerZwischenspeicher;
         
 
-        private string spielername { get; set; }
-        private DateTime zeitangabe { get; set; }
-        public Statistiken spielpunkte { get; private set; }
+        public string spielername { get; set; }
+        public string zeitangabe { get; set; }
+        public int spielpunkte { get; set; }
 
-        private List<Statistiken> highscore = new List<Statistiken>();
+       
+        private int spielpunktestand;
 
-
-        public Statistiken(int spielerPunkte, int erreichbarePunkte,string spielername)//Konstruktor
+        public Statistiken(int spielerPunkte, int erreichbarePunkte,string p_spielername, string p_zeitangabe)//Konstruktor
         {
-            this.spielerPunkteZahl = spielerPunkte;
-            this.erreichbarePunktZahl = erreichbarePunkte;
-            this.spielername = spielername;
+            spielerPunkteZahl = spielerPunkte;
+            erreichbarePunktZahl = erreichbarePunkte;
+            spielername = p_spielername;
+            zeitangabe = p_zeitangabe;
+
            // this.zeitangabe = zeitangabe; vorerst rausgenommen
 
+        }
+
+       
+
+        public Statistiken(int spielpunktestand)
+        {
+            this.spielpunktestand = spielpunktestand;
+        }
+        public string GibMirDieStatistikDaten() //Idee getter aus allen drei daten machen für die highscoresync
+        {
+            string aktuellePunkteQuiz = Convert.ToString(spielpunkte);
+            string maxPunkteSpiel = Convert.ToString(erreichbarePunktZahl);
+            string aktuellerSpielerNamen = spielername;
+            string aktuelleZeitSpiel = Convert.ToString(zeitangabe);
+            //Ausgabe der Liste mit Hilfe von Sync und dieser Methode
+            return "Name: " + aktuellerSpielerNamen + " - Punkt(e): " +aktuellePunkteQuiz+" von: " + maxPunkteSpiel+ " - Datum: " + zeitangabe;
         }
 
         public Statistiken()
@@ -44,48 +62,29 @@ namespace LitteQuizMaster
         {
           punkte =  punkte + 1;
         }
-        public int getPunkte()
+        public int GetPunkte()
         {
             spielerPunkteZaehlerZwischenspeicher = punkte;
             return spielerPunkteZaehlerZwischenspeicher;
         }
-      
+        
 
         public void FragenZaehlen()//Tab Quiz Rückgabe der Anzahl der Fragen
         {
             maxpunkte = maxpunkte + 1;
             
         }
-        public int getAnzahlFragen()    
+        public int GetAnzahlFragen()    
         {
             fragenZaehlerZwischenspeicher = maxpunkte;
             return fragenZaehlerZwischenspeicher;
         }
 
-        
-
-        public void setStatistikSachen(Statistiken spielerPunkte, Statistiken spielername)//nicht fertig
-        {/*in meine liste eingefügt*/
-            //spielerPunkte = spielpunkte;    //Versuch Verbindung von spielpunkte zu spielerpunkte zu erstellen
-           
-            highscore.Clear();
-            highscore.Add(spielerPunkte);
-            highscore.Add(spielername);
-          //  highscore.Add(zeitangabe);
-        }
-        public List<Statistiken> GetStatistikSachen()
-        {
-            return highscore;
-        }
-
-        public void SetSpielerName(string p_spielername)    //set spielername
-        {
-            spielername = p_spielername;
-        }
-        public string GetSpielerName()      //gibt den Spielernamen zurück
+      
+     /*     public string GetSpielerDaten()      //gibt den Spielernamen zurück
         {
             return spielername;
-        }
+        }*/
 
         //erreichtePunkte = new Statistiken();    //Objekt erstellt
         #region erstmal weg

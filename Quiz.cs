@@ -12,13 +12,26 @@ namespace LitteQuizMaster
          List<Frage> hilfslisteZufallsausgabe = new List<Frage>(); //Liste um die Fragen zu mischen*/
         Random fragenmischen = new Random();
         
-        public void Erstelle2Liste()
+      /*  public void Erstelle2Liste()
         {
             List<Frage> zweiteListe = new List<Frage>();
-            //zweiteListe.Add(new Frage)
+            zweiteListe.AddRange(fragen);
+            
+        }*/
+        //TODO - Diese Liste muss die Fragen der Hauptliste bekommen
 
+        public void MischeFragenListe(List<Frage> fragen)
+        {
+            Random zufallsgenerator = new Random(DateTime.Now.Millisecond);
+
+            for(int i=0; i < fragen.Count; i++)
+            {
+                int zufallsPosition = zufallsgenerator.Next(0, fragen.Count);
+                Frage zwischengespeichert = fragen[i];
+                fragen[i] = fragen[zufallsPosition];
+                fragen[zufallsPosition] = zwischengespeichert;
+            }
         }
-
 
         
         
