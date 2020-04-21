@@ -34,15 +34,17 @@ namespace LitteQuizMaster
       
         Statistiken spielerStatistiken = new Statistiken(); //spielerpunkte Statistik
                                                             //  Statistiken fragenStatistiken = new Statistiken();  //Aktuelle Frageanzahl Statistik
-
+       
         Frage aktuelleFrage = new Frage();
         Random zufall = new Random();       //Zufallszahl
+        StartSeite willkommensTextStartSeite = new StartSeite();
+        
 
        
         
         private List<Frage> listeFragen = new List<Frage>();   //Fragenliste für die Fragen erstellt
-           
-             
+        private List<Statistiken> highscore = new List<Statistiken>();
+
 
         public Form1()      //Konstruktor
         {
@@ -350,7 +352,7 @@ namespace LitteQuizMaster
             FelderFragenEditorLeeren();
             GuiSynch();
         }
-        private List<Statistiken> highscore = new List<Statistiken>();
+      
 
      
 
@@ -437,6 +439,17 @@ namespace LitteQuizMaster
         private void btnQuizStopp_Click(object sender, EventArgs e) //Testbutton
         {
 
+        }
+
+        private void tabStartSeite_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+            lblBegruessungsText.Text = willkommensTextStartSeite.GetBegruessungsTextStartSeite();
         }
     }
 

@@ -68,16 +68,6 @@ namespace LitteQuizMaster
         #endregion
 
 
-        // SetlistFragen und GetListFragen?
-        /* public List<Frage> GetListFragen()
-         {
-             return fragen;
-         }*/
-        /* public void loeschenEinerFrage()
-         {//5.3
-
-                     //Datenbestand in der Liste gelöschen: ... .RemoveAt(Index);
-         }*/
 
     }
 }

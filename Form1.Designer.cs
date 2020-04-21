@@ -28,7 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabStartSeite = new System.Windows.Forms.TabPage();
+            this.lblDatumUhrzeit = new System.Windows.Forms.Label();
+            this.btnZurKommentarSeite = new System.Windows.Forms.Button();
+            this.btnZurStatistikenSeite = new System.Windows.Forms.Button();
+            this.btnZurFragenEditorSeite = new System.Windows.Forms.Button();
+            this.btnZurQuizSeite = new System.Windows.Forms.Button();
+            this.lblBegruessungsText = new System.Windows.Forms.Label();
             this.tabQuiz = new System.Windows.Forms.TabPage();
             this.btnQuizStopp = new System.Windows.Forms.Button();
             this.lblAnzeigeAnzahlFragenInDerListe = new System.Windows.Forms.Label();
@@ -103,6 +111,7 @@
             this.txtNeueFrage = new System.Windows.Forms.TextBox();
             this.lblFragenEditorTitel = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
+            this.tabStartSeite.SuspendLayout();
             this.tabQuiz.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabStatistik.SuspendLayout();
@@ -111,6 +120,7 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Controls.Add(this.tabStartSeite);
             this.tabControl1.Controls.Add(this.tabQuiz);
             this.tabControl1.Controls.Add(this.tabStatistik);
             this.tabControl1.Controls.Add(this.tabNeueFragen);
@@ -121,6 +131,78 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1374, 914);
             this.tabControl1.TabIndex = 0;
+            // 
+            // tabStartSeite
+            // 
+            this.tabStartSeite.BackColor = System.Drawing.Color.Bisque;
+            this.tabStartSeite.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabStartSeite.BackgroundImage")));
+            this.tabStartSeite.Controls.Add(this.lblDatumUhrzeit);
+            this.tabStartSeite.Controls.Add(this.btnZurKommentarSeite);
+            this.tabStartSeite.Controls.Add(this.btnZurStatistikenSeite);
+            this.tabStartSeite.Controls.Add(this.btnZurFragenEditorSeite);
+            this.tabStartSeite.Controls.Add(this.btnZurQuizSeite);
+            this.tabStartSeite.Controls.Add(this.lblBegruessungsText);
+            this.tabStartSeite.Location = new System.Drawing.Point(4, 33);
+            this.tabStartSeite.Name = "tabStartSeite";
+            this.tabStartSeite.Size = new System.Drawing.Size(1366, 877);
+            this.tabStartSeite.TabIndex = 3;
+            this.tabStartSeite.Text = "Willkommen";
+            this.tabStartSeite.Click += new System.EventHandler(this.tabStartSeite_Click);
+            // 
+            // lblDatumUhrzeit
+            // 
+            this.lblDatumUhrzeit.AutoSize = true;
+            this.lblDatumUhrzeit.Location = new System.Drawing.Point(228, 804);
+            this.lblDatumUhrzeit.Name = "lblDatumUhrzeit";
+            this.lblDatumUhrzeit.Size = new System.Drawing.Size(111, 24);
+            this.lblDatumUhrzeit.TabIndex = 5;
+            this.lblDatumUhrzeit.Text = "DatumUhrzeit";
+            // 
+            // btnZurKommentarSeite
+            // 
+            this.btnZurKommentarSeite.Location = new System.Drawing.Point(954, 666);
+            this.btnZurKommentarSeite.Name = "btnZurKommentarSeite";
+            this.btnZurKommentarSeite.Size = new System.Drawing.Size(331, 65);
+            this.btnZurKommentarSeite.TabIndex = 4;
+            this.btnZurKommentarSeite.Text = "Anmerkungen";
+            this.btnZurKommentarSeite.UseVisualStyleBackColor = true;
+            // 
+            // btnZurStatistikenSeite
+            // 
+            this.btnZurStatistikenSeite.Location = new System.Drawing.Point(954, 580);
+            this.btnZurStatistikenSeite.Name = "btnZurStatistikenSeite";
+            this.btnZurStatistikenSeite.Size = new System.Drawing.Size(331, 65);
+            this.btnZurStatistikenSeite.TabIndex = 3;
+            this.btnZurStatistikenSeite.Text = "Highscore";
+            this.btnZurStatistikenSeite.UseVisualStyleBackColor = true;
+            // 
+            // btnZurFragenEditorSeite
+            // 
+            this.btnZurFragenEditorSeite.Location = new System.Drawing.Point(954, 496);
+            this.btnZurFragenEditorSeite.Name = "btnZurFragenEditorSeite";
+            this.btnZurFragenEditorSeite.Size = new System.Drawing.Size(331, 65);
+            this.btnZurFragenEditorSeite.TabIndex = 2;
+            this.btnZurFragenEditorSeite.Text = "Frage erstellen/bearbeiten";
+            this.btnZurFragenEditorSeite.UseVisualStyleBackColor = true;
+            // 
+            // btnZurQuizSeite
+            // 
+            this.btnZurQuizSeite.Location = new System.Drawing.Point(954, 415);
+            this.btnZurQuizSeite.Name = "btnZurQuizSeite";
+            this.btnZurQuizSeite.Size = new System.Drawing.Size(331, 65);
+            this.btnZurQuizSeite.TabIndex = 1;
+            this.btnZurQuizSeite.Text = "Quiz";
+            this.btnZurQuizSeite.UseVisualStyleBackColor = true;
+            // 
+            // lblBegruessungsText
+            // 
+            this.lblBegruessungsText.AutoSize = true;
+            this.lblBegruessungsText.BackColor = System.Drawing.Color.Transparent;
+            this.lblBegruessungsText.Location = new System.Drawing.Point(59, 171);
+            this.lblBegruessungsText.Name = "lblBegruessungsText";
+            this.lblBegruessungsText.Size = new System.Drawing.Size(52, 24);
+            this.lblBegruessungsText.TabIndex = 0;
+            this.lblBegruessungsText.Text = "label1";
             // 
             // tabQuiz
             // 
@@ -241,7 +323,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.62867F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 84.37133F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 151F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 154F));
             this.tableLayoutPanel1.Controls.Add(this.radioButton3, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.radioButton4, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.radioButton2, 2, 1);
@@ -272,7 +354,7 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(837, 161);
+            this.radioButton3.Location = new System.Drawing.Point(834, 161);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(21, 20);
             this.radioButton3.TabIndex = 15;
@@ -282,7 +364,7 @@
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(837, 240);
+            this.radioButton4.Location = new System.Drawing.Point(834, 240);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(21, 20);
             this.radioButton4.TabIndex = 16;
@@ -292,7 +374,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(837, 82);
+            this.radioButton2.Location = new System.Drawing.Point(834, 82);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(21, 20);
             this.radioButton2.TabIndex = 14;
@@ -304,7 +386,7 @@
             this.radioButton1.AutoSize = true;
             this.radioButton1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.radioButton1.Location = new System.Drawing.Point(837, 3);
+            this.radioButton1.Location = new System.Drawing.Point(834, 3);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(21, 20);
             this.radioButton1.TabIndex = 13;
@@ -370,7 +452,7 @@
             this.lblMoeglicheAntwort4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblMoeglicheAntwort4.Location = new System.Drawing.Point(133, 237);
             this.lblMoeglicheAntwort4.Name = "lblMoeglicheAntwort4";
-            this.lblMoeglicheAntwort4.Size = new System.Drawing.Size(698, 42);
+            this.lblMoeglicheAntwort4.Size = new System.Drawing.Size(695, 42);
             this.lblMoeglicheAntwort4.TabIndex = 11;
             // 
             // lblMoeglicheAntwort3
@@ -381,7 +463,7 @@
             this.lblMoeglicheAntwort3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblMoeglicheAntwort3.Location = new System.Drawing.Point(133, 158);
             this.lblMoeglicheAntwort3.Name = "lblMoeglicheAntwort3";
-            this.lblMoeglicheAntwort3.Size = new System.Drawing.Size(698, 42);
+            this.lblMoeglicheAntwort3.Size = new System.Drawing.Size(695, 42);
             this.lblMoeglicheAntwort3.TabIndex = 18;
             // 
             // lblMoeglicheAntwort2
@@ -392,7 +474,7 @@
             this.lblMoeglicheAntwort2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblMoeglicheAntwort2.Location = new System.Drawing.Point(133, 79);
             this.lblMoeglicheAntwort2.Name = "lblMoeglicheAntwort2";
-            this.lblMoeglicheAntwort2.Size = new System.Drawing.Size(698, 42);
+            this.lblMoeglicheAntwort2.Size = new System.Drawing.Size(695, 42);
             this.lblMoeglicheAntwort2.TabIndex = 19;
             // 
             // lblMoeglicheAntwort1
@@ -404,7 +486,7 @@
             this.lblMoeglicheAntwort1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblMoeglicheAntwort1.Location = new System.Drawing.Point(133, 0);
             this.lblMoeglicheAntwort1.Name = "lblMoeglicheAntwort1";
-            this.lblMoeglicheAntwort1.Size = new System.Drawing.Size(698, 42);
+            this.lblMoeglicheAntwort1.Size = new System.Drawing.Size(695, 42);
             this.lblMoeglicheAntwort1.TabIndex = 20;
             // 
             // lblMoeglicheAntwort5
@@ -415,13 +497,13 @@
             this.lblMoeglicheAntwort5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblMoeglicheAntwort5.Location = new System.Drawing.Point(133, 316);
             this.lblMoeglicheAntwort5.Name = "lblMoeglicheAntwort5";
-            this.lblMoeglicheAntwort5.Size = new System.Drawing.Size(698, 42);
+            this.lblMoeglicheAntwort5.Size = new System.Drawing.Size(695, 42);
             this.lblMoeglicheAntwort5.TabIndex = 21;
             // 
             // radioButton5
             // 
             this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(837, 319);
+            this.radioButton5.Location = new System.Drawing.Point(834, 319);
             this.radioButton5.Name = "radioButton5";
             this.radioButton5.Size = new System.Drawing.Size(21, 20);
             this.radioButton5.TabIndex = 17;
@@ -1016,9 +1098,13 @@
             this.ClientSize = new System.Drawing.Size(1374, 914);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Kleiner Quizmaster";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
+            this.tabStartSeite.ResumeLayout(false);
+            this.tabStartSeite.PerformLayout();
             this.tabQuiz.ResumeLayout(false);
             this.tabQuiz.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -1107,6 +1193,13 @@
         private System.Windows.Forms.Label lblTextfeld;
         private System.Windows.Forms.Button btnQuizStopp;
         private System.Windows.Forms.ListBox lstHighscoreListeStatistiken;
+        private System.Windows.Forms.TabPage tabStartSeite;
+        private System.Windows.Forms.Label lblBegruessungsText;
+        private System.Windows.Forms.Button btnZurKommentarSeite;
+        private System.Windows.Forms.Button btnZurStatistikenSeite;
+        private System.Windows.Forms.Button btnZurFragenEditorSeite;
+        private System.Windows.Forms.Button btnZurQuizSeite;
+        private System.Windows.Forms.Label lblDatumUhrzeit;
     }
 }
 
