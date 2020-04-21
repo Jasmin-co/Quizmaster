@@ -10,6 +10,7 @@ namespace LitteQuizMaster
     {
         string begruessungsText;
         string begruessungsTextTitelStartSeite;
+        string startSeiteSchlussSatz;
        
         
 
@@ -25,6 +26,7 @@ namespace LitteQuizMaster
         {
             SetBegruessungsTextStartSeiteTitel();
             SetBegruessungsTextStartSeite();
+            SetSchlussSatzStartSeite();
         }
 
         public void SetBegruessungsTextStartSeiteTitel()     //Willkommenstext auf der Startseite
@@ -40,14 +42,21 @@ namespace LitteQuizMaster
             begruessungsText =
                 "\nTeste dein Wissen im Quiz\n" +
                 "oder erweitere die Fragen im Frageeditor. \n" +
-                "Deine Punkte kannst du bei Statistiken einsehen\n" +
-                "Viel Spaß beim Quiz";
+                "Deine Punkte kannst du bei Statistiken einsehen\n";
+                
         }
         public string GetBegruessungsTextStartSeite()
         {
             return begruessungsText;
         }
-        
+        public void SetSchlussSatzStartSeite()
+        {
+            startSeiteSchlussSatz = "Viel Spaß beim Quiz";
+        }
+        public string GetSchlussSatzStartSeite()
+        {
+            return startSeiteSchlussSatz;
+        }
     
         
 

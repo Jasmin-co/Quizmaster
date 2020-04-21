@@ -38,6 +38,7 @@ namespace LitteQuizMaster
         Frage aktuelleFrage = new Frage();
         Random zufall = new Random();       //Zufallszahl
         StartSeite willkommensTextStartSeite = new StartSeite();
+        Kommentare kommentare = new Kommentare();
         
 
        
@@ -441,16 +442,15 @@ namespace LitteQuizMaster
 
         }
 
-        private void tabStartSeite_Click(object sender, EventArgs e)
-        {
-            
-        }
+      
 
         private void Form1_Load(object sender, EventArgs e)
         {
             lblBegruessungsTextTitelStartSeite.Text = willkommensTextStartSeite.GetBegruessungsTextTitelStartSeite();
             lblBegruessungsText.Text = willkommensTextStartSeite.GetBegruessungsTextStartSeite();
+            lblStartSeiteSchlussSatz.Text = willkommensTextStartSeite.GetSchlussSatzStartSeite();
             lblDatumUhrzeitStartSeite.Text = Convert.ToString(DateTime.Now);
+            lblKommentareTitelAnzeige.Text = kommentare.GetKommentarTextAufforderung();
         }
 
         private void btnZurQuizSeite_Click(object sender, EventArgs e)

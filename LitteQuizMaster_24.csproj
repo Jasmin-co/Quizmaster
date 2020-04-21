@@ -100,5 +100,14 @@
   <ItemGroup>
     <None Include="Resources\QMBildK.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QMLogoSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QMBildKleinsmicro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QMBildLogo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
