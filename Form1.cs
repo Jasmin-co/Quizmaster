@@ -448,8 +448,44 @@ namespace LitteQuizMaster
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            lblBegruessungsTextTitelStartSeite.Text = willkommensTextStartSeite.GetBegruessungsTextTitelStartSeite();
             lblBegruessungsText.Text = willkommensTextStartSeite.GetBegruessungsTextStartSeite();
+            lblDatumUhrzeitStartSeite.Text = Convert.ToString(DateTime.Now);
+        }
+
+        private void btnZurQuizSeite_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectTab(tabQuiz);
+        }
+
+        private void btnZurFragenEditorSeite_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectTab(tabNeueFragen);
+        }
+
+        private void btnZurStatistikenSeite_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectTab(tabStatistik);
+        }
+
+        private void btnZurKommentarSeite_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectTab(tabKommentarSeite);
+        }
+
+        private void lblDatumUhrzeit_Click(object sender, EventArgs e)
+        {
+            /* Anzeige Datum und Uhrzeit */
+        }
+
+        private void btnQuizGoBack_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectTab(tabStartSeite);
+        }
+
+        private void btnStartSeiteClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 

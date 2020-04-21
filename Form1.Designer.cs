@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabStartSeite = new System.Windows.Forms.TabPage();
-            this.lblDatumUhrzeit = new System.Windows.Forms.Label();
+            this.lblDatumUhrzeitStartSeite = new System.Windows.Forms.Label();
             this.btnZurKommentarSeite = new System.Windows.Forms.Button();
             this.btnZurStatistikenSeite = new System.Windows.Forms.Button();
             this.btnZurFragenEditorSeite = new System.Windows.Forms.Button();
@@ -43,7 +43,7 @@
             this.btnStart = new System.Windows.Forms.Button();
             this.btnCloseQuiz = new System.Windows.Forms.Button();
             this.btnAntwortSetzen = new System.Windows.Forms.Button();
-            this.btnNext = new System.Windows.Forms.Button();
+            this.btnQuizGoBack = new System.Windows.Forms.Button();
             this.lblInfoWahr = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
@@ -110,12 +110,23 @@
             this.lblKennzeichnungFrage = new System.Windows.Forms.Label();
             this.txtNeueFrage = new System.Windows.Forms.TextBox();
             this.lblFragenEditorTitel = new System.Windows.Forms.Label();
+            this.tabKommentarSeite = new System.Windows.Forms.TabPage();
+            this.lblBegruessungsTextTitelStartSeite = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.btnStartSeiteClose = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabStartSeite.SuspendLayout();
             this.tabQuiz.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabStatistik.SuspendLayout();
             this.tabNeueFragen.SuspendLayout();
+            this.tabKommentarSeite.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -124,6 +135,7 @@
             this.tabControl1.Controls.Add(this.tabQuiz);
             this.tabControl1.Controls.Add(this.tabStatistik);
             this.tabControl1.Controls.Add(this.tabNeueFragen);
+            this.tabControl1.Controls.Add(this.tabKommentarSeite);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Font = new System.Drawing.Font("Arial Narrow", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
@@ -136,7 +148,9 @@
             // 
             this.tabStartSeite.BackColor = System.Drawing.Color.Bisque;
             this.tabStartSeite.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabStartSeite.BackgroundImage")));
-            this.tabStartSeite.Controls.Add(this.lblDatumUhrzeit);
+            this.tabStartSeite.Controls.Add(this.btnStartSeiteClose);
+            this.tabStartSeite.Controls.Add(this.lblBegruessungsTextTitelStartSeite);
+            this.tabStartSeite.Controls.Add(this.lblDatumUhrzeitStartSeite);
             this.tabStartSeite.Controls.Add(this.btnZurKommentarSeite);
             this.tabStartSeite.Controls.Add(this.btnZurStatistikenSeite);
             this.tabStartSeite.Controls.Add(this.btnZurFragenEditorSeite);
@@ -149,14 +163,16 @@
             this.tabStartSeite.Text = "Willkommen";
             this.tabStartSeite.Click += new System.EventHandler(this.tabStartSeite_Click);
             // 
-            // lblDatumUhrzeit
+            // lblDatumUhrzeitStartSeite
             // 
-            this.lblDatumUhrzeit.AutoSize = true;
-            this.lblDatumUhrzeit.Location = new System.Drawing.Point(228, 804);
-            this.lblDatumUhrzeit.Name = "lblDatumUhrzeit";
-            this.lblDatumUhrzeit.Size = new System.Drawing.Size(111, 24);
-            this.lblDatumUhrzeit.TabIndex = 5;
-            this.lblDatumUhrzeit.Text = "DatumUhrzeit";
+            this.lblDatumUhrzeitStartSeite.AutoSize = true;
+            this.lblDatumUhrzeitStartSeite.BackColor = System.Drawing.Color.Transparent;
+            this.lblDatumUhrzeitStartSeite.Location = new System.Drawing.Point(228, 804);
+            this.lblDatumUhrzeitStartSeite.Name = "lblDatumUhrzeitStartSeite";
+            this.lblDatumUhrzeitStartSeite.Size = new System.Drawing.Size(111, 24);
+            this.lblDatumUhrzeitStartSeite.TabIndex = 5;
+            this.lblDatumUhrzeitStartSeite.Text = "DatumUhrzeit";
+            this.lblDatumUhrzeitStartSeite.Click += new System.EventHandler(this.lblDatumUhrzeit_Click);
             // 
             // btnZurKommentarSeite
             // 
@@ -164,8 +180,9 @@
             this.btnZurKommentarSeite.Name = "btnZurKommentarSeite";
             this.btnZurKommentarSeite.Size = new System.Drawing.Size(331, 65);
             this.btnZurKommentarSeite.TabIndex = 4;
-            this.btnZurKommentarSeite.Text = "Anmerkungen";
+            this.btnZurKommentarSeite.Text = "Kommentare";
             this.btnZurKommentarSeite.UseVisualStyleBackColor = true;
+            this.btnZurKommentarSeite.Click += new System.EventHandler(this.btnZurKommentarSeite_Click);
             // 
             // btnZurStatistikenSeite
             // 
@@ -175,6 +192,7 @@
             this.btnZurStatistikenSeite.TabIndex = 3;
             this.btnZurStatistikenSeite.Text = "Highscore";
             this.btnZurStatistikenSeite.UseVisualStyleBackColor = true;
+            this.btnZurStatistikenSeite.Click += new System.EventHandler(this.btnZurStatistikenSeite_Click);
             // 
             // btnZurFragenEditorSeite
             // 
@@ -184,6 +202,7 @@
             this.btnZurFragenEditorSeite.TabIndex = 2;
             this.btnZurFragenEditorSeite.Text = "Frage erstellen/bearbeiten";
             this.btnZurFragenEditorSeite.UseVisualStyleBackColor = true;
+            this.btnZurFragenEditorSeite.Click += new System.EventHandler(this.btnZurFragenEditorSeite_Click);
             // 
             // btnZurQuizSeite
             // 
@@ -193,14 +212,17 @@
             this.btnZurQuizSeite.TabIndex = 1;
             this.btnZurQuizSeite.Text = "Quiz";
             this.btnZurQuizSeite.UseVisualStyleBackColor = true;
+            this.btnZurQuizSeite.Click += new System.EventHandler(this.btnZurQuizSeite_Click);
             // 
             // lblBegruessungsText
             // 
             this.lblBegruessungsText.AutoSize = true;
             this.lblBegruessungsText.BackColor = System.Drawing.Color.Transparent;
-            this.lblBegruessungsText.Location = new System.Drawing.Point(59, 171);
+            this.lblBegruessungsText.Font = new System.Drawing.Font("Arial Narrow", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBegruessungsText.ForeColor = System.Drawing.Color.Black;
+            this.lblBegruessungsText.Location = new System.Drawing.Point(170, 209);
             this.lblBegruessungsText.Name = "lblBegruessungsText";
-            this.lblBegruessungsText.Size = new System.Drawing.Size(52, 24);
+            this.lblBegruessungsText.Size = new System.Drawing.Size(68, 29);
             this.lblBegruessungsText.TabIndex = 0;
             this.lblBegruessungsText.Text = "label1";
             // 
@@ -213,7 +235,7 @@
             this.tabQuiz.Controls.Add(this.btnStart);
             this.tabQuiz.Controls.Add(this.btnCloseQuiz);
             this.tabQuiz.Controls.Add(this.btnAntwortSetzen);
-            this.tabQuiz.Controls.Add(this.btnNext);
+            this.tabQuiz.Controls.Add(this.btnQuizGoBack);
             this.tabQuiz.Controls.Add(this.lblInfoWahr);
             this.tabQuiz.Controls.Add(this.tableLayoutPanel1);
             this.tabQuiz.Controls.Add(this.lblFragestellung);
@@ -295,18 +317,19 @@
             this.btnAntwortSetzen.UseVisualStyleBackColor = true;
             this.btnAntwortSetzen.Click += new System.EventHandler(this.btnAntwortSetzen_Click);
             // 
-            // btnNext
+            // btnQuizGoBack
             // 
-            this.btnNext.FlatAppearance.BorderColor = System.Drawing.Color.DarkBlue;
-            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNext.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnNext.Location = new System.Drawing.Point(74, 678);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(129, 49);
-            this.btnNext.TabIndex = 33;
-            this.btnNext.Text = "Nächste";
-            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnQuizGoBack.FlatAppearance.BorderColor = System.Drawing.Color.DarkBlue;
+            this.btnQuizGoBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuizGoBack.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuizGoBack.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnQuizGoBack.Location = new System.Drawing.Point(74, 678);
+            this.btnQuizGoBack.Name = "btnQuizGoBack";
+            this.btnQuizGoBack.Size = new System.Drawing.Size(129, 49);
+            this.btnQuizGoBack.TabIndex = 33;
+            this.btnQuizGoBack.Text = "Zurück";
+            this.btnQuizGoBack.UseVisualStyleBackColor = true;
+            this.btnQuizGoBack.Click += new System.EventHandler(this.btnQuizGoBack_Click);
             // 
             // lblInfoWahr
             // 
@@ -323,7 +346,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.62867F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 84.37133F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 154F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 155F));
             this.tableLayoutPanel1.Controls.Add(this.radioButton3, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.radioButton4, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.radioButton2, 2, 1);
@@ -354,7 +377,7 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(834, 161);
+            this.radioButton3.Location = new System.Drawing.Point(833, 161);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(21, 20);
             this.radioButton3.TabIndex = 15;
@@ -364,7 +387,7 @@
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(834, 240);
+            this.radioButton4.Location = new System.Drawing.Point(833, 240);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(21, 20);
             this.radioButton4.TabIndex = 16;
@@ -374,7 +397,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(834, 82);
+            this.radioButton2.Location = new System.Drawing.Point(833, 82);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(21, 20);
             this.radioButton2.TabIndex = 14;
@@ -386,7 +409,7 @@
             this.radioButton1.AutoSize = true;
             this.radioButton1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.radioButton1.Location = new System.Drawing.Point(834, 3);
+            this.radioButton1.Location = new System.Drawing.Point(833, 3);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(21, 20);
             this.radioButton1.TabIndex = 13;
@@ -450,7 +473,7 @@
             this.lblMoeglicheAntwort4.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.lblMoeglicheAntwort4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMoeglicheAntwort4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblMoeglicheAntwort4.Location = new System.Drawing.Point(133, 237);
+            this.lblMoeglicheAntwort4.Location = new System.Drawing.Point(132, 237);
             this.lblMoeglicheAntwort4.Name = "lblMoeglicheAntwort4";
             this.lblMoeglicheAntwort4.Size = new System.Drawing.Size(695, 42);
             this.lblMoeglicheAntwort4.TabIndex = 11;
@@ -461,7 +484,7 @@
             this.lblMoeglicheAntwort3.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.lblMoeglicheAntwort3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMoeglicheAntwort3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblMoeglicheAntwort3.Location = new System.Drawing.Point(133, 158);
+            this.lblMoeglicheAntwort3.Location = new System.Drawing.Point(132, 158);
             this.lblMoeglicheAntwort3.Name = "lblMoeglicheAntwort3";
             this.lblMoeglicheAntwort3.Size = new System.Drawing.Size(695, 42);
             this.lblMoeglicheAntwort3.TabIndex = 18;
@@ -472,7 +495,7 @@
             this.lblMoeglicheAntwort2.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.lblMoeglicheAntwort2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMoeglicheAntwort2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblMoeglicheAntwort2.Location = new System.Drawing.Point(133, 79);
+            this.lblMoeglicheAntwort2.Location = new System.Drawing.Point(132, 79);
             this.lblMoeglicheAntwort2.Name = "lblMoeglicheAntwort2";
             this.lblMoeglicheAntwort2.Size = new System.Drawing.Size(695, 42);
             this.lblMoeglicheAntwort2.TabIndex = 19;
@@ -484,7 +507,7 @@
             this.lblMoeglicheAntwort1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.lblMoeglicheAntwort1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMoeglicheAntwort1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblMoeglicheAntwort1.Location = new System.Drawing.Point(133, 0);
+            this.lblMoeglicheAntwort1.Location = new System.Drawing.Point(132, 0);
             this.lblMoeglicheAntwort1.Name = "lblMoeglicheAntwort1";
             this.lblMoeglicheAntwort1.Size = new System.Drawing.Size(695, 42);
             this.lblMoeglicheAntwort1.TabIndex = 20;
@@ -495,7 +518,7 @@
             this.lblMoeglicheAntwort5.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.lblMoeglicheAntwort5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMoeglicheAntwort5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblMoeglicheAntwort5.Location = new System.Drawing.Point(133, 316);
+            this.lblMoeglicheAntwort5.Location = new System.Drawing.Point(132, 316);
             this.lblMoeglicheAntwort5.Name = "lblMoeglicheAntwort5";
             this.lblMoeglicheAntwort5.Size = new System.Drawing.Size(695, 42);
             this.lblMoeglicheAntwort5.TabIndex = 21;
@@ -503,7 +526,7 @@
             // radioButton5
             // 
             this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(834, 319);
+            this.radioButton5.Location = new System.Drawing.Point(833, 319);
             this.radioButton5.Name = "radioButton5";
             this.radioButton5.Size = new System.Drawing.Size(21, 20);
             this.radioButton5.TabIndex = 17;
@@ -1091,6 +1114,107 @@
             this.lblFragenEditorTitel.TabIndex = 0;
             this.lblFragenEditorTitel.Text = "Neue Fragen erstellen / Fragen bearbeiten";
             // 
+            // tabKommentarSeite
+            // 
+            this.tabKommentarSeite.BackColor = System.Drawing.Color.Bisque;
+            this.tabKommentarSeite.BackgroundImage = global::LitteQuizMaster.Properties.Resources.QMBildKlein;
+            this.tabKommentarSeite.Controls.Add(this.button3);
+            this.tabKommentarSeite.Controls.Add(this.button2);
+            this.tabKommentarSeite.Controls.Add(this.textBox6);
+            this.tabKommentarSeite.Controls.Add(this.label12);
+            this.tabKommentarSeite.Controls.Add(this.button1);
+            this.tabKommentarSeite.Controls.Add(this.listBox1);
+            this.tabKommentarSeite.Controls.Add(this.label1);
+            this.tabKommentarSeite.Location = new System.Drawing.Point(4, 33);
+            this.tabKommentarSeite.Name = "tabKommentarSeite";
+            this.tabKommentarSeite.Size = new System.Drawing.Size(1366, 877);
+            this.tabKommentarSeite.TabIndex = 4;
+            this.tabKommentarSeite.Text = "Kommentare";
+            // 
+            // lblBegruessungsTextTitelStartSeite
+            // 
+            this.lblBegruessungsTextTitelStartSeite.AutoSize = true;
+            this.lblBegruessungsTextTitelStartSeite.BackColor = System.Drawing.Color.Transparent;
+            this.lblBegruessungsTextTitelStartSeite.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBegruessungsTextTitelStartSeite.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblBegruessungsTextTitelStartSeite.Location = new System.Drawing.Point(142, 148);
+            this.lblBegruessungsTextTitelStartSeite.Name = "lblBegruessungsTextTitelStartSeite";
+            this.lblBegruessungsTextTitelStartSeite.Size = new System.Drawing.Size(96, 33);
+            this.lblBegruessungsTextTitelStartSeite.TabIndex = 6;
+            this.lblBegruessungsTextTitelStartSeite.Text = "label1";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(95, 70);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 24);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 24;
+            this.listBox1.Location = new System.Drawing.Point(1033, 159);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(276, 388);
+            this.listBox1.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(95, 681);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(279, 51);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label12
+            // 
+            this.label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label12.Location = new System.Drawing.Point(95, 464);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(679, 191);
+            this.label12.TabIndex = 3;
+            this.label12.Text = "label12";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(99, 158);
+            this.textBox6.Multiline = true;
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(675, 223);
+            this.textBox6.TabIndex = 4;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(431, 681);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(279, 51);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(770, 681);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(279, 51);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // btnStartSeiteClose
+            // 
+            this.btnStartSeiteClose.Location = new System.Drawing.Point(954, 753);
+            this.btnStartSeiteClose.Name = "btnStartSeiteClose";
+            this.btnStartSeiteClose.Size = new System.Drawing.Size(331, 65);
+            this.btnStartSeiteClose.TabIndex = 7;
+            this.btnStartSeiteClose.Text = "Beenden";
+            this.btnStartSeiteClose.UseVisualStyleBackColor = true;
+            this.btnStartSeiteClose.Click += new System.EventHandler(this.btnStartSeiteClose_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -1113,6 +1237,8 @@
             this.tabStatistik.PerformLayout();
             this.tabNeueFragen.ResumeLayout(false);
             this.tabNeueFragen.PerformLayout();
+            this.tabKommentarSeite.ResumeLayout(false);
+            this.tabKommentarSeite.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1123,7 +1249,7 @@
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnCloseQuiz;
         private System.Windows.Forms.Button btnAntwortSetzen;
-        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Button btnQuizGoBack;
         private System.Windows.Forms.Label lblInfoWahr;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.RadioButton radioButton3;
@@ -1199,7 +1325,17 @@
         private System.Windows.Forms.Button btnZurStatistikenSeite;
         private System.Windows.Forms.Button btnZurFragenEditorSeite;
         private System.Windows.Forms.Button btnZurQuizSeite;
-        private System.Windows.Forms.Label lblDatumUhrzeit;
+        private System.Windows.Forms.Label lblDatumUhrzeitStartSeite;
+        private System.Windows.Forms.TabPage tabKommentarSeite;
+        private System.Windows.Forms.Label lblBegruessungsTextTitelStartSeite;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnStartSeiteClose;
     }
 }
 
