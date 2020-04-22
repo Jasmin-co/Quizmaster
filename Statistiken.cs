@@ -34,8 +34,6 @@ namespace LitteQuizMaster
             spielername = p_spielername;
             zeitangabe = p_zeitangabe;
 
-           // this.zeitangabe = zeitangabe; vorerst rausgenommen
-
         }
 
        
@@ -44,7 +42,7 @@ namespace LitteQuizMaster
         {
             this.spielpunktestand = spielpunktestand;
         }
-        public string GibMirDieStatistikDaten() //Idee getter aus allen drei daten machen für die highscoresync
+        public string GetHoleSpielDatenHighscore() //Idee getter aus allen drei daten machen für die highscoresync
         {
             string aktuellePunkteQuiz = Convert.ToString(spielpunkte);
             string maxPunkteSpiel = Convert.ToString(erreichbarePunktZahl);

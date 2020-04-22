@@ -28,12 +28,13 @@ using System.IO;
 namespace LitteQuizMaster
 {
 
+    [Serializable]
     public partial class Form1 : Form
 
     {
       
-        Statistiken spielerStatistiken = new Statistiken(); //spielerpunkte Statistik
-                                                            //  Statistiken fragenStatistiken = new Statistiken();  //Aktuelle Frageanzahl Statistik
+        Statistiken spielerStatistiken = new Statistiken(); //spielerpunkte statistik
+                                                            //  Statistiken fragenStatistiken = new Statistiken();  //Aktuelle Frageanzahl statistik
        
         Frage aktuelleFrage = new Frage();
         Random zufall = new Random();       //Zufallszahl
@@ -53,7 +54,7 @@ namespace LitteQuizMaster
             Deserialisierung();
         }
        
-
+        
 
         public void Serialisierung()
         {
@@ -212,7 +213,7 @@ namespace LitteQuizMaster
                 {
                 /* Werte von der Klasse Statistiken müssen übergeben werden */
                 
-                  // punktezaehlen = punktezaehlen+1;   //Zählt Punkte, wenn richtig (für Statistik)
+                  // punktezaehlen = punktezaehlen+1;   //Zählt Punkte, wenn richtig (für statistik)
                     spielerStatistiken.PunktzahlPlus1();
                     
                     MessageBox.Show("Korrekt." + "\nDeine Punkte: " + spielerStatistiken.GetPunkte() +" von " +spielerStatistiken.GetAnzahlFragen() + " Punkte(n)");
@@ -321,7 +322,7 @@ namespace LitteQuizMaster
                 lblMoeglicheAntwort4.Text = spielStart.GetAntworten()[3].antwortText;
                 lblMoeglicheAntwort5.Text = spielStart.GetAntworten()[4].antwortText;
 
-                spielerStatistiken.FragenZaehlen();  //Counter Anzahl der Frage Statistik
+                spielerStatistiken.FragenZaehlen();  //Counter Anzahl der Frage statistik
 
                 aktuelleFrage.SetAntworten(spielStart.GetAntworten()[0], spielStart.GetAntworten()[1],
                 spielStart.GetAntworten()[2], spielStart.GetAntworten()[3], spielStart.GetAntworten()[4]);
@@ -369,34 +370,30 @@ namespace LitteQuizMaster
             string neuername = txtStatistikNameEintragen.Text;
             string spielzeit = DateTime.Now.ToShortDateString();
             
-                
-
-        
        
-            Statistiken Statistik = new Statistiken();//Objekt erstellen und mit objekt.variable = ... befüllen
-            Statistik.spielpunkte = spielpunktestand;
-            Statistik.erreichbarePunktZahl = maxpunkte;
-            Statistik.spielername = neuername;
-            Statistik.zeitangabe = spielzeit; 
+            Statistiken statistik = new Statistiken();//Objekt erstellen und mit objekt.variable = ... befüllen
+            statistik.spielpunkte = spielpunktestand;
+            statistik.erreichbarePunktZahl = maxpunkte;
+            statistik.spielername = neuername;
+            statistik.zeitangabe = spielzeit; 
 
-            highscore.Add(Statistik);       //Objekt Statistik wird der Listre Highscore hinzugefügt
+            highscore.Add(statistik);       //Objekt statistik wird der Listre Highscore hinzugefügt
 
-            //  lblTextfeld.Text =Convert.ToString(Statistik.erreichbarePunktZahl)+Convert.ToString(Statistik.spielername); //Testausgabe
+            //  lblTextfeld.Text =Convert.ToString(statistik.erreichbarePunktZahl)+Convert.ToString(statistik.spielername); //Testausgabe
             lblTextfeld.Text = Convert.ToString(spielzeit);
             
-                //TODO -Punktestand , MaxPunkte, Datum*/
 
-                return Statistik;
+                return statistik;
            
         }
-       
-        private void SynHighscoreliste()        //Syncronisation der Higscoreliste Tab Statistik
+     
+        private void SynHighscoreliste()        //Syncronisation der Higscoreliste Tab statistik
         {
             lstHighscoreListeStatistiken.Items.Clear();  //Eingabefeld geleert wird
 
             for (int i = 0; i < highscore.Count; i++)  //geht die Liste anhand des Index durch
             {
-                lstHighscoreListeStatistiken.Items.Add(highscore[i].GibMirDieStatistikDaten());//alle daten abändern sodass ich die pubkte habe
+                lstHighscoreListeStatistiken.Items.Add(highscore[i].GetHoleSpielDatenHighscore());//alle daten abändern sodass ich die pubkte habe
                 //GetSpielerDaten gibt den spielernamen zurück er soll aber punkte, namen und datum zurückgeben
 
             }
