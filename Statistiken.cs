@@ -26,7 +26,8 @@ namespace LitteQuizMaster
 
        
         private int spielpunktestand;
-
+        int fragenanzahlNull;
+        int punktezahlNull;
         public Statistiken(int spielerPunkte, int erreichbarePunkte,string p_spielername, string p_zeitangabe)//Konstruktor
         {
             spielerPunkteZahl = spielerPunkte;
@@ -77,14 +78,29 @@ namespace LitteQuizMaster
             fragenZaehlerZwischenspeicher = maxpunkte;
             return fragenZaehlerZwischenspeicher;
         }
-
-      
-     /*     public string GetSpielerDaten()      //gibt den Spielernamen zurück
+        
+        public void ResetQuizAufNull()      //MaxPunkte und SpielerPunkte sollen auf Null gesetzt werden
         {
-            return spielername;
-        }*/
 
-        //erreichtePunkte = new Statistiken();    //Objekt erstellt
+
+
+            punktezahlNull = spielpunkte - spielpunkte; ;
+            
+            
+                
+
+            
+            punktezahlNull = maxpunkte - maxpunkte;
+            
+            
+        }
+        public int reseteQuiz()
+        {
+            return fragenanzahlNull + punktezahlNull;
+        }
+        
+        
+   
         #region erstmal weg
         /*
                 public void SetErreichtePunkte(int p_erreichtePunkte)

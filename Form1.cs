@@ -93,6 +93,7 @@ namespace LitteQuizMaster
         }
 
 
+        /***********************************************************************************************************************/
 
         /*** TAB FRAGENEDITOR - Frage und Antwort - TAB FRAGENEDITOR - Frage und Antwort - TAB FRAGENEDITOR - Frage und Antwort ***/
         private void btnSpeicherFrage_Click(object sender, EventArgs e)
@@ -236,6 +237,8 @@ namespace LitteQuizMaster
             Close();
         }
 
+        /***********************************************************************************************************************/
+
         /*** TAB QUIZ - Frage und Antwort Spiel - TAB QUIZ - Frage und Antwort Spiel - TAB QUIZ - Frage und Antwort Spiel ****/
         private void btnAntwortSetzen_Click(object sender, EventArgs e)/* Tab Quiz */
         {
@@ -377,8 +380,8 @@ namespace LitteQuizMaster
             tabControl1.SelectTab(tabStartSeite);
         }
 
-      
-   
+
+        /***********************************************************************************************************************/
 
 
         /**** TAB Statistiken - Highscoreliste - Tab Statistiken - Highscoreliste - TAB Statistiken - Highscoreliste ****/
@@ -464,7 +467,7 @@ namespace LitteQuizMaster
             Close();
         }
 
-
+        /***********************************************************************************************************************/
 
         /****** TAB STARTSEITE - Willkommensgruesse und Menüauswahl - TAB STARTSEITE - Willkommensgruesse und Menüauswahl *****/
 
@@ -481,6 +484,24 @@ namespace LitteQuizMaster
         private void btnZurQuizSeite_Click(object sender, EventArgs e)
         {
             tabControl1.SelectTab(tabQuiz);
+            /*Bei erneuten Buttonklick auf Quiz, soll ein neues Spiel starten */
+            lblFragestellung.Text = "";
+            lblMoeglicheAntwort1.Text = "";
+            lblMoeglicheAntwort2.Text = "";
+            lblMoeglicheAntwort3.Text = "";
+            lblMoeglicheAntwort4.Text = "";
+            lblMoeglicheAntwort5.Text = "";
+
+            /*Spielstaende werden mit der If-Anweisung auf Null gesetzt*/
+            if(spielerStatistiken.GetPunkte()>0 && spielerStatistiken.GetAnzahlFragen()>0)
+            { spielerStatistiken.punkte = 0;
+                spielerStatistiken.maxpunkte = 0;
+            }
+
+            RadioButtonQuizLeeren();
+            
+            GuiSynch();
+            
         }
 
         private void btnZurFragenEditorSeite_Click(object sender, EventArgs e)
