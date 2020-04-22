@@ -23,7 +23,8 @@ using System.IO;
 // TODO - Frageeditor: Texteingaben flexibel gestalten? - muss nicht zwingend
 // TODO - Statt direkt in der Liste Random machen (wegen Endlosschleife und doppelte Fragenausgabe- 
 // TODO - Allgemein: Zum Schluss überflüssige Codes /Kommentare löschen und die Fehlerabfangenssachen coden
-// TODO - Kommentarliste erstellen mit folgenden Optionen: Speichern, Löschen
+// TODO - Kommentarliste erstellen mit folgenden Optionen: Speichern, Löschen 
+// TODO - Für die Liste Highscore und Kommentare (De)Serialisierung Methode erstellen
 
 
 namespace LitteQuizMaster
