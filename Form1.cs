@@ -30,7 +30,7 @@ using System.IO;
 namespace LitteQuizMaster
 {
 
-    [Serializable]
+   
     public partial class Form1 : Form
 
     {
@@ -47,7 +47,7 @@ namespace LitteQuizMaster
        
         
         private List<Frage> listeFragen = new List<Frage>();   //Fragenliste für die Fragen erstellt
-        private List<Statistiken> highscore = new List<Statistiken>();
+        private List<Statistiken> listehighscore = new List<Statistiken>();
 
 
         public Form1()      //Konstruktor
@@ -56,9 +56,8 @@ namespace LitteQuizMaster
             Deserialisierung();
         }
        
-        
-
-        public void Serialisierung()
+        /** SOLL in die DeSerialisierungs Klasse rein**/
+        public void Serialisierung()//diese muss noch in die Klasse DeSerialisierung ausgelagert werden !!!
         {
          
             BinaryFormatter binaryFormatter = new BinaryFormatter();
@@ -76,7 +75,26 @@ namespace LitteQuizMaster
 
             GuiSynch();
         }
-         
+
+        public void SerialisierungHighscoreliste()//funkt. nicht
+        {
+            BinaryFormatter binaryFormatter = new BinaryFormatter();
+            FileStream stream = new FileStream(@"C:\Users\black\source\repos\Highscoreliste.txt", FileMode.Create, FileAccess.Write);
+            binaryFormatter.Serialize(stream, listehighscore);
+            stream.Close();
+        }
+
+        public void DeserialisierungHighscoreliste()//fiunkt. nicht
+        {
+            FileStream stream = new FileStream(@"C:\Users\black\source\repos\Highscoreliste.txt", FileMode.Open, FileAccess.Read);
+            BinaryFormatter binaryFormatter = new BinaryFormatter();
+            listehighscore = (List<Statistiken>)binaryFormatter.Deserialize(stream);
+            SynHighscoreliste();
+        }
+
+
+
+        /*** TAB FRAGENEDITOR - Frage und Antwort - TAB FRAGENEDITOR - Frage und Antwort - TAB FRAGENEDITOR - Frage und Antwort ***/
         private void btnSpeicherFrage_Click(object sender, EventArgs e)
         {
             string frage = txtNeueFrage.Text;
@@ -175,8 +193,50 @@ namespace LitteQuizMaster
                aktuelleFrage = frage;
            }*/
         #endregion
+        private void FrageImEditorAnzeigen()  /* Funktion Anzeigen im Frageneditor */
+        {
+            Frage frageBearbeiten = listeFragen[lstFragenliste.SelectedIndex]; //aus der Liste den ausgewählten Index nehmen
 
+            txtNeueFrage.Text = frageBearbeiten.GetFrageText();
+            textBox1.Text = frageBearbeiten.GetAntworten()[0].antwortText;
+            textBox2.Text = frageBearbeiten.GetAntworten()[1].antwortText;
+            textBox3.Text = frageBearbeiten.GetAntworten()[2].antwortText;
+            textBox4.Text = frageBearbeiten.GetAntworten()[3].antwortText;
+            textBox5.Text = frageBearbeiten.GetAntworten()[4].antwortText;
 
+            /*Zeigt an welche Antwort als die richtige abgespeichert wurde*/
+            radioButton6.Checked = frageBearbeiten.GetAntworten()[0].istRichtig;
+            radioButton7.Checked = frageBearbeiten.GetAntworten()[1].istRichtig;
+            radioButton8.Checked = frageBearbeiten.GetAntworten()[2].istRichtig;
+            radioButton9.Checked = frageBearbeiten.GetAntworten()[3].istRichtig;
+            radioButton10.Checked = frageBearbeiten.GetAntworten()[4].istRichtig;
+        }
+        private void btnEdit_Click(object sender, EventArgs e)  /* Tab FragenEditor */
+        {
+            FrageImEditorAnzeigen();
+        }
+
+        private void btnFrageLöschern_Click(object sender, EventArgs e)
+        {
+            listeFragen.RemoveAt(lstFragenliste.SelectedIndex);
+            GuiSynch();
+        }
+        private void btnNeuFrageEditor_Click(object sender, EventArgs e)
+        {
+            /*Felder für eine neue Frage leeren*/
+            FelderFragenEditorLeeren();
+            GuiSynch();
+        }
+        private void btnFragenEditorGoBack_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectTab(tabStartSeite);
+        }
+        private void btnCloseEditor_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        /*** TAB QUIZ - Frage und Antwort Spiel - TAB QUIZ - Frage und Antwort Spiel - TAB QUIZ - Frage und Antwort Spiel ****/
         private void btnAntwortSetzen_Click(object sender, EventArgs e)/* Tab Quiz */
         {
             
@@ -257,50 +317,16 @@ namespace LitteQuizMaster
             }       
           
         }
-       
-        private void FrageImEditorAnzeigen()  /* Funktion Anzeigen im Frageneditor */
-        { 
-            Frage frageBearbeiten = listeFragen[lstFragenliste.SelectedIndex]; //aus der Liste den ausgewählten Index nehmen
 
-            txtNeueFrage.Text = frageBearbeiten.GetFrageText();
-            textBox1.Text = frageBearbeiten.GetAntworten()[0].antwortText;
-            textBox2.Text = frageBearbeiten.GetAntworten()[1].antwortText;
-            textBox3.Text = frageBearbeiten.GetAntworten()[2].antwortText;
-            textBox4.Text = frageBearbeiten.GetAntworten()[3].antwortText;
-            textBox5.Text = frageBearbeiten.GetAntworten()[4].antwortText;
-
-            /*Zeigt an welche Antwort als die richtige abgespeichert wurde*/
-            radioButton6.Checked = frageBearbeiten.GetAntworten()[0].istRichtig;
-            radioButton7.Checked = frageBearbeiten.GetAntworten()[1].istRichtig;
-            radioButton8.Checked = frageBearbeiten.GetAntworten()[2].istRichtig;
-            radioButton9.Checked = frageBearbeiten.GetAntworten()[3].istRichtig;
-            radioButton10.Checked = frageBearbeiten.GetAntworten()[4].istRichtig;
-        }
-        private void btnEdit_Click(object sender, EventArgs e)  /* Tab FragenEditor */
+        private void btnStart_Click(object sender, EventArgs e)
         {
-              FrageImEditorAnzeigen();
+
+            Deserialisierung();
+
+            FrageHolenQuiz();
+
         }
 
-        private void btnFrageLöschern_Click(object sender, EventArgs e)
-        {
-             listeFragen.RemoveAt(lstFragenliste.SelectedIndex);
-            GuiSynch();
-        }
-
-        private void btnCloseEditor_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void btnCloseQuiz_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void btnCloseStatistik_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
         #region Button Laden rausgenommen
         /*  private void btnLaden_Click(object sender, EventArgs e)
           {//TODO ladeprobleme , speichert eine datei liest sie jedoch nicht
@@ -311,8 +337,8 @@ namespace LitteQuizMaster
 
           }*/
         #endregion
-     
-            private void FrageHolenQuiz()
+
+        private void FrageHolenQuiz()
         {
             
                 Frage spielStart = listeFragen[zufall.Next(0, listeFragen.Count-1)];
@@ -336,31 +362,26 @@ namespace LitteQuizMaster
             
             
         }
-        private void btnStart_Click(object sender, EventArgs e)
+
+        private void btnQuizStopp_Click(object sender, EventArgs e) //Testbutton
         {
-                  
-            Deserialisierung();
-         
-            FrageHolenQuiz();
 
         }
 
-        private void tabNeueFragen_Click(object sender, EventArgs e)
+        private void btnCloseQuiz_Click(object sender, EventArgs e)
         {
-            //kann das weg?
+            Close();
+        }
+        private void btnQuizGoBack_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectTab(tabStartSeite);
         }
 
-        private void btnNeuFrageEditor_Click(object sender, EventArgs e)
-        {
-            /*Felder für eine neue Frage leeren*/
-            FelderFragenEditorLeeren();
-            GuiSynch();
-        }
       
+   
 
-     
 
-
+        /**** TAB Statistiken - Highscoreliste - Tab Statistiken - Highscoreliste - TAB Statistiken - Highscoreliste ****/
 
         Statistiken SpielerDatenSpeichern() /* Für den Highscore, anlegen neue Spielerdaten + gibt diese zurück*/
         {
@@ -379,10 +400,10 @@ namespace LitteQuizMaster
             statistik.spielername = neuername;
             statistik.zeitangabe = spielzeit; 
 
-            highscore.Add(statistik);       //Objekt statistik wird der Listre Highscore hinzugefügt
+            listehighscore.Add(statistik);       //Objekt statistik wird der Listre Highscore hinzugefügt
 
             //  lblTextfeld.Text =Convert.ToString(statistik.erreichbarePunktZahl)+Convert.ToString(statistik.spielername); //Testausgabe
-            lblTextfeld.Text = Convert.ToString(spielzeit);
+           // lblTextfeld.Text = Convert.ToString(spielzeit);
             
 
                 return statistik;
@@ -394,9 +415,9 @@ namespace LitteQuizMaster
         {
             lstHighscoreListeStatistiken.Items.Clear();  //Eingabefeld geleert wird
 
-            for (int i = 0; i < highscore.Count; i++)  //geht die Liste anhand des Index durch
+            for (int i = 0; i < listehighscore.Count; i++)  //geht die Liste anhand des Index durch
             {
-                lstHighscoreListeStatistiken.Items.Add(highscore[i].GetHoleSpielDatenHighscore());//alle daten abändern sodass ich die pubkte habe
+                lstHighscoreListeStatistiken.Items.Add(listehighscore[i].GetHoleSpielDatenHighscore());//alle daten abändern sodass ich die pubkte habe
                 //GetSpielerDaten gibt den spielernamen zurück er soll aber punkte, namen und datum zurückgeben
 
             }
@@ -404,26 +425,19 @@ namespace LitteQuizMaster
         private void btnStatistikNamenEintragen_Click(object sender, EventArgs e) // Namen in der Highscoreliste anzeigen
         {
             Statistiken statistikneuername = SpielerDatenSpeichern();
-            
-            
-
-          //  highscore.Add(statistikneuername);
-          //  listeSpielerStatistikListe.Add(SpielerDatenSpeichern());
-            
-
-            
-            
-            
-            
-         
+           
+            SerialisierungHighscoreliste();
             SynHighscoreliste();
             // Serialisierung FrageAntwort oder Extra 
-            
-
 
         }
 
-        
+        private void btnStatistikEintragLoeschen_Click(object sender, EventArgs e)
+        {
+            /*Aus der Highscoreliste Beitrag entfernen */
+            listehighscore.RemoveAt(lstHighscoreListeStatistiken.SelectedIndex);
+            SynHighscoreliste();
+        }
 
         #region Nächste-Frage-Button
         /*
@@ -440,12 +454,19 @@ namespace LitteQuizMaster
         */
         #endregion
 
-        private void btnQuizStopp_Click(object sender, EventArgs e) //Testbutton
+        private void btnStatistikGoBack_Click(object sender, EventArgs e)
         {
-
+            tabControl1.SelectTab(tabStartSeite);
         }
 
-      
+        private void btnCloseStatistik_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+
+
+        /****** TAB STARTSEITE - Willkommensgruesse und Menüauswahl - TAB STARTSEITE - Willkommensgruesse und Menüauswahl *****/
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -456,6 +477,7 @@ namespace LitteQuizMaster
             lblKommentareTitelAnzeige.Text = kommentare.GetKommentarTextAufforderung();
         }
 
+        /* Startseite: Menueauswahl */
         private void btnZurQuizSeite_Click(object sender, EventArgs e)
         {
             tabControl1.SelectTab(tabQuiz);
@@ -464,6 +486,7 @@ namespace LitteQuizMaster
         private void btnZurFragenEditorSeite_Click(object sender, EventArgs e)
         {
             tabControl1.SelectTab(tabNeueFragen);
+            DeserialisierungHighscoreliste();
         }
 
         private void btnZurStatistikenSeite_Click(object sender, EventArgs e)
@@ -476,20 +499,13 @@ namespace LitteQuizMaster
             tabControl1.SelectTab(tabKommentarSeite);
         }
 
-        private void lblDatumUhrzeit_Click(object sender, EventArgs e)
-        {
-            /* Anzeige Datum und Uhrzeit */
-        }
-
-        private void btnQuizGoBack_Click(object sender, EventArgs e)
-        {
-            tabControl1.SelectTab(tabStartSeite);
-        }
 
         private void btnStartSeiteClose_Click(object sender, EventArgs e)
         {
             Close();
         }
+
+      
     }
 
 }

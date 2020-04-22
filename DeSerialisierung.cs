@@ -21,7 +21,7 @@ namespace LitteQuizMaster
         public void SerialisierungHighscore()
         {
             BinaryFormatter binaryFormatter = new BinaryFormatter();
-            FileStream stream = new FileStream(@"C:\Users\black\source\repos\Highscoreliste.txt", FileMode.Create, FileAccess.Write);
+            FileStream stream = new FileStream(@"C:\repos\Highscoreliste.txt", FileMode.Create, FileAccess.Write);
             binaryFormatter.Serialize(stream, testdatenbesorgen.GetHoleSpielDatenHighscore() );
             stream.Close();
         }
