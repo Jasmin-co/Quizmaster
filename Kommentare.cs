@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace LitteQuizMaster
-{
+{[Serializable]
     class Kommentare
     {
         string kommentarAufforderungsText;
+        string kommentarText;
 
         public Kommentare(string p_kommentiere)
         {
@@ -26,6 +27,14 @@ namespace LitteQuizMaster
         public string GetKommentarTextAufforderung()
         {
             return kommentarAufforderungsText;
+        }
+        public string GetKommentarliste()   //für die Synchronisation
+        {
+            return kommentarText;
+        }
+        public void SetKommentar(string p_neuKommentar)
+        {
+            string neuerKommentar = p_neuKommentar;
         }
     }
 }

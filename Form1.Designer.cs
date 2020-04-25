@@ -68,6 +68,7 @@
             this.lblMoeglicheAntwort5 = new System.Windows.Forms.Label();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.tabStatistik = new System.Windows.Forms.TabPage();
+            this.btnNochlSpielenStatistik = new System.Windows.Forms.Button();
             this.btnStatistikEintragLoeschen = new System.Windows.Forms.Button();
             this.btnStatistikGoBack = new System.Windows.Forms.Button();
             this.lstHighscoreListeStatistiken = new System.Windows.Forms.ListBox();
@@ -125,9 +126,10 @@
             this.txtKommentareEintragen = new System.Windows.Forms.TextBox();
             this.lblKommentarAnzeigen = new System.Windows.Forms.Label();
             this.btnZurueckKommentare = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lstKommentarListe = new System.Windows.Forms.ListBox();
             this.lblKommentareTitelAnzeige = new System.Windows.Forms.Label();
             this.lblKommentareHintergrund = new System.Windows.Forms.Label();
+            this.btnZumFeedbackStatistik = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabStartSeite.SuspendLayout();
             this.tabQuiz.SuspendLayout();
@@ -297,7 +299,7 @@
             this.btnCloseQuiz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCloseQuiz.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCloseQuiz.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnCloseQuiz.Location = new System.Drawing.Point(1037, 678);
+            this.btnCloseQuiz.Location = new System.Drawing.Point(1041, 799);
             this.btnCloseQuiz.Name = "btnCloseQuiz";
             this.btnCloseQuiz.Size = new System.Drawing.Size(129, 49);
             this.btnCloseQuiz.TabIndex = 35;
@@ -311,7 +313,7 @@
             this.btnQuizStopp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuizStopp.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuizStopp.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnQuizStopp.Location = new System.Drawing.Point(530, 758);
+            this.btnQuizStopp.Location = new System.Drawing.Point(312, 659);
             this.btnQuizStopp.Name = "btnQuizStopp";
             this.btnQuizStopp.Size = new System.Drawing.Size(129, 49);
             this.btnQuizStopp.TabIndex = 37;
@@ -325,7 +327,7 @@
             this.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStart.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStart.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnStart.Location = new System.Drawing.Point(826, 678);
+            this.btnStart.Location = new System.Drawing.Point(84, 659);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(129, 49);
             this.btnStart.TabIndex = 36;
@@ -339,7 +341,7 @@
             this.btnAntwortSetzen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAntwortSetzen.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAntwortSetzen.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnAntwortSetzen.Location = new System.Drawing.Point(244, 678);
+            this.btnAntwortSetzen.Location = new System.Drawing.Point(983, 634);
             this.btnAntwortSetzen.Name = "btnAntwortSetzen";
             this.btnAntwortSetzen.Size = new System.Drawing.Size(129, 49);
             this.btnAntwortSetzen.TabIndex = 34;
@@ -353,7 +355,7 @@
             this.btnQuizGoBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuizGoBack.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuizGoBack.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnQuizGoBack.Location = new System.Drawing.Point(74, 678);
+            this.btnQuizGoBack.Location = new System.Drawing.Point(84, 799);
             this.btnQuizGoBack.Name = "btnQuizGoBack";
             this.btnQuizGoBack.Size = new System.Drawing.Size(129, 49);
             this.btnQuizGoBack.TabIndex = 33;
@@ -417,7 +419,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.62867F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 84.37133F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 164F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 167F));
             this.tableLayoutPanel1.Controls.Add(this.radioButton3, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.radioButton4, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.radioButton2, 2, 1);
@@ -448,7 +450,7 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(824, 161);
+            this.radioButton3.Location = new System.Drawing.Point(821, 161);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(21, 20);
             this.radioButton3.TabIndex = 15;
@@ -458,7 +460,7 @@
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(824, 240);
+            this.radioButton4.Location = new System.Drawing.Point(821, 240);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(21, 20);
             this.radioButton4.TabIndex = 16;
@@ -468,7 +470,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(824, 82);
+            this.radioButton2.Location = new System.Drawing.Point(821, 82);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(21, 20);
             this.radioButton2.TabIndex = 14;
@@ -480,7 +482,7 @@
             this.radioButton1.AutoSize = true;
             this.radioButton1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.radioButton1.Location = new System.Drawing.Point(824, 3);
+            this.radioButton1.Location = new System.Drawing.Point(821, 3);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(21, 20);
             this.radioButton1.TabIndex = 13;
@@ -544,9 +546,9 @@
             this.lblMoeglicheAntwort4.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.lblMoeglicheAntwort4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMoeglicheAntwort4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblMoeglicheAntwort4.Location = new System.Drawing.Point(131, 237);
+            this.lblMoeglicheAntwort4.Location = new System.Drawing.Point(130, 237);
             this.lblMoeglicheAntwort4.Name = "lblMoeglicheAntwort4";
-            this.lblMoeglicheAntwort4.Size = new System.Drawing.Size(687, 42);
+            this.lblMoeglicheAntwort4.Size = new System.Drawing.Size(685, 42);
             this.lblMoeglicheAntwort4.TabIndex = 11;
             // 
             // lblMoeglicheAntwort3
@@ -555,9 +557,9 @@
             this.lblMoeglicheAntwort3.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.lblMoeglicheAntwort3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMoeglicheAntwort3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblMoeglicheAntwort3.Location = new System.Drawing.Point(131, 158);
+            this.lblMoeglicheAntwort3.Location = new System.Drawing.Point(130, 158);
             this.lblMoeglicheAntwort3.Name = "lblMoeglicheAntwort3";
-            this.lblMoeglicheAntwort3.Size = new System.Drawing.Size(687, 42);
+            this.lblMoeglicheAntwort3.Size = new System.Drawing.Size(685, 42);
             this.lblMoeglicheAntwort3.TabIndex = 18;
             // 
             // lblMoeglicheAntwort2
@@ -566,9 +568,9 @@
             this.lblMoeglicheAntwort2.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.lblMoeglicheAntwort2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMoeglicheAntwort2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblMoeglicheAntwort2.Location = new System.Drawing.Point(131, 79);
+            this.lblMoeglicheAntwort2.Location = new System.Drawing.Point(130, 79);
             this.lblMoeglicheAntwort2.Name = "lblMoeglicheAntwort2";
-            this.lblMoeglicheAntwort2.Size = new System.Drawing.Size(687, 42);
+            this.lblMoeglicheAntwort2.Size = new System.Drawing.Size(685, 42);
             this.lblMoeglicheAntwort2.TabIndex = 19;
             // 
             // lblMoeglicheAntwort1
@@ -578,9 +580,9 @@
             this.lblMoeglicheAntwort1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.lblMoeglicheAntwort1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMoeglicheAntwort1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblMoeglicheAntwort1.Location = new System.Drawing.Point(131, 0);
+            this.lblMoeglicheAntwort1.Location = new System.Drawing.Point(130, 0);
             this.lblMoeglicheAntwort1.Name = "lblMoeglicheAntwort1";
-            this.lblMoeglicheAntwort1.Size = new System.Drawing.Size(687, 42);
+            this.lblMoeglicheAntwort1.Size = new System.Drawing.Size(685, 42);
             this.lblMoeglicheAntwort1.TabIndex = 20;
             // 
             // lblMoeglicheAntwort5
@@ -589,15 +591,15 @@
             this.lblMoeglicheAntwort5.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.lblMoeglicheAntwort5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMoeglicheAntwort5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblMoeglicheAntwort5.Location = new System.Drawing.Point(131, 316);
+            this.lblMoeglicheAntwort5.Location = new System.Drawing.Point(130, 316);
             this.lblMoeglicheAntwort5.Name = "lblMoeglicheAntwort5";
-            this.lblMoeglicheAntwort5.Size = new System.Drawing.Size(687, 42);
+            this.lblMoeglicheAntwort5.Size = new System.Drawing.Size(685, 42);
             this.lblMoeglicheAntwort5.TabIndex = 21;
             // 
             // radioButton5
             // 
             this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(824, 319);
+            this.radioButton5.Location = new System.Drawing.Point(821, 319);
             this.radioButton5.Name = "radioButton5";
             this.radioButton5.Size = new System.Drawing.Size(21, 20);
             this.radioButton5.TabIndex = 17;
@@ -607,6 +609,8 @@
             // tabStatistik
             // 
             this.tabStatistik.BackColor = System.Drawing.Color.Bisque;
+            this.tabStatistik.Controls.Add(this.btnZumFeedbackStatistik);
+            this.tabStatistik.Controls.Add(this.btnNochlSpielenStatistik);
             this.tabStatistik.Controls.Add(this.btnStatistikEintragLoeschen);
             this.tabStatistik.Controls.Add(this.btnStatistikGoBack);
             this.tabStatistik.Controls.Add(this.lstHighscoreListeStatistiken);
@@ -628,6 +632,20 @@
             this.tabStatistik.TabIndex = 2;
             this.tabStatistik.Text = "Statistik";
             // 
+            // btnNochlSpielenStatistik
+            // 
+            this.btnNochlSpielenStatistik.FlatAppearance.BorderColor = System.Drawing.Color.Navy;
+            this.btnNochlSpielenStatistik.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNochlSpielenStatistik.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNochlSpielenStatistik.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnNochlSpielenStatistik.Location = new System.Drawing.Point(314, 796);
+            this.btnNochlSpielenStatistik.Name = "btnNochlSpielenStatistik";
+            this.btnNochlSpielenStatistik.Size = new System.Drawing.Size(201, 49);
+            this.btnNochlSpielenStatistik.TabIndex = 49;
+            this.btnNochlSpielenStatistik.Text = "erneut spielen";
+            this.btnNochlSpielenStatistik.UseVisualStyleBackColor = true;
+            this.btnNochlSpielenStatistik.Click += new System.EventHandler(this.btnNochlSpielenStatistik_Click);
+            // 
             // btnStatistikEintragLoeschen
             // 
             this.btnStatistikEintragLoeschen.FlatAppearance.BorderColor = System.Drawing.Color.Navy;
@@ -636,7 +654,7 @@
             this.btnStatistikEintragLoeschen.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnStatistikEintragLoeschen.Location = new System.Drawing.Point(588, 705);
             this.btnStatistikEintragLoeschen.Name = "btnStatistikEintragLoeschen";
-            this.btnStatistikEintragLoeschen.Size = new System.Drawing.Size(129, 49);
+            this.btnStatistikEintragLoeschen.Size = new System.Drawing.Size(187, 49);
             this.btnStatistikEintragLoeschen.TabIndex = 48;
             this.btnStatistikEintragLoeschen.Text = "Löschen";
             this.btnStatistikEintragLoeschen.UseVisualStyleBackColor = true;
@@ -648,9 +666,9 @@
             this.btnStatistikGoBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStatistikGoBack.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStatistikGoBack.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnStatistikGoBack.Location = new System.Drawing.Point(40, 705);
+            this.btnStatistikGoBack.Location = new System.Drawing.Point(33, 796);
             this.btnStatistikGoBack.Name = "btnStatistikGoBack";
-            this.btnStatistikGoBack.Size = new System.Drawing.Size(129, 49);
+            this.btnStatistikGoBack.Size = new System.Drawing.Size(201, 49);
             this.btnStatistikGoBack.TabIndex = 47;
             this.btnStatistikGoBack.Text = "Zurück";
             this.btnStatistikGoBack.UseVisualStyleBackColor = true;
@@ -662,9 +680,9 @@
             this.lstHighscoreListeStatistiken.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lstHighscoreListeStatistiken.FormattingEnabled = true;
             this.lstHighscoreListeStatistiken.ItemHeight = 27;
-            this.lstHighscoreListeStatistiken.Location = new System.Drawing.Point(727, 231);
+            this.lstHighscoreListeStatistiken.Location = new System.Drawing.Point(691, 231);
             this.lstHighscoreListeStatistiken.Name = "lstHighscoreListeStatistiken";
-            this.lstHighscoreListeStatistiken.Size = new System.Drawing.Size(548, 434);
+            this.lstHighscoreListeStatistiken.Size = new System.Drawing.Size(641, 434);
             this.lstHighscoreListeStatistiken.TabIndex = 45;
             // 
             // btnStatistikNamenEintragen
@@ -675,7 +693,7 @@
             this.btnStatistikNamenEintragen.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnStatistikNamenEintragen.Location = new System.Drawing.Point(314, 705);
             this.btnStatistikNamenEintragen.Name = "btnStatistikNamenEintragen";
-            this.btnStatistikNamenEintragen.Size = new System.Drawing.Size(129, 49);
+            this.btnStatistikNamenEintragen.Size = new System.Drawing.Size(201, 49);
             this.btnStatistikNamenEintragen.TabIndex = 43;
             this.btnStatistikNamenEintragen.Text = "Eintragen";
             this.btnStatistikNamenEintragen.UseVisualStyleBackColor = true;
@@ -724,9 +742,9 @@
             this.btnCloseStatistik.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCloseStatistik.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCloseStatistik.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnCloseStatistik.Location = new System.Drawing.Point(1190, 796);
+            this.btnCloseStatistik.Location = new System.Drawing.Point(1119, 796);
             this.btnCloseStatistik.Name = "btnCloseStatistik";
-            this.btnCloseStatistik.Size = new System.Drawing.Size(129, 49);
+            this.btnCloseStatistik.Size = new System.Drawing.Size(200, 49);
             this.btnCloseStatistik.TabIndex = 38;
             this.btnCloseStatistik.Text = "Schließen";
             this.btnCloseStatistik.UseVisualStyleBackColor = true;
@@ -915,7 +933,7 @@
             this.lstFragenliste.ItemHeight = 25;
             this.lstFragenliste.Location = new System.Drawing.Point(220, 517);
             this.lstFragenliste.Name = "lstFragenliste";
-            this.lstFragenliste.Size = new System.Drawing.Size(968, 54);
+            this.lstFragenliste.Size = new System.Drawing.Size(969, 154);
             this.lstFragenliste.TabIndex = 38;
             // 
             // btnFrageLöschern
@@ -1215,7 +1233,7 @@
             this.tabKommentarSeite.Controls.Add(this.txtKommentareEintragen);
             this.tabKommentarSeite.Controls.Add(this.lblKommentarAnzeigen);
             this.tabKommentarSeite.Controls.Add(this.btnZurueckKommentare);
-            this.tabKommentarSeite.Controls.Add(this.listBox1);
+            this.tabKommentarSeite.Controls.Add(this.lstKommentarListe);
             this.tabKommentarSeite.Controls.Add(this.lblKommentareTitelAnzeige);
             this.tabKommentarSeite.Controls.Add(this.lblKommentareHintergrund);
             this.tabKommentarSeite.Location = new System.Drawing.Point(4, 33);
@@ -1232,6 +1250,7 @@
             this.btnKommentarClose.TabIndex = 9;
             this.btnKommentarClose.Text = "Schließen";
             this.btnKommentarClose.UseVisualStyleBackColor = true;
+            this.btnKommentarClose.Click += new System.EventHandler(this.btnKommentarClose_Click);
             // 
             // btnKommentarAnzeigen
             // 
@@ -1259,6 +1278,7 @@
             this.btnKommentarSpeichern.TabIndex = 5;
             this.btnKommentarSpeichern.Text = "Speichern";
             this.btnKommentarSpeichern.UseVisualStyleBackColor = true;
+            this.btnKommentarSpeichern.Click += new System.EventHandler(this.btnKommentarSpeichern_Click);
             // 
             // txtKommentareEintragen
             // 
@@ -1287,15 +1307,16 @@
             this.btnZurueckKommentare.TabIndex = 2;
             this.btnZurueckKommentare.Text = "Zurück";
             this.btnZurueckKommentare.UseVisualStyleBackColor = true;
+            this.btnZurueckKommentare.Click += new System.EventHandler(this.btnZurueckKommentare_Click);
             // 
-            // listBox1
+            // lstKommentarListe
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 24;
-            this.listBox1.Location = new System.Drawing.Point(1033, 159);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(276, 388);
-            this.listBox1.TabIndex = 1;
+            this.lstKommentarListe.FormattingEnabled = true;
+            this.lstKommentarListe.ItemHeight = 24;
+            this.lstKommentarListe.Location = new System.Drawing.Point(1033, 159);
+            this.lstKommentarListe.Name = "lstKommentarListe";
+            this.lstKommentarListe.Size = new System.Drawing.Size(276, 388);
+            this.lstKommentarListe.TabIndex = 1;
             // 
             // lblKommentareTitelAnzeige
             // 
@@ -1313,6 +1334,20 @@
             this.lblKommentareHintergrund.Name = "lblKommentareHintergrund";
             this.lblKommentareHintergrund.Size = new System.Drawing.Size(934, 860);
             this.lblKommentareHintergrund.TabIndex = 7;
+            // 
+            // btnZumFeedbackStatistik
+            // 
+            this.btnZumFeedbackStatistik.FlatAppearance.BorderColor = System.Drawing.Color.Navy;
+            this.btnZumFeedbackStatistik.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnZumFeedbackStatistik.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnZumFeedbackStatistik.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnZumFeedbackStatistik.Location = new System.Drawing.Point(33, 705);
+            this.btnZumFeedbackStatistik.Name = "btnZumFeedbackStatistik";
+            this.btnZumFeedbackStatistik.Size = new System.Drawing.Size(201, 49);
+            this.btnZumFeedbackStatistik.TabIndex = 50;
+            this.btnZumFeedbackStatistik.Text = "Zum Feedback";
+            this.btnZumFeedbackStatistik.UseVisualStyleBackColor = true;
+            this.btnZumFeedbackStatistik.Click += new System.EventHandler(this.btnZumFeedbackStatistik_Click);
             // 
             // Form1
             // 
@@ -1430,7 +1465,7 @@
         private System.Windows.Forms.TextBox txtKommentareEintragen;
         private System.Windows.Forms.Label lblKommentarAnzeigen;
         private System.Windows.Forms.Button btnZurueckKommentare;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lstKommentarListe;
         private System.Windows.Forms.Label lblKommentareTitelAnzeige;
         private System.Windows.Forms.Button btnStartSeiteClose;
         private System.Windows.Forms.Label lblStartSeiteSchlussSatz;
@@ -1443,6 +1478,8 @@
         private System.Windows.Forms.Button btnStatistikEintragLoeschen;
         private System.Windows.Forms.Button btnStatistikGoBack;
         private System.Windows.Forms.Button btnFragenEditorGoBack;
+        private System.Windows.Forms.Button btnNochlSpielenStatistik;
+        private System.Windows.Forms.Button btnZumFeedbackStatistik;
     }
 }
 

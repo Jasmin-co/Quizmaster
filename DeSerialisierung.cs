@@ -11,20 +11,25 @@ namespace LitteQuizMaster
 {
     class DeSerialisierung
     {
-        Statistiken testdatenbesorgen = new Statistiken();
-        /* Hier kommt der Deserialisierungs- und Serialisierungscode hin*/
+     /*   static Statistiken testdatenbesorgen = new Statistiken();
+       
 
-
-
-        //  TODO Deserialisierung und Serialisierung Highscoreliste
-
-        public void SerialisierungHighscore()
+       static public void SerialisierungHighscore()
         {
             BinaryFormatter binaryFormatter = new BinaryFormatter();
-            FileStream stream = new FileStream(@"C:\repos\Highscoreliste.txt", FileMode.Create, FileAccess.Write);
+            FileStream stream = new FileStream(@"C:Users\black\source\repos\Highscoreliste.txt", FileMode.Create, FileAccess.Write);
             binaryFormatter.Serialize(stream, testdatenbesorgen.GetHoleSpielDatenHighscore() );
             stream.Close();
         }
+
+      /*  public void DeserialisierungHighscoreliste()//funkt. nicht
+        {
+            FileStream stream = new FileStream(@"C:\Users\black\source\repos\Highscoreliste.txt", FileMode.Open, FileAccess.Read);
+            BinaryFormatter binaryFormatter = new BinaryFormatter();
+            listehighscore = (List<Statistiken>)binaryFormatter.Deserialize(stream);
+            SynHighscoreliste();
+        }*/
+
         /*
          Person pers = new Person(56, "Schmidt");
 FileStream stream; 
@@ -33,16 +38,16 @@ BinaryFormatter formatter = new BinaryFormatter();
 formatter.Serialize(stream, pers);
 stream.Close();*/
 
-    /*    public void DeserialisierungHighscore()
-        {
-            FileStream stream = new FileStream(@"C:\Users\black\source\repos\Highscoreliste.txt", FileMode.Open, FileAccess.Read);
-            BinaryFormatter binaryFormatter = new BinaryFormatter();
-     //       testdatenbesorgen = testdatenbesorgen.GetHoleSpielDatenHighscore() binaryFormatter.Deserialize(stream);
+        /*    public void DeserialisierungHighscore()
+            {
+                FileStream stream = new FileStream(@"C:\Users\black\source\repos\Highscoreliste.txt", FileMode.Open, FileAccess.Read);
+                BinaryFormatter binaryFormatter = new BinaryFormatter();
+         //       testdatenbesorgen = testdatenbesorgen.GetHoleSpielDatenHighscore() binaryFormatter.Deserialize(stream);
 
-        
-            
-            
-            //  GuiSynch();
-        }*/
+
+
+
+                //  GuiSynch();
+            }*/
     }
 }
