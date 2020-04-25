@@ -68,6 +68,7 @@
             this.lblMoeglicheAntwort5 = new System.Windows.Forms.Label();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.tabStatistik = new System.Windows.Forms.TabPage();
+            this.btnZumFeedbackStatistik = new System.Windows.Forms.Button();
             this.btnNochlSpielenStatistik = new System.Windows.Forms.Button();
             this.btnStatistikEintragLoeschen = new System.Windows.Forms.Button();
             this.btnStatistikGoBack = new System.Windows.Forms.Button();
@@ -119,6 +120,8 @@
             this.lblFragenEditorTitel = new System.Windows.Forms.Label();
             this.lblAnzeigeLogoFragenEditor = new System.Windows.Forms.Label();
             this.tabKommentarSeite = new System.Windows.Forms.TabPage();
+            this.lblKommentareKommentarAnzeige = new System.Windows.Forms.Label();
+            this.lblKommentarAnzeigeDuschreibst = new System.Windows.Forms.Label();
             this.btnKommentarClose = new System.Windows.Forms.Button();
             this.btnKommentarAnzeigen = new System.Windows.Forms.Button();
             this.btnLoescheKommentare = new System.Windows.Forms.Button();
@@ -129,7 +132,8 @@
             this.lstKommentarListe = new System.Windows.Forms.ListBox();
             this.lblKommentareTitelAnzeige = new System.Windows.Forms.Label();
             this.lblKommentareHintergrund = new System.Windows.Forms.Label();
-            this.btnZumFeedbackStatistik = new System.Windows.Forms.Button();
+            this.lblKommenatreKommentarlisteAnzeige = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabStartSeite.SuspendLayout();
             this.tabQuiz.SuspendLayout();
@@ -167,9 +171,9 @@
             this.tabStartSeite.Controls.Add(this.btnZurFragenEditorSeite);
             this.tabStartSeite.Controls.Add(this.btnZurQuizSeite);
             this.tabStartSeite.Controls.Add(this.lblBegruessungsText);
-            this.tabStartSeite.Location = new System.Drawing.Point(4, 33);
+            this.tabStartSeite.Location = new System.Drawing.Point(4, 25);
             this.tabStartSeite.Name = "tabStartSeite";
-            this.tabStartSeite.Size = new System.Drawing.Size(1366, 877);
+            this.tabStartSeite.Size = new System.Drawing.Size(1366, 885);
             this.tabStartSeite.TabIndex = 3;
             this.tabStartSeite.Text = "Willkommen";
             // 
@@ -181,7 +185,7 @@
             this.lblStartSeiteSchlussSatz.ForeColor = System.Drawing.Color.DimGray;
             this.lblStartSeiteSchlussSatz.Location = new System.Drawing.Point(312, 558);
             this.lblStartSeiteSchlussSatz.Name = "lblStartSeiteSchlussSatz";
-            this.lblStartSeiteSchlussSatz.Size = new System.Drawing.Size(75, 31);
+            this.lblStartSeiteSchlussSatz.Size = new System.Drawing.Size(51, 22);
             this.lblStartSeiteSchlussSatz.TabIndex = 8;
             this.lblStartSeiteSchlussSatz.Text = "label1";
             this.lblStartSeiteSchlussSatz.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -204,7 +208,7 @@
             this.lblBegruessungsTextTitelStartSeite.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblBegruessungsTextTitelStartSeite.Location = new System.Drawing.Point(142, 148);
             this.lblBegruessungsTextTitelStartSeite.Name = "lblBegruessungsTextTitelStartSeite";
-            this.lblBegruessungsTextTitelStartSeite.Size = new System.Drawing.Size(96, 33);
+            this.lblBegruessungsTextTitelStartSeite.Size = new System.Drawing.Size(65, 22);
             this.lblBegruessungsTextTitelStartSeite.TabIndex = 6;
             this.lblBegruessungsTextTitelStartSeite.Text = "label1";
             // 
@@ -214,7 +218,7 @@
             this.lblDatumUhrzeitStartSeite.BackColor = System.Drawing.Color.Transparent;
             this.lblDatumUhrzeitStartSeite.Location = new System.Drawing.Point(228, 804);
             this.lblDatumUhrzeitStartSeite.Name = "lblDatumUhrzeitStartSeite";
-            this.lblDatumUhrzeitStartSeite.Size = new System.Drawing.Size(111, 24);
+            this.lblDatumUhrzeitStartSeite.Size = new System.Drawing.Size(74, 17);
             this.lblDatumUhrzeitStartSeite.TabIndex = 5;
             this.lblDatumUhrzeitStartSeite.Text = "DatumUhrzeit";
             // 
@@ -266,7 +270,7 @@
             this.lblBegruessungsText.ForeColor = System.Drawing.Color.Black;
             this.lblBegruessungsText.Location = new System.Drawing.Point(170, 209);
             this.lblBegruessungsText.Name = "lblBegruessungsText";
-            this.lblBegruessungsText.Size = new System.Drawing.Size(68, 29);
+            this.lblBegruessungsText.Size = new System.Drawing.Size(46, 20);
             this.lblBegruessungsText.TabIndex = 0;
             this.lblBegruessungsText.Text = "label1";
             // 
@@ -286,10 +290,10 @@
             this.tabQuiz.Controls.Add(this.lblLogoAnzeigeQuiz);
             this.tabQuiz.Controls.Add(this.tableLayoutPanel1);
             this.tabQuiz.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabQuiz.Location = new System.Drawing.Point(4, 33);
+            this.tabQuiz.Location = new System.Drawing.Point(4, 25);
             this.tabQuiz.Name = "tabQuiz";
             this.tabQuiz.Padding = new System.Windows.Forms.Padding(3);
-            this.tabQuiz.Size = new System.Drawing.Size(1366, 877);
+            this.tabQuiz.Size = new System.Drawing.Size(1366, 885);
             this.tabQuiz.TabIndex = 0;
             this.tabQuiz.Text = "Quiz";
             // 
@@ -369,7 +373,7 @@
             this.lblInfoWahr.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInfoWahr.Location = new System.Drawing.Point(956, 155);
             this.lblInfoWahr.Name = "lblInfoWahr";
-            this.lblInfoWahr.Size = new System.Drawing.Size(59, 23);
+            this.lblInfoWahr.Size = new System.Drawing.Size(42, 16);
             this.lblInfoWahr.TabIndex = 32;
             this.lblInfoWahr.Text = "wahr:";
             // 
@@ -391,7 +395,7 @@
             this.lblTitelFrage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitelFrage.Location = new System.Drawing.Point(80, 100);
             this.lblTitelFrage.Name = "lblTitelFrage";
-            this.lblTitelFrage.Size = new System.Drawing.Size(85, 29);
+            this.lblTitelFrage.Size = new System.Drawing.Size(59, 19);
             this.lblTitelFrage.TabIndex = 28;
             this.lblTitelFrage.Text = "Frage:";
             // 
@@ -401,7 +405,7 @@
             this.lblTitelQuiz.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitelQuiz.Location = new System.Drawing.Point(542, 42);
             this.lblTitelQuiz.Name = "lblTitelQuiz";
-            this.lblTitelQuiz.Size = new System.Drawing.Size(80, 36);
+            this.lblTitelQuiz.Size = new System.Drawing.Size(56, 25);
             this.lblTitelQuiz.TabIndex = 27;
             this.lblTitelQuiz.Text = "Quiz";
             // 
@@ -419,7 +423,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.62867F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 84.37133F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 167F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 169F));
             this.tableLayoutPanel1.Controls.Add(this.radioButton3, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.radioButton4, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.radioButton2, 2, 1);
@@ -450,9 +454,9 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(821, 161);
+            this.radioButton3.Location = new System.Drawing.Point(819, 161);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(21, 20);
+            this.radioButton3.Size = new System.Drawing.Size(14, 13);
             this.radioButton3.TabIndex = 15;
             this.radioButton3.TabStop = true;
             this.radioButton3.UseVisualStyleBackColor = true;
@@ -460,9 +464,9 @@
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(821, 240);
+            this.radioButton4.Location = new System.Drawing.Point(819, 240);
             this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(21, 20);
+            this.radioButton4.Size = new System.Drawing.Size(14, 13);
             this.radioButton4.TabIndex = 16;
             this.radioButton4.TabStop = true;
             this.radioButton4.UseVisualStyleBackColor = true;
@@ -470,9 +474,9 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(821, 82);
+            this.radioButton2.Location = new System.Drawing.Point(819, 82);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(21, 20);
+            this.radioButton2.Size = new System.Drawing.Size(14, 13);
             this.radioButton2.TabIndex = 14;
             this.radioButton2.TabStop = true;
             this.radioButton2.UseVisualStyleBackColor = true;
@@ -482,9 +486,9 @@
             this.radioButton1.AutoSize = true;
             this.radioButton1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.radioButton1.Location = new System.Drawing.Point(821, 3);
+            this.radioButton1.Location = new System.Drawing.Point(819, 3);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(21, 20);
+            this.radioButton1.Size = new System.Drawing.Size(14, 13);
             this.radioButton1.TabIndex = 13;
             this.radioButton1.TabStop = true;
             this.radioButton1.UseVisualStyleBackColor = true;
@@ -496,7 +500,7 @@
             this.lblInfo1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInfo1.Location = new System.Drawing.Point(3, 0);
             this.lblInfo1.Name = "lblInfo1";
-            this.lblInfo1.Size = new System.Drawing.Size(101, 23);
+            this.lblInfo1.Size = new System.Drawing.Size(71, 16);
             this.lblInfo1.TabIndex = 2;
             this.lblInfo1.Text = "Antwort 1:";
             // 
@@ -506,7 +510,7 @@
             this.lblInfo2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInfo2.Location = new System.Drawing.Point(3, 79);
             this.lblInfo2.Name = "lblInfo2";
-            this.lblInfo2.Size = new System.Drawing.Size(101, 23);
+            this.lblInfo2.Size = new System.Drawing.Size(71, 16);
             this.lblInfo2.TabIndex = 3;
             this.lblInfo2.Text = "Antwort 2:";
             // 
@@ -516,7 +520,7 @@
             this.lblInfo5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInfo5.Location = new System.Drawing.Point(3, 316);
             this.lblInfo5.Name = "lblInfo5";
-            this.lblInfo5.Size = new System.Drawing.Size(101, 23);
+            this.lblInfo5.Size = new System.Drawing.Size(71, 16);
             this.lblInfo5.TabIndex = 6;
             this.lblInfo5.Text = "Antwort 5:";
             // 
@@ -526,7 +530,7 @@
             this.lblInfo3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInfo3.Location = new System.Drawing.Point(3, 158);
             this.lblInfo3.Name = "lblInfo3";
-            this.lblInfo3.Size = new System.Drawing.Size(101, 23);
+            this.lblInfo3.Size = new System.Drawing.Size(71, 16);
             this.lblInfo3.TabIndex = 4;
             this.lblInfo3.Text = "Antwort 3:";
             // 
@@ -536,7 +540,7 @@
             this.lblInfo4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInfo4.Location = new System.Drawing.Point(3, 237);
             this.lblInfo4.Name = "lblInfo4";
-            this.lblInfo4.Size = new System.Drawing.Size(101, 23);
+            this.lblInfo4.Size = new System.Drawing.Size(71, 16);
             this.lblInfo4.TabIndex = 5;
             this.lblInfo4.Text = "Antwort 4:";
             // 
@@ -548,7 +552,7 @@
             this.lblMoeglicheAntwort4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblMoeglicheAntwort4.Location = new System.Drawing.Point(130, 237);
             this.lblMoeglicheAntwort4.Name = "lblMoeglicheAntwort4";
-            this.lblMoeglicheAntwort4.Size = new System.Drawing.Size(685, 42);
+            this.lblMoeglicheAntwort4.Size = new System.Drawing.Size(683, 42);
             this.lblMoeglicheAntwort4.TabIndex = 11;
             // 
             // lblMoeglicheAntwort3
@@ -559,7 +563,7 @@
             this.lblMoeglicheAntwort3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblMoeglicheAntwort3.Location = new System.Drawing.Point(130, 158);
             this.lblMoeglicheAntwort3.Name = "lblMoeglicheAntwort3";
-            this.lblMoeglicheAntwort3.Size = new System.Drawing.Size(685, 42);
+            this.lblMoeglicheAntwort3.Size = new System.Drawing.Size(683, 42);
             this.lblMoeglicheAntwort3.TabIndex = 18;
             // 
             // lblMoeglicheAntwort2
@@ -570,7 +574,7 @@
             this.lblMoeglicheAntwort2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblMoeglicheAntwort2.Location = new System.Drawing.Point(130, 79);
             this.lblMoeglicheAntwort2.Name = "lblMoeglicheAntwort2";
-            this.lblMoeglicheAntwort2.Size = new System.Drawing.Size(685, 42);
+            this.lblMoeglicheAntwort2.Size = new System.Drawing.Size(683, 42);
             this.lblMoeglicheAntwort2.TabIndex = 19;
             // 
             // lblMoeglicheAntwort1
@@ -582,7 +586,7 @@
             this.lblMoeglicheAntwort1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblMoeglicheAntwort1.Location = new System.Drawing.Point(130, 0);
             this.lblMoeglicheAntwort1.Name = "lblMoeglicheAntwort1";
-            this.lblMoeglicheAntwort1.Size = new System.Drawing.Size(685, 42);
+            this.lblMoeglicheAntwort1.Size = new System.Drawing.Size(683, 42);
             this.lblMoeglicheAntwort1.TabIndex = 20;
             // 
             // lblMoeglicheAntwort5
@@ -593,15 +597,15 @@
             this.lblMoeglicheAntwort5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblMoeglicheAntwort5.Location = new System.Drawing.Point(130, 316);
             this.lblMoeglicheAntwort5.Name = "lblMoeglicheAntwort5";
-            this.lblMoeglicheAntwort5.Size = new System.Drawing.Size(685, 42);
+            this.lblMoeglicheAntwort5.Size = new System.Drawing.Size(683, 42);
             this.lblMoeglicheAntwort5.TabIndex = 21;
             // 
             // radioButton5
             // 
             this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(821, 319);
+            this.radioButton5.Location = new System.Drawing.Point(819, 319);
             this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(21, 20);
+            this.radioButton5.Size = new System.Drawing.Size(14, 13);
             this.radioButton5.TabIndex = 17;
             this.radioButton5.TabStop = true;
             this.radioButton5.UseVisualStyleBackColor = true;
@@ -626,11 +630,25 @@
             this.tabStatistik.Controls.Add(this.lblTitelStatistik);
             this.tabStatistik.Controls.Add(this.label1);
             this.tabStatistik.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabStatistik.Location = new System.Drawing.Point(4, 33);
+            this.tabStatistik.Location = new System.Drawing.Point(4, 25);
             this.tabStatistik.Name = "tabStatistik";
-            this.tabStatistik.Size = new System.Drawing.Size(1366, 877);
+            this.tabStatistik.Size = new System.Drawing.Size(1366, 885);
             this.tabStatistik.TabIndex = 2;
             this.tabStatistik.Text = "Statistik";
+            // 
+            // btnZumFeedbackStatistik
+            // 
+            this.btnZumFeedbackStatistik.FlatAppearance.BorderColor = System.Drawing.Color.Navy;
+            this.btnZumFeedbackStatistik.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnZumFeedbackStatistik.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnZumFeedbackStatistik.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnZumFeedbackStatistik.Location = new System.Drawing.Point(33, 705);
+            this.btnZumFeedbackStatistik.Name = "btnZumFeedbackStatistik";
+            this.btnZumFeedbackStatistik.Size = new System.Drawing.Size(201, 49);
+            this.btnZumFeedbackStatistik.TabIndex = 50;
+            this.btnZumFeedbackStatistik.Text = "Zum Feedback";
+            this.btnZumFeedbackStatistik.UseVisualStyleBackColor = true;
+            this.btnZumFeedbackStatistik.Click += new System.EventHandler(this.btnZumFeedbackStatistik_Click);
             // 
             // btnNochlSpielenStatistik
             // 
@@ -679,7 +697,7 @@
             this.lstHighscoreListeStatistiken.BackColor = System.Drawing.Color.PeachPuff;
             this.lstHighscoreListeStatistiken.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lstHighscoreListeStatistiken.FormattingEnabled = true;
-            this.lstHighscoreListeStatistiken.ItemHeight = 27;
+            this.lstHighscoreListeStatistiken.ItemHeight = 18;
             this.lstHighscoreListeStatistiken.Location = new System.Drawing.Point(691, 231);
             this.lstHighscoreListeStatistiken.Name = "lstHighscoreListeStatistiken";
             this.lstHighscoreListeStatistiken.Size = new System.Drawing.Size(641, 434);
@@ -704,7 +722,7 @@
             this.lblDeinePunkteAnzeige.AutoSize = true;
             this.lblDeinePunkteAnzeige.Location = new System.Drawing.Point(314, 169);
             this.lblDeinePunkteAnzeige.Name = "lblDeinePunkteAnzeige";
-            this.lblDeinePunkteAnzeige.Size = new System.Drawing.Size(306, 27);
+            this.lblDeinePunkteAnzeige.Size = new System.Drawing.Size(198, 18);
             this.lblDeinePunkteAnzeige.TabIndex = 42;
             this.lblDeinePunkteAnzeige.Text = "Deine erreichbaren Punkte:";
             // 
@@ -713,7 +731,7 @@
             this.lblAnzeigeErreichbarePunkte.AutoSize = true;
             this.lblAnzeigeErreichbarePunkte.Location = new System.Drawing.Point(332, 269);
             this.lblAnzeigeErreichbarePunkte.Name = "lblAnzeigeErreichbarePunkte";
-            this.lblAnzeigeErreichbarePunkte.Size = new System.Drawing.Size(279, 27);
+            this.lblAnzeigeErreichbarePunkte.Size = new System.Drawing.Size(181, 18);
             this.lblAnzeigeErreichbarePunkte.TabIndex = 41;
             this.lblAnzeigeErreichbarePunkte.Text = "Die erreichbaren Punkte:";
             // 
@@ -723,7 +741,7 @@
             this.LblNamenEingabe.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblNamenEingabe.Location = new System.Drawing.Point(116, 412);
             this.LblNamenEingabe.Name = "LblNamenEingabe";
-            this.LblNamenEingabe.Size = new System.Drawing.Size(118, 24);
+            this.LblNamenEingabe.Size = new System.Drawing.Size(87, 16);
             this.LblNamenEingabe.TabIndex = 40;
             this.LblNamenEingabe.Text = "Dein Name:";
             // 
@@ -733,7 +751,7 @@
             this.txtStatistikNameEintragen.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStatistikNameEintragen.Location = new System.Drawing.Point(314, 412);
             this.txtStatistikNameEintragen.Name = "txtStatistikNameEintragen";
-            this.txtStatistikNameEintragen.Size = new System.Drawing.Size(330, 33);
+            this.txtStatistikNameEintragen.Size = new System.Drawing.Size(330, 24);
             this.txtStatistikNameEintragen.TabIndex = 39;
             // 
             // btnCloseStatistik
@@ -756,7 +774,7 @@
             this.lblTitelHighscoreList.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitelHighscoreList.Location = new System.Drawing.Point(723, 174);
             this.lblTitelHighscoreList.Name = "lblTitelHighscoreList";
-            this.lblTitelHighscoreList.Size = new System.Drawing.Size(158, 24);
+            this.lblTitelHighscoreList.Size = new System.Drawing.Size(118, 16);
             this.lblTitelHighscoreList.TabIndex = 7;
             this.lblTitelHighscoreList.Text = "Highscore Liste";
             // 
@@ -766,7 +784,7 @@
             this.lblTextErreichbarePunktzahl.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTextErreichbarePunktzahl.Location = new System.Drawing.Point(116, 272);
             this.lblTextErreichbarePunktzahl.Name = "lblTextErreichbarePunktzahl";
-            this.lblTextErreichbarePunktzahl.Size = new System.Drawing.Size(199, 24);
+            this.lblTextErreichbarePunktzahl.Size = new System.Drawing.Size(148, 16);
             this.lblTextErreichbarePunktzahl.TabIndex = 2;
             this.lblTextErreichbarePunktzahl.Text = "Erreichbare Punkte:";
             // 
@@ -776,7 +794,7 @@
             this.lblTextPunktzahl.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTextPunktzahl.Location = new System.Drawing.Point(116, 172);
             this.lblTextPunktzahl.Name = "lblTextPunktzahl";
-            this.lblTextPunktzahl.Size = new System.Drawing.Size(175, 24);
+            this.lblTextPunktzahl.Size = new System.Drawing.Size(130, 16);
             this.lblTextPunktzahl.TabIndex = 1;
             this.lblTextPunktzahl.Text = "Erreichte Punkte:";
             // 
@@ -786,7 +804,7 @@
             this.lblTitelStatistik.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitelStatistik.Location = new System.Drawing.Point(506, 29);
             this.lblTitelStatistik.Name = "lblTitelStatistik";
-            this.lblTitelStatistik.Size = new System.Drawing.Size(126, 36);
+            this.lblTitelStatistik.Size = new System.Drawing.Size(88, 25);
             this.lblTitelStatistik.TabIndex = 0;
             this.lblTitelStatistik.Text = "Statistik";
             // 
@@ -839,10 +857,10 @@
             this.tabNeueFragen.Controls.Add(this.lblFragenEditorTitel);
             this.tabNeueFragen.Controls.Add(this.lblAnzeigeLogoFragenEditor);
             this.tabNeueFragen.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabNeueFragen.Location = new System.Drawing.Point(4, 33);
+            this.tabNeueFragen.Location = new System.Drawing.Point(4, 25);
             this.tabNeueFragen.Name = "tabNeueFragen";
             this.tabNeueFragen.Padding = new System.Windows.Forms.Padding(3);
-            this.tabNeueFragen.Size = new System.Drawing.Size(1366, 877);
+            this.tabNeueFragen.Size = new System.Drawing.Size(1366, 885);
             this.tabNeueFragen.TabIndex = 1;
             this.tabNeueFragen.Text = "FragenEditor";
             // 
@@ -922,7 +940,7 @@
             this.lblFragenListe.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFragenListe.Location = new System.Drawing.Point(28, 517);
             this.lblFragenListe.Name = "lblFragenListe";
-            this.lblFragenListe.Size = new System.Drawing.Size(172, 24);
+            this.lblFragenListe.Size = new System.Drawing.Size(128, 16);
             this.lblFragenListe.TabIndex = 39;
             this.lblFragenListe.Text = "Liste der Fragen:";
             // 
@@ -930,10 +948,10 @@
             // 
             this.lstFragenliste.BackColor = System.Drawing.Color.PeachPuff;
             this.lstFragenliste.FormattingEnabled = true;
-            this.lstFragenliste.ItemHeight = 25;
+            this.lstFragenliste.ItemHeight = 17;
             this.lstFragenliste.Location = new System.Drawing.Point(220, 517);
             this.lstFragenliste.Name = "lstFragenliste";
-            this.lstFragenliste.Size = new System.Drawing.Size(969, 154);
+            this.lstFragenliste.Size = new System.Drawing.Size(969, 140);
             this.lstFragenliste.TabIndex = 38;
             // 
             // btnFrageLöschern
@@ -970,7 +988,7 @@
             this.label11.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(1082, 128);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(159, 23);
+            this.label11.Size = new System.Drawing.Size(113, 16);
             this.label11.TabIndex = 26;
             this.label11.Text = "Richtige Antwort:";
             // 
@@ -980,7 +998,7 @@
             this.label10.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(1136, 445);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(53, 23);
+            this.label10.Size = new System.Drawing.Size(38, 16);
             this.label10.TabIndex = 25;
             this.label10.Text = "wahr";
             // 
@@ -990,7 +1008,7 @@
             this.label9.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(1136, 386);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(53, 23);
+            this.label9.Size = new System.Drawing.Size(38, 16);
             this.label9.TabIndex = 24;
             this.label9.Text = "wahr";
             // 
@@ -1000,7 +1018,7 @@
             this.label8.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(1136, 331);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(53, 23);
+            this.label8.Size = new System.Drawing.Size(38, 16);
             this.label8.TabIndex = 23;
             this.label8.Text = "wahr";
             // 
@@ -1010,7 +1028,7 @@
             this.label7.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(1136, 274);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 23);
+            this.label7.Size = new System.Drawing.Size(38, 16);
             this.label7.TabIndex = 22;
             this.label7.Text = "wahr";
             // 
@@ -1020,7 +1038,7 @@
             this.label6.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(1136, 215);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 23);
+            this.label6.Size = new System.Drawing.Size(38, 16);
             this.label6.TabIndex = 21;
             this.label6.Text = "wahr";
             // 
@@ -1031,7 +1049,7 @@
             this.radioButton10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.radioButton10.Location = new System.Drawing.Point(1082, 445);
             this.radioButton10.Name = "radioButton10";
-            this.radioButton10.Size = new System.Drawing.Size(21, 20);
+            this.radioButton10.Size = new System.Drawing.Size(14, 13);
             this.radioButton10.TabIndex = 20;
             this.radioButton10.TabStop = true;
             this.radioButton10.UseVisualStyleBackColor = true;
@@ -1043,7 +1061,7 @@
             this.radioButton9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.radioButton9.Location = new System.Drawing.Point(1082, 386);
             this.radioButton9.Name = "radioButton9";
-            this.radioButton9.Size = new System.Drawing.Size(21, 20);
+            this.radioButton9.Size = new System.Drawing.Size(14, 13);
             this.radioButton9.TabIndex = 19;
             this.radioButton9.TabStop = true;
             this.radioButton9.UseVisualStyleBackColor = true;
@@ -1055,7 +1073,7 @@
             this.radioButton8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.radioButton8.Location = new System.Drawing.Point(1082, 331);
             this.radioButton8.Name = "radioButton8";
-            this.radioButton8.Size = new System.Drawing.Size(21, 20);
+            this.radioButton8.Size = new System.Drawing.Size(14, 13);
             this.radioButton8.TabIndex = 18;
             this.radioButton8.TabStop = true;
             this.radioButton8.UseVisualStyleBackColor = true;
@@ -1067,7 +1085,7 @@
             this.radioButton7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.radioButton7.Location = new System.Drawing.Point(1082, 274);
             this.radioButton7.Name = "radioButton7";
-            this.radioButton7.Size = new System.Drawing.Size(21, 20);
+            this.radioButton7.Size = new System.Drawing.Size(14, 13);
             this.radioButton7.TabIndex = 17;
             this.radioButton7.TabStop = true;
             this.radioButton7.UseVisualStyleBackColor = true;
@@ -1079,7 +1097,7 @@
             this.radioButton6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.radioButton6.Location = new System.Drawing.Point(1082, 217);
             this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(21, 20);
+            this.radioButton6.Size = new System.Drawing.Size(14, 13);
             this.radioButton6.TabIndex = 16;
             this.radioButton6.TabStop = true;
             this.radioButton6.UseVisualStyleBackColor = true;
@@ -1140,7 +1158,7 @@
             this.label5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(64, 446);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(108, 24);
+            this.label5.Size = new System.Drawing.Size(78, 16);
             this.label5.TabIndex = 10;
             this.label5.Text = "Antwort 5:";
             // 
@@ -1150,7 +1168,7 @@
             this.label4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(64, 389);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(108, 24);
+            this.label4.Size = new System.Drawing.Size(78, 16);
             this.label4.TabIndex = 9;
             this.label4.Text = "Antwort 4:";
             // 
@@ -1160,7 +1178,7 @@
             this.label3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(64, 332);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 24);
+            this.label3.Size = new System.Drawing.Size(78, 16);
             this.label3.TabIndex = 8;
             this.label3.Text = "Antwort 3:";
             // 
@@ -1170,7 +1188,7 @@
             this.label2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(64, 275);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 24);
+            this.label2.Size = new System.Drawing.Size(78, 16);
             this.label2.TabIndex = 7;
             this.label2.Text = "Antwort 2:";
             // 
@@ -1180,7 +1198,7 @@
             this.lblAntwortInfo1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAntwortInfo1.Location = new System.Drawing.Point(64, 215);
             this.lblAntwortInfo1.Name = "lblAntwortInfo1";
-            this.lblAntwortInfo1.Size = new System.Drawing.Size(108, 24);
+            this.lblAntwortInfo1.Size = new System.Drawing.Size(78, 16);
             this.lblAntwortInfo1.TabIndex = 6;
             this.lblAntwortInfo1.Text = "Antwort 1:";
             // 
@@ -1190,7 +1208,7 @@
             this.lblKennzeichnungFrage.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKennzeichnungFrage.Location = new System.Drawing.Point(64, 112);
             this.lblKennzeichnungFrage.Name = "lblKennzeichnungFrage";
-            this.lblKennzeichnungFrage.Size = new System.Drawing.Size(136, 26);
+            this.lblKennzeichnungFrage.Size = new System.Drawing.Size(95, 18);
             this.lblKennzeichnungFrage.TabIndex = 5;
             this.lblKennzeichnungFrage.Text = "Neue Frage:";
             // 
@@ -1210,7 +1228,7 @@
             this.lblFragenEditorTitel.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFragenEditorTitel.Location = new System.Drawing.Point(324, 28);
             this.lblFragenEditorTitel.Name = "lblFragenEditorTitel";
-            this.lblFragenEditorTitel.Size = new System.Drawing.Size(610, 36);
+            this.lblFragenEditorTitel.Size = new System.Drawing.Size(413, 25);
             this.lblFragenEditorTitel.TabIndex = 0;
             this.lblFragenEditorTitel.Text = "Neue Fragen erstellen / Fragen bearbeiten";
             // 
@@ -1226,6 +1244,10 @@
             // tabKommentarSeite
             // 
             this.tabKommentarSeite.BackColor = System.Drawing.Color.Bisque;
+            this.tabKommentarSeite.Controls.Add(this.label12);
+            this.tabKommentarSeite.Controls.Add(this.lblKommenatreKommentarlisteAnzeige);
+            this.tabKommentarSeite.Controls.Add(this.lblKommentareKommentarAnzeige);
+            this.tabKommentarSeite.Controls.Add(this.lblKommentarAnzeigeDuschreibst);
             this.tabKommentarSeite.Controls.Add(this.btnKommentarClose);
             this.tabKommentarSeite.Controls.Add(this.btnKommentarAnzeigen);
             this.tabKommentarSeite.Controls.Add(this.btnLoescheKommentare);
@@ -1236,11 +1258,31 @@
             this.tabKommentarSeite.Controls.Add(this.lstKommentarListe);
             this.tabKommentarSeite.Controls.Add(this.lblKommentareTitelAnzeige);
             this.tabKommentarSeite.Controls.Add(this.lblKommentareHintergrund);
-            this.tabKommentarSeite.Location = new System.Drawing.Point(4, 33);
+            this.tabKommentarSeite.Location = new System.Drawing.Point(4, 25);
             this.tabKommentarSeite.Name = "tabKommentarSeite";
-            this.tabKommentarSeite.Size = new System.Drawing.Size(1366, 877);
+            this.tabKommentarSeite.Size = new System.Drawing.Size(1366, 885);
             this.tabKommentarSeite.TabIndex = 4;
             this.tabKommentarSeite.Text = "Kommentare";
+            // 
+            // lblKommentareKommentarAnzeige
+            // 
+            this.lblKommentareKommentarAnzeige.AutoSize = true;
+            this.lblKommentareKommentarAnzeige.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKommentareKommentarAnzeige.Location = new System.Drawing.Point(98, 435);
+            this.lblKommentareKommentarAnzeige.Name = "lblKommentareKommentarAnzeige";
+            this.lblKommentareKommentarAnzeige.Size = new System.Drawing.Size(86, 16);
+            this.lblKommentareKommentarAnzeige.TabIndex = 11;
+            this.lblKommentareKommentarAnzeige.Text = "Kommentar:";
+            // 
+            // lblKommentarAnzeigeDuschreibst
+            // 
+            this.lblKommentarAnzeigeDuschreibst.AutoSize = true;
+            this.lblKommentarAnzeigeDuschreibst.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKommentarAnzeigeDuschreibst.Location = new System.Drawing.Point(99, 119);
+            this.lblKommentarAnzeigeDuschreibst.Name = "lblKommentarAnzeigeDuschreibst";
+            this.lblKommentarAnzeigeDuschreibst.Size = new System.Drawing.Size(89, 16);
+            this.lblKommentarAnzeigeDuschreibst.TabIndex = 10;
+            this.lblKommentarAnzeigeDuschreibst.Text = "Du schreibst:";
             // 
             // btnKommentarClose
             // 
@@ -1260,6 +1302,7 @@
             this.btnKommentarAnzeigen.TabIndex = 8;
             this.btnKommentarAnzeigen.Text = "Anzeigen";
             this.btnKommentarAnzeigen.UseVisualStyleBackColor = true;
+            this.btnKommentarAnzeigen.Click += new System.EventHandler(this.btnKommentarAnzeigen_Click);
             // 
             // btnLoescheKommentare
             // 
@@ -1269,6 +1312,7 @@
             this.btnLoescheKommentare.TabIndex = 6;
             this.btnLoescheKommentare.Text = "Löschen";
             this.btnLoescheKommentare.UseVisualStyleBackColor = true;
+            this.btnLoescheKommentare.Click += new System.EventHandler(this.btnLoescheKommentare_Click);
             // 
             // btnKommentarSpeichern
             // 
@@ -1282,12 +1326,12 @@
             // 
             // txtKommentareEintragen
             // 
+            this.txtKommentareEintragen.BackColor = System.Drawing.Color.PeachPuff;
             this.txtKommentareEintragen.Location = new System.Drawing.Point(99, 158);
             this.txtKommentareEintragen.Multiline = true;
             this.txtKommentareEintragen.Name = "txtKommentareEintragen";
             this.txtKommentareEintragen.Size = new System.Drawing.Size(675, 223);
             this.txtKommentareEintragen.TabIndex = 4;
-            this.txtKommentareEintragen.Text = "Du schreibst: ";
             // 
             // lblKommentarAnzeigen
             // 
@@ -1297,7 +1341,6 @@
             this.lblKommentarAnzeigen.Name = "lblKommentarAnzeigen";
             this.lblKommentarAnzeigen.Size = new System.Drawing.Size(679, 191);
             this.lblKommentarAnzeigen.TabIndex = 3;
-            this.lblKommentarAnzeigen.Text = "Kommentar:";
             // 
             // btnZurueckKommentare
             // 
@@ -1311,8 +1354,9 @@
             // 
             // lstKommentarListe
             // 
+            this.lstKommentarListe.BackColor = System.Drawing.Color.PeachPuff;
             this.lstKommentarListe.FormattingEnabled = true;
-            this.lstKommentarListe.ItemHeight = 24;
+            this.lstKommentarListe.ItemHeight = 16;
             this.lstKommentarListe.Location = new System.Drawing.Point(1033, 159);
             this.lstKommentarListe.Name = "lstKommentarListe";
             this.lstKommentarListe.Size = new System.Drawing.Size(276, 388);
@@ -1323,7 +1367,7 @@
             this.lblKommentareTitelAnzeige.AutoSize = true;
             this.lblKommentareTitelAnzeige.Location = new System.Drawing.Point(95, 70);
             this.lblKommentareTitelAnzeige.Name = "lblKommentareTitelAnzeige";
-            this.lblKommentareTitelAnzeige.Size = new System.Drawing.Size(0, 24);
+            this.lblKommentareTitelAnzeige.Size = new System.Drawing.Size(0, 17);
             this.lblKommentareTitelAnzeige.TabIndex = 0;
             // 
             // lblKommentareHintergrund
@@ -1335,19 +1379,25 @@
             this.lblKommentareHintergrund.Size = new System.Drawing.Size(934, 860);
             this.lblKommentareHintergrund.TabIndex = 7;
             // 
-            // btnZumFeedbackStatistik
+            // lblKommenatreKommentarlisteAnzeige
             // 
-            this.btnZumFeedbackStatistik.FlatAppearance.BorderColor = System.Drawing.Color.Navy;
-            this.btnZumFeedbackStatistik.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnZumFeedbackStatistik.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnZumFeedbackStatistik.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnZumFeedbackStatistik.Location = new System.Drawing.Point(33, 705);
-            this.btnZumFeedbackStatistik.Name = "btnZumFeedbackStatistik";
-            this.btnZumFeedbackStatistik.Size = new System.Drawing.Size(201, 49);
-            this.btnZumFeedbackStatistik.TabIndex = 50;
-            this.btnZumFeedbackStatistik.Text = "Zum Feedback";
-            this.btnZumFeedbackStatistik.UseVisualStyleBackColor = true;
-            this.btnZumFeedbackStatistik.Click += new System.EventHandler(this.btnZumFeedbackStatistik_Click);
+            this.lblKommenatreKommentarlisteAnzeige.AutoSize = true;
+            this.lblKommenatreKommentarlisteAnzeige.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKommenatreKommentarlisteAnzeige.Location = new System.Drawing.Point(1033, 119);
+            this.lblKommenatreKommentarlisteAnzeige.Name = "lblKommenatreKommentarlisteAnzeige";
+            this.lblKommenatreKommentarlisteAnzeige.Size = new System.Drawing.Size(94, 16);
+            this.lblKommenatreKommentarlisteAnzeige.TabIndex = 12;
+            this.lblKommenatreKommentarlisteAnzeige.Text = "Kommentare:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(525, 35);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(102, 24);
+            this.label12.TabIndex = 13;
+            this.label12.Text = "Feedback";
             // 
             // Form1
             // 
@@ -1480,6 +1530,10 @@
         private System.Windows.Forms.Button btnFragenEditorGoBack;
         private System.Windows.Forms.Button btnNochlSpielenStatistik;
         private System.Windows.Forms.Button btnZumFeedbackStatistik;
+        private System.Windows.Forms.Label lblKommentareKommentarAnzeige;
+        private System.Windows.Forms.Label lblKommentarAnzeigeDuschreibst;
+        private System.Windows.Forms.Label lblKommenatreKommentarlisteAnzeige;
+        private System.Windows.Forms.Label label12;
     }
 }
 

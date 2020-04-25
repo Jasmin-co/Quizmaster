@@ -516,34 +516,64 @@ namespace LitteQuizMaster
 
         /**TAB KOMMENTARE - gebe dein Feedback - TAB Kommentare - gebe dein Feedback - TAB Kommentare - TAB Kommentare - gebe dein Feedback*/
         Kommentare neuerKommentarspeichern = new Kommentare();
-        private void KommentarlisteSynch()  //Kommentarliste Synchronisation
+        
+        
+
+        private void btnKommentarSpeichern_Click(object sender, EventArgs e) //Kommentar speichern
+        {
+              Kommentare kommentarObjekt = new Kommentare();
+              string kommentar = txtKommentareEintragen.Text;
+                kommentarObjekt.SetKommentarliste(kommentar);
+
+
+                 lstKommentarListe.Items.Add (kommentar);        //fügt den eingegebenen Kommentar der Liste hinzu
+
+                 neuerKommentarspeichern.GetKommentarliste();    //und zeigt diesen in der Listbox der Kommentarliste; jedoch will er nicht bei der Synchronisation
+
+
+           // KommentarlisteSynch();//klappt nicht
+            SerialisierungKommentarliste();
+            
+        }
+        private void btnLoescheKommentare_Click(object sender, EventArgs e)
+        {
+            listeKommentare.RemoveAt(lstKommentarListe.SelectedIndex);
+            //Synchronisation
+            //Serialisierung
+
+        }
+        private void btnKommentarAnzeigen_Click(object sender, EventArgs e)
+        {
+
+            Kommentare kommentarAnzeigen = listeKommentare[lstKommentarListe.SelectedIndex];//noch Fehlerhaft ggf liegt es an GetKommentarliste
+            lblKommentarAnzeigen.Text = kommentarAnzeigen.GetKommentarliste();
+            
+        }
+
+        #region auskommentiertes Zeug
+        /*   Kommentare KommentarSpeichern()
+           {
+               Kommentare kommentar = new Kommentare();
+               string neuerKommentarEintrag = txtKommentareEintragen.Text;
+               kommentar.SetKommentar(neuerKommentarEintrag);
+               return kommentar;
+           }
+           /*   Kommentare KommentarSpeichern()
+              {
+
+                  string neuerKommentar = txtKommentareEintragen.Text;
+                  neuerKommentarspeichern.SetKommentar(neuerKommentar);
+                  return neuerKommentarspeichern;
+              }*/
+        #endregion
+        private void KommentarlisteSynch()  //Kommentarliste Synchronisation  - was stimmt hier nicht - sobald mit sync. zeigt er den text nicht an
         {
             lstKommentarListe.Items.Clear();  //Eingabefeld geleert wird
 
             for (int i = 0; i < listeKommentare.Count; i++)  //geht die Liste anhand des Index durch
             {
-                lstKommentarListe.Items.Add(listeKommentare[i].GetKommentarliste());
+                lstKommentarListe.Items.Add(listeKommentare[i].GetKommentarliste());        //ich dachte der hat durch setkommentarliste den parameter
             }
-        }
-
-        private void btnKommentarSpeichern_Click(object sender, EventArgs e) //Kommentar speichern
-        {
-            Kommentare kommentarObjekt = new Kommentare();
-            string kommentar = txtKommentareEintragen.Text;
-            lstKommentarListe.Items.Add (kommentar);        //fügt den eingegebenen Kommentar der Liste hinzu
-            neuerKommentarspeichern.GetKommentarliste();    //und zeigt diesen in der Listbox der Kommentarliste
-          
-
-
-            SerialisierungKommentarliste();
-           // KommentarlisteSynch();//klappt nicht
-        }
-        Kommentare KommentarSpeichern()
-        {
-            
-            string neuerKommentar = txtKommentareEintragen.Text;
-            neuerKommentarspeichern.SetKommentar(neuerKommentar);
-            return neuerKommentarspeichern;
         }
         private void btnZurueckKommentare_Click(object sender, EventArgs e)
         {
@@ -606,22 +636,26 @@ namespace LitteQuizMaster
             binaryFormatter.Serialize(stream, listeKommentare);
             stream.Close();
         }
-      /* public void DeserialisierungKommentarliste()
-        {
-            FileStream streamKommentardaten = new FileStream(@"C:\Users\black\source\repos\Kommentare.txt", FileMode.Open, FileAccess.Read);
-            BinaryFormatter binaryFormatterKommentarliste = new BinaryFormatter();
-            listeKommentare = (List<Kommentare>)binaryFormatterKommentarliste.Deserialize(streamKommentardaten);
-            KommentarlisteSynch();
-        }*/
+
+   
+
+
+        /* public void DeserialisierungKommentarliste()
+ {
+     FileStream streamKommentardaten = new FileStream(@"C:\Users\black\source\repos\Kommentare.txt", FileMode.Open, FileAccess.Read);
+     BinaryFormatter binaryFormatterKommentarliste = new BinaryFormatter();
+     listeKommentare = (List<Kommentare>)binaryFormatterKommentarliste.Deserialize(streamKommentardaten);
+     KommentarlisteSynch();
+ }*/
 
 
 
 
         /*Bauecke*/
 
-      
 
-      
+
+
     }
 
 }
