@@ -515,7 +515,7 @@ namespace LitteQuizMaster
 
 
         /**TAB KOMMENTARE - gebe dein Feedback - TAB Kommentare - gebe dein Feedback - TAB Kommentare - TAB Kommentare - gebe dein Feedback*/
-
+        Kommentare neuerKommentarspeichern = new Kommentare();
         private void KommentarlisteSynch()  //Kommentarliste Synchronisation
         {
             lstKommentarListe.Items.Clear();  //Eingabefeld geleert wird
@@ -528,18 +528,19 @@ namespace LitteQuizMaster
 
         private void btnKommentarSpeichern_Click(object sender, EventArgs e) //Kommentar speichern
         {
+            Kommentare kommentarObjekt = new Kommentare();
             string kommentar = txtKommentareEintragen.Text;
-
-            Kommentare kommi = KommentarSpeichern();
-            listeKommentare.Add(kommi);
+            lstKommentarListe.Items.Add (kommentar);        //fügt den eingegebenen Kommentar der Liste hinzu
+            neuerKommentarspeichern.GetKommentarliste();    //und zeigt diesen in der Listbox der Kommentarliste
+          
 
 
             SerialisierungKommentarliste();
-            KommentarlisteSynch();
+           // KommentarlisteSynch();//klappt nicht
         }
         Kommentare KommentarSpeichern()
         {
-            Kommentare neuerKommentarspeichern = new Kommentare();
+            
             string neuerKommentar = txtKommentareEintragen.Text;
             neuerKommentarspeichern.SetKommentar(neuerKommentar);
             return neuerKommentarspeichern;
