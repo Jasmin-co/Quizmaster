@@ -62,7 +62,7 @@ namespace LitteQuizMaster
             lblBegruessungsText.Text = willkommensTextStartSeite.GetBegruessungsTextStartSeite();
             lblStartSeiteSchlussSatz.Text = willkommensTextStartSeite.GetSchlussSatzStartSeite();
             lblDatumUhrzeitStartSeite.Text = "Seit " + Convert.ToString(DateTime.Now) + " online ";
-            lblKommentareTitelAnzeige.Text = kommentare.GetKommentarTextAufforderung();
+         
         }
 
         /* Startseite: Menueauswahl */
@@ -109,10 +109,7 @@ namespace LitteQuizMaster
             DeserialisierungHighscoreliste();
         }
 
-        private void btnZurKommentarSeite_Click(object sender, EventArgs e)
-        {
-            tabControl1.SelectTab(tabKommentarSeite);
-        }
+     
 
 
         private void btnStartSeiteClose_Click(object sender, EventArgs e)
@@ -343,10 +340,7 @@ namespace LitteQuizMaster
         {
             tabControl1.SelectTab(tabStartSeite);
         }
-        private void btnZumFeedbackStatistik_Click(object sender, EventArgs e)
-        {
-            tabControl1.SelectTab(tabKommentarSeite);
-        }
+    
         private void btnNochlSpielenStatistik_Click(object sender, EventArgs e)
         {
             tabControl1.SelectTab(tabQuiz);
