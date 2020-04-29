@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 
 
@@ -37,7 +39,7 @@ namespace LitteQuizMaster
         private List<Frage> listeFragen = new List<Frage>();   //Fragenliste für die Fragen erstellt
         private List<Statistiken> listehighscore = new List<Statistiken>();
      
-
+      
 
         public Form1()      //Konstruktor
         {
@@ -161,7 +163,7 @@ namespace LitteQuizMaster
                     
                     MessageBox.Show("Korrekt." + "\nDeine Punkte: " + spielerStatistiken.GetPunkte() +" von " +spielerStatistiken.GetAnzahlFragen() + " Punkte(n)");
 
-                    if ( spielerStatistiken.GetAnzahlFragen() <  listeFragen.Count) {
+                    if ( spielerStatistiken.GetAnzahlFragen() <  listeFragen.Count) {       //Überprüfung ob die max Anzahl an Fragen gestellt wurde
 
                         FrageHolenQuiz();
                         RadioButtonQuizLeeren();
@@ -244,10 +246,40 @@ namespace LitteQuizMaster
             
         }
 
-        private void btnQuizStopp_Click(object sender, EventArgs e) //Testbutton
+        private void btnQuizStopp_Click(object sender, EventArgs e) //Sobald stopp geklickt wurde, soll das Spiel zuende sein
         {
+            /* Dazu wird benötigt:
+             * Variable die weiß wie viele Fragen noch in der Liste sind(gestellt werden)  listeFragen.Count
+             * aktuellen Punktestand
+             * - Spielerpunkte die er bereits gespielt hat: Methode GetPunkte  oder statistik.spielpunkte
+             * Maxpunkte die er hätte erreichen können Anzahl der Fragen
+             * Übergang zur "Beendigungsfunktion des Spiel
+             * spieler spielt 5 Fragen
+             *  spielerpunkte 5 , theor. würde das Spiel solange laufen wie die Anzahl der Fragen ist.
+             *  23 - 5 = 18 Punkte die noch hätten erreicht werden können
+             *  also irgendwie sowas spielerStatistiken.GetAnzahlFragen() =  listeFragen.Count ?
+                 */
+                 if(spielerStatistiken.GetAnzahlFragen() < listeFragen.Count)
+            {
+                //addiere den Rest der "Fragen hätten noch getsellt werden können" dazu, sodass die maximal Frageanzahl erreicht ist und das Spiel endet
+
+                int anzahlDerFragenInDerListe = listeFragen.Count;        //Wertübergabe Anzahl der Fragen in der Liste
+                int stoppErreichtePunkte = spielerStatistiken.GetPunkte();      //Wertübergabe die aktuell erspielten Punkte
+
+                int nichtgestellteFragen =(anzahlDerFragenInDerListe - stoppErreichtePunkte);
+
+                MessageBox.Show("Spiel ist zu Ende");
+                tabControl1.SelectTab(tabStatistik);
+                lblDeinePunkteAnzeige.Text = Convert.ToString(spielerStatistiken.GetPunkte());
+                lblAnzeigeErreichbarePunkte.Text = Convert.ToString(spielerStatistiken.GetAnzahlFragen()+ (nichtgestellteFragen -1));
+                //Ist zwar nicht so schön, aber es funktioniert
+            }
+                 
+           
 
         }
+      
+  
 
         private void btnCloseQuiz_Click(object sender, EventArgs e)
         {

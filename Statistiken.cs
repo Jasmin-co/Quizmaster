@@ -78,5 +78,9 @@ namespace LitteQuizMaster
             return fragenZaehlerZwischenspeicher;
         }
 
+        
+
+      
+
        }
 }
