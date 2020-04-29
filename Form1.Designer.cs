@@ -134,7 +134,7 @@
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Font = new System.Drawing.Font("Arial Narrow", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(916, 594);
@@ -153,7 +153,7 @@
             this.tabStartSeite.Controls.Add(this.btnZurQuizSeite);
             this.tabStartSeite.Controls.Add(this.lblBegruessungsText);
             this.tabStartSeite.Location = new System.Drawing.Point(4, 25);
-            this.tabStartSeite.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabStartSeite.Margin = new System.Windows.Forms.Padding(2);
             this.tabStartSeite.Name = "tabStartSeite";
             this.tabStartSeite.Size = new System.Drawing.Size(908, 565);
             this.tabStartSeite.TabIndex = 3;
@@ -176,7 +176,7 @@
             // btnStartSeiteClose
             // 
             this.btnStartSeiteClose.Location = new System.Drawing.Point(636, 489);
-            this.btnStartSeiteClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStartSeiteClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnStartSeiteClose.Name = "btnStartSeiteClose";
             this.btnStartSeiteClose.Size = new System.Drawing.Size(221, 42);
             this.btnStartSeiteClose.TabIndex = 7;
@@ -211,7 +211,7 @@
             // btnZurStatistikenSeite
             // 
             this.btnZurStatistikenSeite.Location = new System.Drawing.Point(636, 377);
-            this.btnZurStatistikenSeite.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnZurStatistikenSeite.Margin = new System.Windows.Forms.Padding(2);
             this.btnZurStatistikenSeite.Name = "btnZurStatistikenSeite";
             this.btnZurStatistikenSeite.Size = new System.Drawing.Size(221, 42);
             this.btnZurStatistikenSeite.TabIndex = 3;
@@ -222,7 +222,7 @@
             // btnZurFragenEditorSeite
             // 
             this.btnZurFragenEditorSeite.Location = new System.Drawing.Point(636, 322);
-            this.btnZurFragenEditorSeite.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnZurFragenEditorSeite.Margin = new System.Windows.Forms.Padding(2);
             this.btnZurFragenEditorSeite.Name = "btnZurFragenEditorSeite";
             this.btnZurFragenEditorSeite.Size = new System.Drawing.Size(221, 42);
             this.btnZurFragenEditorSeite.TabIndex = 2;
@@ -233,7 +233,7 @@
             // btnZurQuizSeite
             // 
             this.btnZurQuizSeite.Location = new System.Drawing.Point(636, 270);
-            this.btnZurQuizSeite.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnZurQuizSeite.Margin = new System.Windows.Forms.Padding(2);
             this.btnZurQuizSeite.Name = "btnZurQuizSeite";
             this.btnZurQuizSeite.Size = new System.Drawing.Size(221, 42);
             this.btnZurQuizSeite.TabIndex = 1;
@@ -271,9 +271,9 @@
             this.tabQuiz.Controls.Add(this.tableLayoutPanel1);
             this.tabQuiz.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabQuiz.Location = new System.Drawing.Point(4, 25);
-            this.tabQuiz.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabQuiz.Margin = new System.Windows.Forms.Padding(2);
             this.tabQuiz.Name = "tabQuiz";
-            this.tabQuiz.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabQuiz.Padding = new System.Windows.Forms.Padding(2);
             this.tabQuiz.Size = new System.Drawing.Size(908, 565);
             this.tabQuiz.TabIndex = 0;
             this.tabQuiz.Text = "Quiz";
@@ -285,7 +285,7 @@
             this.btnCloseQuiz.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCloseQuiz.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnCloseQuiz.Location = new System.Drawing.Point(694, 519);
-            this.btnCloseQuiz.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCloseQuiz.Margin = new System.Windows.Forms.Padding(2);
             this.btnCloseQuiz.Name = "btnCloseQuiz";
             this.btnCloseQuiz.Size = new System.Drawing.Size(86, 32);
             this.btnCloseQuiz.TabIndex = 35;
@@ -299,8 +299,8 @@
             this.btnQuizStopp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuizStopp.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuizStopp.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnQuizStopp.Location = new System.Drawing.Point(208, 428);
-            this.btnQuizStopp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnQuizStopp.Location = new System.Drawing.Point(366, 519);
+            this.btnQuizStopp.Margin = new System.Windows.Forms.Padding(2);
             this.btnQuizStopp.Name = "btnQuizStopp";
             this.btnQuizStopp.Size = new System.Drawing.Size(86, 32);
             this.btnQuizStopp.TabIndex = 37;
@@ -315,7 +315,7 @@
             this.btnStart.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStart.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnStart.Location = new System.Drawing.Point(56, 428);
-            this.btnStart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStart.Margin = new System.Windows.Forms.Padding(2);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(86, 32);
             this.btnStart.TabIndex = 36;
@@ -329,8 +329,8 @@
             this.btnAntwortSetzen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAntwortSetzen.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAntwortSetzen.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnAntwortSetzen.Location = new System.Drawing.Point(655, 412);
-            this.btnAntwortSetzen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAntwortSetzen.Location = new System.Drawing.Point(497, 428);
+            this.btnAntwortSetzen.Margin = new System.Windows.Forms.Padding(2);
             this.btnAntwortSetzen.Name = "btnAntwortSetzen";
             this.btnAntwortSetzen.Size = new System.Drawing.Size(86, 32);
             this.btnAntwortSetzen.TabIndex = 34;
@@ -345,7 +345,7 @@
             this.btnQuizGoBack.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuizGoBack.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnQuizGoBack.Location = new System.Drawing.Point(56, 519);
-            this.btnQuizGoBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnQuizGoBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnQuizGoBack.Name = "btnQuizGoBack";
             this.btnQuizGoBack.Size = new System.Drawing.Size(86, 32);
             this.btnQuizGoBack.TabIndex = 33;
@@ -414,7 +414,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.62867F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 84.37133F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 113F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 114F));
             this.tableLayoutPanel1.Controls.Add(this.radioButton3, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.radioButton4, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.radioButton2, 2, 1);
@@ -431,7 +431,7 @@
             this.tableLayoutPanel1.Controls.Add(this.lblMoeglicheAntwort5, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.radioButton5, 2, 4);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(56, 127);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -446,8 +446,8 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(545, 104);
-            this.radioButton3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButton3.Location = new System.Drawing.Point(544, 104);
+            this.radioButton3.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(14, 13);
             this.radioButton3.TabIndex = 15;
@@ -457,8 +457,8 @@
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(545, 155);
-            this.radioButton4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButton4.Location = new System.Drawing.Point(544, 155);
+            this.radioButton4.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(14, 13);
             this.radioButton4.TabIndex = 16;
@@ -468,8 +468,8 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(545, 53);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButton2.Location = new System.Drawing.Point(544, 53);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(14, 13);
             this.radioButton2.TabIndex = 14;
@@ -481,8 +481,8 @@
             this.radioButton1.AutoSize = true;
             this.radioButton1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.radioButton1.Location = new System.Drawing.Point(545, 2);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButton1.Location = new System.Drawing.Point(544, 2);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(14, 13);
             this.radioButton1.TabIndex = 13;
@@ -551,7 +551,7 @@
             this.lblMoeglicheAntwort4.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.lblMoeglicheAntwort4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMoeglicheAntwort4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblMoeglicheAntwort4.Location = new System.Drawing.Point(87, 153);
+            this.lblMoeglicheAntwort4.Location = new System.Drawing.Point(86, 153);
             this.lblMoeglicheAntwort4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMoeglicheAntwort4.Name = "lblMoeglicheAntwort4";
             this.lblMoeglicheAntwort4.Size = new System.Drawing.Size(454, 27);
@@ -563,7 +563,7 @@
             this.lblMoeglicheAntwort3.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.lblMoeglicheAntwort3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMoeglicheAntwort3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblMoeglicheAntwort3.Location = new System.Drawing.Point(87, 102);
+            this.lblMoeglicheAntwort3.Location = new System.Drawing.Point(86, 102);
             this.lblMoeglicheAntwort3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMoeglicheAntwort3.Name = "lblMoeglicheAntwort3";
             this.lblMoeglicheAntwort3.Size = new System.Drawing.Size(454, 27);
@@ -575,7 +575,7 @@
             this.lblMoeglicheAntwort2.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.lblMoeglicheAntwort2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMoeglicheAntwort2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblMoeglicheAntwort2.Location = new System.Drawing.Point(87, 51);
+            this.lblMoeglicheAntwort2.Location = new System.Drawing.Point(86, 51);
             this.lblMoeglicheAntwort2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMoeglicheAntwort2.Name = "lblMoeglicheAntwort2";
             this.lblMoeglicheAntwort2.Size = new System.Drawing.Size(454, 27);
@@ -588,7 +588,7 @@
             this.lblMoeglicheAntwort1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.lblMoeglicheAntwort1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMoeglicheAntwort1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblMoeglicheAntwort1.Location = new System.Drawing.Point(87, 0);
+            this.lblMoeglicheAntwort1.Location = new System.Drawing.Point(86, 0);
             this.lblMoeglicheAntwort1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMoeglicheAntwort1.Name = "lblMoeglicheAntwort1";
             this.lblMoeglicheAntwort1.Size = new System.Drawing.Size(454, 27);
@@ -600,7 +600,7 @@
             this.lblMoeglicheAntwort5.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.lblMoeglicheAntwort5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMoeglicheAntwort5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblMoeglicheAntwort5.Location = new System.Drawing.Point(87, 204);
+            this.lblMoeglicheAntwort5.Location = new System.Drawing.Point(86, 204);
             this.lblMoeglicheAntwort5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMoeglicheAntwort5.Name = "lblMoeglicheAntwort5";
             this.lblMoeglicheAntwort5.Size = new System.Drawing.Size(454, 27);
@@ -609,8 +609,8 @@
             // radioButton5
             // 
             this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(545, 206);
-            this.radioButton5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButton5.Location = new System.Drawing.Point(544, 206);
+            this.radioButton5.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton5.Name = "radioButton5";
             this.radioButton5.Size = new System.Drawing.Size(14, 13);
             this.radioButton5.TabIndex = 17;
@@ -637,7 +637,7 @@
             this.tabStatistik.Controls.Add(this.label1);
             this.tabStatistik.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabStatistik.Location = new System.Drawing.Point(4, 25);
-            this.tabStatistik.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabStatistik.Margin = new System.Windows.Forms.Padding(2);
             this.tabStatistik.Name = "tabStatistik";
             this.tabStatistik.Size = new System.Drawing.Size(908, 565);
             this.tabStatistik.TabIndex = 2;
@@ -650,7 +650,7 @@
             this.btnNochlSpielenStatistik.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNochlSpielenStatistik.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnNochlSpielenStatistik.Location = new System.Drawing.Point(209, 517);
-            this.btnNochlSpielenStatistik.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNochlSpielenStatistik.Margin = new System.Windows.Forms.Padding(2);
             this.btnNochlSpielenStatistik.Name = "btnNochlSpielenStatistik";
             this.btnNochlSpielenStatistik.Size = new System.Drawing.Size(134, 32);
             this.btnNochlSpielenStatistik.TabIndex = 49;
@@ -665,7 +665,7 @@
             this.btnStatistikEintragLoeschen.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStatistikEintragLoeschen.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnStatistikEintragLoeschen.Location = new System.Drawing.Point(392, 458);
-            this.btnStatistikEintragLoeschen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStatistikEintragLoeschen.Margin = new System.Windows.Forms.Padding(2);
             this.btnStatistikEintragLoeschen.Name = "btnStatistikEintragLoeschen";
             this.btnStatistikEintragLoeschen.Size = new System.Drawing.Size(125, 32);
             this.btnStatistikEintragLoeschen.TabIndex = 48;
@@ -680,7 +680,7 @@
             this.btnStatistikGoBack.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStatistikGoBack.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnStatistikGoBack.Location = new System.Drawing.Point(22, 517);
-            this.btnStatistikGoBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStatistikGoBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnStatistikGoBack.Name = "btnStatistikGoBack";
             this.btnStatistikGoBack.Size = new System.Drawing.Size(134, 32);
             this.btnStatistikGoBack.TabIndex = 47;
@@ -695,7 +695,7 @@
             this.lstHighscoreListeStatistiken.FormattingEnabled = true;
             this.lstHighscoreListeStatistiken.ItemHeight = 18;
             this.lstHighscoreListeStatistiken.Location = new System.Drawing.Point(461, 150);
-            this.lstHighscoreListeStatistiken.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstHighscoreListeStatistiken.Margin = new System.Windows.Forms.Padding(2);
             this.lstHighscoreListeStatistiken.Name = "lstHighscoreListeStatistiken";
             this.lstHighscoreListeStatistiken.Size = new System.Drawing.Size(428, 272);
             this.lstHighscoreListeStatistiken.TabIndex = 45;
@@ -707,7 +707,7 @@
             this.btnStatistikNamenEintragen.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStatistikNamenEintragen.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnStatistikNamenEintragen.Location = new System.Drawing.Point(209, 458);
-            this.btnStatistikNamenEintragen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStatistikNamenEintragen.Margin = new System.Windows.Forms.Padding(2);
             this.btnStatistikNamenEintragen.Name = "btnStatistikNamenEintragen";
             this.btnStatistikNamenEintragen.Size = new System.Drawing.Size(134, 32);
             this.btnStatistikNamenEintragen.TabIndex = 43;
@@ -751,7 +751,7 @@
             this.txtStatistikNameEintragen.BackColor = System.Drawing.Color.NavajoWhite;
             this.txtStatistikNameEintragen.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStatistikNameEintragen.Location = new System.Drawing.Point(209, 268);
-            this.txtStatistikNameEintragen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtStatistikNameEintragen.Margin = new System.Windows.Forms.Padding(2);
             this.txtStatistikNameEintragen.Name = "txtStatistikNameEintragen";
             this.txtStatistikNameEintragen.Size = new System.Drawing.Size(221, 24);
             this.txtStatistikNameEintragen.TabIndex = 39;
@@ -763,7 +763,7 @@
             this.btnCloseStatistik.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCloseStatistik.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnCloseStatistik.Location = new System.Drawing.Point(746, 517);
-            this.btnCloseStatistik.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCloseStatistik.Margin = new System.Windows.Forms.Padding(2);
             this.btnCloseStatistik.Name = "btnCloseStatistik";
             this.btnCloseStatistik.Size = new System.Drawing.Size(133, 32);
             this.btnCloseStatistik.TabIndex = 38;
@@ -866,9 +866,9 @@
             this.tabNeueFragen.Controls.Add(this.lblAnzeigeLogoFragenEditor);
             this.tabNeueFragen.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabNeueFragen.Location = new System.Drawing.Point(4, 25);
-            this.tabNeueFragen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabNeueFragen.Margin = new System.Windows.Forms.Padding(2);
             this.tabNeueFragen.Name = "tabNeueFragen";
-            this.tabNeueFragen.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabNeueFragen.Padding = new System.Windows.Forms.Padding(2);
             this.tabNeueFragen.Size = new System.Drawing.Size(908, 565);
             this.tabNeueFragen.TabIndex = 1;
             this.tabNeueFragen.Text = "FragenEditor";
@@ -880,7 +880,7 @@
             this.btnFragenEditorGoBack.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFragenEditorGoBack.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnFragenEditorGoBack.Location = new System.Drawing.Point(43, 512);
-            this.btnFragenEditorGoBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFragenEditorGoBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnFragenEditorGoBack.Name = "btnFragenEditorGoBack";
             this.btnFragenEditorGoBack.Size = new System.Drawing.Size(122, 38);
             this.btnFragenEditorGoBack.TabIndex = 45;
@@ -895,7 +895,7 @@
             this.btnNeuFrageEditor.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNeuFrageEditor.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnNeuFrageEditor.Location = new System.Drawing.Point(179, 453);
-            this.btnNeuFrageEditor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNeuFrageEditor.Margin = new System.Windows.Forms.Padding(2);
             this.btnNeuFrageEditor.Name = "btnNeuFrageEditor";
             this.btnNeuFrageEditor.Size = new System.Drawing.Size(122, 38);
             this.btnNeuFrageEditor.TabIndex = 43;
@@ -910,7 +910,7 @@
             this.btnEdit.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnEdit.Location = new System.Drawing.Point(312, 453);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(2);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(122, 38);
             this.btnEdit.TabIndex = 42;
@@ -925,7 +925,7 @@
             this.btnCloseEditor.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCloseEditor.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnCloseEditor.Location = new System.Drawing.Point(760, 512);
-            this.btnCloseEditor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCloseEditor.Margin = new System.Windows.Forms.Padding(2);
             this.btnCloseEditor.Name = "btnCloseEditor";
             this.btnCloseEditor.Size = new System.Drawing.Size(122, 38);
             this.btnCloseEditor.TabIndex = 41;
@@ -940,7 +940,7 @@
             this.btnUeberschreiben.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUeberschreiben.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnUeberschreiben.Location = new System.Drawing.Point(453, 453);
-            this.btnUeberschreiben.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUeberschreiben.Margin = new System.Windows.Forms.Padding(2);
             this.btnUeberschreiben.Name = "btnUeberschreiben";
             this.btnUeberschreiben.Size = new System.Drawing.Size(122, 38);
             this.btnUeberschreiben.TabIndex = 40;
@@ -965,7 +965,7 @@
             this.lstFragenliste.FormattingEnabled = true;
             this.lstFragenliste.ItemHeight = 17;
             this.lstFragenliste.Location = new System.Drawing.Point(147, 336);
-            this.lstFragenliste.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstFragenliste.Margin = new System.Windows.Forms.Padding(2);
             this.lstFragenliste.Name = "lstFragenliste";
             this.lstFragenliste.Size = new System.Drawing.Size(647, 89);
             this.lstFragenliste.TabIndex = 38;
@@ -977,7 +977,7 @@
             this.btnFrageLöschern.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFrageLöschern.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnFrageLöschern.Location = new System.Drawing.Point(596, 453);
-            this.btnFrageLöschern.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFrageLöschern.Margin = new System.Windows.Forms.Padding(2);
             this.btnFrageLöschern.Name = "btnFrageLöschern";
             this.btnFrageLöschern.Size = new System.Drawing.Size(122, 38);
             this.btnFrageLöschern.TabIndex = 37;
@@ -992,7 +992,7 @@
             this.btnSpeicherFrage.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSpeicherFrage.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnSpeicherFrage.Location = new System.Drawing.Point(43, 453);
-            this.btnSpeicherFrage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSpeicherFrage.Margin = new System.Windows.Forms.Padding(2);
             this.btnSpeicherFrage.Name = "btnSpeicherFrage";
             this.btnSpeicherFrage.Size = new System.Drawing.Size(122, 38);
             this.btnSpeicherFrage.TabIndex = 36;
@@ -1072,7 +1072,7 @@
             this.radioButton10.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.radioButton10.Location = new System.Drawing.Point(721, 289);
-            this.radioButton10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButton10.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton10.Name = "radioButton10";
             this.radioButton10.Size = new System.Drawing.Size(14, 13);
             this.radioButton10.TabIndex = 20;
@@ -1085,7 +1085,7 @@
             this.radioButton9.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.radioButton9.Location = new System.Drawing.Point(721, 251);
-            this.radioButton9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButton9.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton9.Name = "radioButton9";
             this.radioButton9.Size = new System.Drawing.Size(14, 13);
             this.radioButton9.TabIndex = 19;
@@ -1098,7 +1098,7 @@
             this.radioButton8.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.radioButton8.Location = new System.Drawing.Point(721, 215);
-            this.radioButton8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButton8.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton8.Name = "radioButton8";
             this.radioButton8.Size = new System.Drawing.Size(14, 13);
             this.radioButton8.TabIndex = 18;
@@ -1111,7 +1111,7 @@
             this.radioButton7.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.radioButton7.Location = new System.Drawing.Point(721, 178);
-            this.radioButton7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButton7.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton7.Name = "radioButton7";
             this.radioButton7.Size = new System.Drawing.Size(14, 13);
             this.radioButton7.TabIndex = 17;
@@ -1124,7 +1124,7 @@
             this.radioButton6.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.radioButton6.Location = new System.Drawing.Point(721, 141);
-            this.radioButton6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButton6.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton6.Name = "radioButton6";
             this.radioButton6.Size = new System.Drawing.Size(14, 13);
             this.radioButton6.TabIndex = 16;
@@ -1136,7 +1136,7 @@
             this.textBox5.BackColor = System.Drawing.Color.MistyRose;
             this.textBox5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox5.Location = new System.Drawing.Point(147, 285);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(550, 30);
@@ -1147,7 +1147,7 @@
             this.textBox4.BackColor = System.Drawing.Color.MistyRose;
             this.textBox4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox4.Location = new System.Drawing.Point(147, 247);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(550, 30);
@@ -1158,7 +1158,7 @@
             this.textBox2.BackColor = System.Drawing.Color.MistyRose;
             this.textBox2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(147, 174);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(550, 30);
@@ -1169,7 +1169,7 @@
             this.textBox3.BackColor = System.Drawing.Color.MistyRose;
             this.textBox3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.Location = new System.Drawing.Point(147, 211);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(550, 30);
@@ -1180,7 +1180,7 @@
             this.textBox1.BackColor = System.Drawing.Color.MistyRose;
             this.textBox1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(147, 137);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(550, 30);
@@ -1257,7 +1257,7 @@
             this.txtNeueFrage.BackColor = System.Drawing.Color.RosyBrown;
             this.txtNeueFrage.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNeueFrage.Location = new System.Drawing.Point(147, 72);
-            this.txtNeueFrage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNeueFrage.Margin = new System.Windows.Forms.Padding(2);
             this.txtNeueFrage.Multiline = true;
             this.txtNeueFrage.Name = "txtNeueFrage";
             this.txtNeueFrage.Size = new System.Drawing.Size(550, 43);
@@ -1292,7 +1292,7 @@
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Kleiner Quizmaster";
             this.Load += new System.EventHandler(this.Form1_Load);

@@ -10,10 +10,9 @@ using System.Windows.Forms;
 /* AUFGABENLISTE: */
 
 // TODO - Fehler auffangen, wenn man in der Liste oder beim Start nichts ausgewählt hat - wichtig
-// TODO - Serialisierung und Deserialissierungs-Methoden: Pfad noch mit Openfield ändern und in einer anderen Klasse auslagern
-// TODO - FrageEditor: Vermeidung eines Leerenstrings, Doppelte Fragestellung
+// TODO - Serialisierung und Deserialissierungs-Methoden: Pfad noch mit Openfield ändern und in einer anderen Kasse auslagern
+// TODO - FrageEditor: Vermeidung eines Leerenstrings, Doppelte Fragestellung - if( getFrage() == GetFrage) hole die nächste Frage
 
-// TODO - Statt direkt in der Liste Random machen (wegen Endlosschleife und doppelte Fragenausgabe- 
 // TODO - Allgemein: Zum Schluss überflüssige Codes /Kommentare löschen und die Fehlerabfangenssachen coden
 
 
@@ -248,20 +247,10 @@ namespace LitteQuizMaster
 
         private void btnQuizStopp_Click(object sender, EventArgs e) //Sobald stopp geklickt wurde, soll das Spiel zuende sein
         {
-            /* Dazu wird benötigt:
-             * Variable die weiß wie viele Fragen noch in der Liste sind(gestellt werden)  listeFragen.Count
-             * aktuellen Punktestand
-             * - Spielerpunkte die er bereits gespielt hat: Methode GetPunkte  oder statistik.spielpunkte
-             * Maxpunkte die er hätte erreichen können Anzahl der Fragen
-             * Übergang zur "Beendigungsfunktion des Spiel
-             * spieler spielt 5 Fragen
-             *  spielerpunkte 5 , theor. würde das Spiel solange laufen wie die Anzahl der Fragen ist.
-             *  23 - 5 = 18 Punkte die noch hätten erreicht werden können
-             *  also irgendwie sowas spielerStatistiken.GetAnzahlFragen() =  listeFragen.Count ?
-                 */
+           
                  if(spielerStatistiken.GetAnzahlFragen() < listeFragen.Count)
             {
-                //addiere den Rest der "Fragen hätten noch getsellt werden können" dazu, sodass die maximal Frageanzahl erreicht ist und das Spiel endet
+                // Idee: addiere den Rest der "Fragen hätten noch getsellt werden können" dazu, sodass die maximal Frageanzahl erreicht ist und das Spiel endet
 
                 int anzahlDerFragenInDerListe = listeFragen.Count;        //Wertübergabe Anzahl der Fragen in der Liste
                 int stoppErreichtePunkte = spielerStatistiken.GetPunkte();      //Wertübergabe die aktuell erspielten Punkte
