@@ -7,13 +7,17 @@ using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 
 
-/* AUFGABENLISTE: */
+/* AUFGABENLISTE: was leider noch nicht klappt */
 
-// TODO - Fehler auffangen, wenn man in der Liste oder beim Start nichts ausgewählt hat - wichtig
-// TODO - Serialisierung und Deserialissierungs-Methoden: Pfad noch mit Openfield ändern und in einer anderen Kasse auslagern
-// TODO - FrageEditor: Vermeidung eines Leerenstrings, Doppelte Fragestellung - if( getFrage() == GetFrage) hole die nächste Frage
 
-// TODO - Allgemein: Zum Schluss überflüssige Codes /Kommentare löschen und die Fehlerabfangenssachen coden
+// TODO - Serialisierung und Deserialissierungs-Methoden: absolutenPfad in nen relativen Pfad ändern, und (De)Serialisierung auslagern
+// TODO - FrageEditor:Doppelte Fragestellung vermeiden
+// TODO - Kommentare löschen und die Fehlerabfangenssachen coden
+// TODO - mehr Code in anderen Klassen auslagen - QM 2.0
+// TODO - Kommentarhinzufügen -QM 2.0
+// TODO - Auswahlmöglichkeit für Themengebiete (Quiz) -QM 2.0
+// TODO - Vielleicht diverse Datenbanken (Textdateien) von vornherein einlesen können - QM 2.0
+// TODO - doppelt gestellte Fragen vermeiden - QM 2.0
 
 
 
@@ -45,7 +49,7 @@ namespace LitteQuizMaster
             InitializeComponent();
             Deserialisierung();
             DeserialisierungHighscoreliste();
-          //  DeserialisierungKommentarliste();
+          
         }
 
         /***********************************************************************************************************************/
@@ -224,7 +228,7 @@ namespace LitteQuizMaster
         {
             
                 Frage spielStart = listeFragen[zufall.Next(0, listeFragen.Count-1)];
-            
+          
                 lblFragestellung.Text = spielStart.GetFrageText();
                 lblMoeglicheAntwort1.Text = spielStart.GetAntworten()[0].antwortText;
                 lblMoeglicheAntwort2.Text = spielStart.GetAntworten()[1].antwortText;
@@ -237,9 +241,9 @@ namespace LitteQuizMaster
                 aktuelleFrage.SetAntworten(spielStart.GetAntworten()[0], spielStart.GetAntworten()[1],
                 spielStart.GetAntworten()[2], spielStart.GetAntworten()[3], spielStart.GetAntworten()[4]);
 
-                //Vermerk: radioButton1.Checked = spielStart.GetAntworten()[0].istRichtig;
-                //somit zeigt es den richtigen Wert an
-
+            //Vermerk: radioButton1.Checked = spielStart.GetAntworten()[0].istRichtig;
+            //somit zeigt es den richtigen Wert an
+           
                 GuiSynch();
             
             
@@ -301,10 +305,17 @@ namespace LitteQuizMaster
             statistik.spielername = neuername;
             statistik.zeitangabe = spielzeit;
 
-            listehighscore.Add(statistik);       //Objekt statistik wird der Listre Highscore hinzugefügt
+            if (statistik.spielername == "")
+            {
+                MessageBox.Show("Du hast vergessen deinen Namen einzutragen");
+            }
+            else
+            {
+                listehighscore.Add(statistik);       //Objekt statistik wird der Listre Highscore hinzugefügt
 
+              
+            }
             return statistik;
-
 
         }
 
@@ -322,8 +333,9 @@ namespace LitteQuizMaster
         }
         private void btnStatistikNamenEintragen_Click(object sender, EventArgs e) // Namen in der Highscoreliste anzeigen
         {
-            Statistiken statistikneuername = SpielerDatenSpeichern();
 
+            Statistiken statistikneuername = SpielerDatenSpeichern();
+         
             SerialisierungHighscoreliste();
             SynHighscoreliste();
             txtStatistikNameEintragen.Text = "";
@@ -363,8 +375,17 @@ namespace LitteQuizMaster
         {
             string frage = txtNeueFrage.Text;
 
+           
             Frage neueFrage = FrageSpeichern();
-            listeFragen.Add(neueFrage);
+            /*Wenn was nicht eingetragen wurde*/
+            if (neueFrage.GetFrageText() == "" || neueFrage.GetAntworten()[0].antwortText == "" || neueFrage.GetAntworten()[1].antwortText == "" || neueFrage.GetAntworten()[2].antwortText == ""
+                || neueFrage.GetAntworten()[3].antwortText == "" || neueFrage.GetAntworten()[4].antwortText == "") 
+            {
+                MessageBox.Show("OOPS, da fehlt was");
+            }
+           
+            else { 
+            listeFragen.Add(neueFrage);}
 
 
             //TODO Leere String abfangen
@@ -421,6 +442,8 @@ namespace LitteQuizMaster
                                         new Antwort(radioButton10.Checked, textBox5.Text)
                                          );
             //indexFrageliste = listeFragen.Count;    //Soll herausfinden, wieviele Fragen in der Liste sind
+
+           
 
             Serialisierung();
             GuiSynch();
