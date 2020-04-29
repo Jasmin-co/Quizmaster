@@ -31,12 +31,12 @@ namespace LitteQuizMaster
         Frage aktuelleFrage = new Frage();
         Random zufall = new Random();       //Zufallszahl
         StartSeite willkommensTextStartSeite = new StartSeite();
-        Kommentare kommentare = new Kommentare();
+    
 
 
         private List<Frage> listeFragen = new List<Frage>();   //Fragenliste für die Fragen erstellt
         private List<Statistiken> listehighscore = new List<Statistiken>();
-        private List<Kommentare> listeKommentare = new List<Kommentare>();
+     
 
 
         public Form1()      //Konstruktor
@@ -317,21 +317,7 @@ namespace LitteQuizMaster
             SynHighscoreliste();
         }
 
-        #region Nächste-Frage-Button
-        /*
-        private void btnNext_Click(object sender, EventArgs e)
-        {
-            RadioButtonQuizLeeren();
-            FrageHolenQuiz();
-          string frage = txtNeueFrage.Text;
-
-            Frage neueFrage = FrageSpeichern();
-            listeFragen.Add(neueFrage);
-
-        }
-        */
-        #endregion
-
+     
         private void btnStatistikGoBack_Click(object sender, EventArgs e)
         {
             tabControl1.SelectTab(tabStartSeite);
@@ -347,7 +333,6 @@ namespace LitteQuizMaster
         {
             Close();
         }
-
 
 
         /***************************************************************************************************************************/
@@ -441,21 +426,7 @@ namespace LitteQuizMaster
 
             return frage;
         }
-        #region FrageAnzeige - wir derzeit nicht benutzt
-        /* Methode: Anzeigen der Frage und den dazugehörigen Antworten Antworten */
 
-        /*  private void FrageAnzeigen(Frage frage) // für Button Next beim Tab Quiz 
-           {
-
-               lblFragestellung.Text = frage.GetFrageText();
-               lblMoeglicheAntwort1.Text = frage.GetAntworten()[0].antwortText;
-               lblMoeglicheAntwort2.Text = frage.GetAntworten()[1].antwortText;
-               lblMoeglicheAntwort3.Text = frage.GetAntworten()[2].antwortText;
-               lblMoeglicheAntwort4.Text = frage.GetAntworten()[3].antwortText;
-               lblMoeglicheAntwort5.Text = frage.GetAntworten()[4].antwortText;
-               aktuelleFrage = frage;
-           }*/
-        #endregion
         private void FrageImEditorAnzeigen()  /* Funktion Anzeigen im Frageneditor */
         {
             Frage frageBearbeiten = listeFragen[lstFragenliste.SelectedIndex]; //aus der Liste den ausgewählten Index nehmen
