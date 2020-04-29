@@ -7,18 +7,14 @@ using System.Windows.Forms;
 
 /* AUFGABENLISTE: */
 
-// TODO - Statistiken: speicher den namen sobald er eingegeben wurde + speicher die punkte und das datum in die highscoreliste
-// ggf neuen button erstellen oder wenn Spiel zuende ist, wechsel zur statistik seite
-
-
 // TODO - Fehler auffangen, wenn man in der Liste oder beim Start nichts ausgewählt hat - wichtig
-// TODO - Serialisierung und Deserialissierungs-Methoden: Pfad noch mit Openfield ändern und in einer anderen KLasse auslagern
+// TODO - Serialisierung und Deserialissierungs-Methoden: Pfad noch mit Openfield ändern und in einer anderen Klasse auslagern
 // TODO - FrageEditor: Vermeidung eines Leerenstrings, Doppelte Fragestellung
 
 // TODO - Statt direkt in der Liste Random machen (wegen Endlosschleife und doppelte Fragenausgabe- 
 // TODO - Allgemein: Zum Schluss überflüssige Codes /Kommentare löschen und die Fehlerabfangenssachen coden
-// TODO - Kommentarliste erstellen mit folgenden Optionen: Speichern, Löschen 
-// TODO - Für die Liste Highscore und Kommentare (De)Serialisierung Methode erstellen
+
+
 
 
 namespace LitteQuizMaster
