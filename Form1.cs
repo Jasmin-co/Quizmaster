@@ -527,7 +527,7 @@ namespace LitteQuizMaster
         {
 
             BinaryFormatter binaryFormatter = new BinaryFormatter();
-            FileStream stream = new FileStream(@"C:\Users\black\source\repos\FrageAntwort.txt", FileMode.Create, FileAccess.Write);
+            FileStream stream = new FileStream(@"C:\Users\black\source\repos\Jasmin-co\Quizmaster\FrageAntwort.txt", FileMode.Create, FileAccess.Write);
             binaryFormatter.Serialize(stream, listeFragen);
             stream.Close();
 
@@ -535,7 +535,7 @@ namespace LitteQuizMaster
 
         public void Deserialisierung()
         {
-            FileStream stream = new FileStream(@"C:\Users\black\source\repos\FrageAntwort.txt", FileMode.Open, FileAccess.Read);
+            FileStream stream = new FileStream(@"C:\Users\black\source\repos\Jasmin-co\Quizmaster\FrageAntwort.txt", FileMode.Open, FileAccess.Read);
             BinaryFormatter binaryFormatter = new BinaryFormatter();
             listeFragen = (List<Frage>)binaryFormatter.Deserialize(stream);
 
@@ -546,13 +546,13 @@ namespace LitteQuizMaster
         public void SerialisierungHighscoreliste()//funkt. nicht
         {
             BinaryFormatter binaryFormatter = new BinaryFormatter();
-            FileStream stream = new FileStream(@"C:\Users\black\source\repos\Highscoreliste.txt", FileMode.Create, FileAccess.Write);
+            FileStream stream = new FileStream(@"C:\Users\black\source\repos\Jasmin-co\Quizmaster\Highscoreliste.txt", FileMode.Create, FileAccess.Write);
             binaryFormatter.Serialize(stream, listehighscore);
             stream.Close();
         }
         public void DeserialisierungHighscoreliste()
         {
-            FileStream streamHighscore = new FileStream(@"C:\Users\black\source\repos\Highscoreliste.txt", FileMode.Open, FileAccess.Read);
+            FileStream streamHighscore = new FileStream(@"C:\Users\black\source\repos\Jasmin-co\Quizmaster\Highscoreliste.txt", FileMode.Open, FileAccess.Read);
             BinaryFormatter binaryFormatterHighscore = new BinaryFormatter();
             listehighscore = (List<Statistiken>)binaryFormatterHighscore.Deserialize(streamHighscore);
             SynHighscoreliste();
